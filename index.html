@@ -12,14 +12,13 @@
             theme: { 
                 extend: { 
                     colors: { brandDark: '#0a192f', brandGold: '#c5a059', brandGray: '#8892b0', whatsapp: '#25D366' },
-                    fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] }
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
                 } 
             }
         }
     </script>
     <style>
-        /* Forzamos que todo el documento use una fuente limpia y profesional */
-        body { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif !important; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Inter', system-ui, sans-serif !important; -webkit-font-smoothing: antialiased; }
         .ticker-wrap { overflow: hidden; white-space: nowrap; background: #0f172a; border-bottom: 1px solid #c5a059; }
         .ticker { display: inline-block; animation: ticker 40s linear infinite; padding: 10px 0; }
         @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
@@ -34,9 +33,9 @@
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <img src="Logo-Requin.jpg" alt="Logo" class="h-10 w-auto border border-brandGold"> 
-                <span class="text-xl font-bold tracking-widest text-brandGold uppercase italic">REQUIN <span class="text-white">& ASOC.</span></span>
+                <span class="text-xl font-bold tracking-widest text-brandGold uppercase italic text-sm">REQUIN <span class="text-white">& ASOC.</span></span>
             </div>
-            <ul class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-widest">
+            <ul class="hidden md:flex space-x-6 text-[10px] font-bold uppercase tracking-widest items-center italic">
                 <li><a href="#inicio" class="hover:text-brandGold transition">Inicio</a></li>
                 <li><a href="#servicios" class="hover:text-brandGold transition">Servicios</a></li>
                 <li><a href="#noticias" class="hover:text-brandGold transition">Mercados</a></li>
@@ -48,15 +47,15 @@
     <div class="ticker-wrap relative z-40 font-mono text-sm tracking-widest text-white">
         <div class="ticker">
             <div id="ticker-content" class="inline-flex">
-                <span class="mx-8 text-brandGold uppercase italic text-[10px]">Sincronizando indicadores económicos...</span>
+                <span class="mx-8 text-brandGold uppercase italic text-[10px]">Actualizando indicadores financieros...</span>
                 </div>
         </div>
     </div>
 
-    <header id="inicio" class="bg-brandDark text-white py-24 relative overflow-hidden text-center md:text-left italic">
+    <header id="inicio" class="bg-brandDark text-white py-24 relative overflow-hidden text-center md:text-left">
         <div class="container mx-auto px-6 relative z-10 italic">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 uppercase leading-tight tracking-tighter italic">Expertos en <br><span class="text-brandGold">Arquitectura Financiera</span></h1>
-            <p class="text-brandGray text-lg mb-8 max-w-2xl italic">Consultoría experta en auditoría, gestión legal tributaria y desarrollo integral de proyectos con rigor matemático.</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 uppercase leading-tight tracking-tighter italic">Expertos en <br><span class="text-brandGold">Arquitectura Financiera</span></h1>
+            <p class="text-brandGray text-lg mb-8 max-w-2xl italic">Consultoría experta en auditoría, gestión legal tributaria y desarrollo de proyectos con rigor matemático.</p>
             <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
                 <a href="#contacto" class="bg-brandGold text-brandDark px-8 py-3 rounded font-bold hover:bg-white transition shadow-lg text-center uppercase tracking-widest text-xs italic">Solicitar Diagnóstico</a>
                 <a href="#servicios" class="border border-brandGold text-brandGold px-8 py-3 rounded font-bold hover:bg-brandGold hover:text-brandDark transition text-center uppercase tracking-widest text-xs italic">Ver Servicios</a>
@@ -66,32 +65,32 @@
 
     <section id="servicios" class="py-20 bg-white">
         <div class="container mx-auto px-6 italic">
-            <div class="text-center mb-16 italic uppercase">
-                <h2 class="text-3xl font-bold tracking-widest italic uppercase">Nuestros Servicios</h2>
+            <div class="text-center mb-16 italic uppercase tracking-widest">
+                <h2 class="text-3xl font-bold italic">Nuestros Servicios</h2>
                 <div class="h-1 w-24 bg-brandGold mx-auto mt-4"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-slate-50 p-8 rounded shadow border-t-4 border-brandGold">
                     <div class="text-2xl mb-4 text-brandGold"><i class="fas fa-file-invoice-dollar"></i></div>
-                    <h3 class="text-xs font-bold mb-3 uppercase tracking-tighter">Contabilidad y Auditoría</h3>
+                    <h3 class="text-[11px] font-bold mb-3 uppercase tracking-tighter">Contabilidad y Auditoría</h3>
                     <ul class="text-[10px] text-gray-600 space-y-2 italic uppercase">
-                        <li>• Auditoría de Estados Financieros</li>
+                        <li>• Auditoría Estados Financieros</li>
                         <li>• Auditoría Forense y Peritajes</li>
                         <li>• Contabilidad Corporativa</li>
                     </ul>
                 </div>
                 <div class="bg-slate-50 p-8 rounded shadow border-t-4 border-brandGold">
                     <div class="text-2xl mb-4 text-brandGold"><i class="fas fa-gavel"></i></div>
-                    <h3 class="text-xs font-bold mb-3 uppercase tracking-tighter italic font-extrabold underline decoration-brandGold">Asesoramiento Legal</h3>
+                    <h3 class="text-[11px] font-bold mb-3 uppercase tracking-tighter italic font-extrabold underline decoration-brandGold">Asesoramiento Legal</h3>
                     <ul class="text-[10px] text-gray-600 space-y-2 italic uppercase">
-                        <li class="font-bold text-brandDark italic underline">Especialidad Derecho Tributario</li>
+                        <li class="font-bold text-brandDark italic">Especialidad Derecho Tributario</li>
                         <li>• Consultoría Legal Civil</li>
                         <li>• Asesoría Derecho Laboral</li>
                     </ul>
                 </div>
                 <div class="bg-slate-50 p-8 rounded shadow border-t-4 border-brandGold">
                     <div class="text-2xl mb-4 text-brandGold"><i class="fas fa-tasks"></i></div>
-                    <h3 class="text-xs font-bold mb-3 uppercase tracking-tighter italic">Gestión de Proyectos</h3>
+                    <h3 class="text-[11px] font-bold mb-3 uppercase tracking-tighter italic">Gestión de Proyectos</h3>
                     <ul class="text-[10px] text-gray-600 space-y-2 italic uppercase">
                         <li>• Evaluación Técnica y Económica</li>
                         <li>• Puesta en Marcha Operacional</li>
@@ -100,11 +99,11 @@
                 </div>
                 <div class="bg-slate-50 p-8 rounded shadow border-t-4 border-brandGold">
                     <div class="text-2xl mb-4 text-brandGold"><i class="fas fa-landmark"></i></div>
-                    <h3 class="text-xs font-bold mb-3 uppercase tracking-tighter">Obtención de Fondos</h3>
+                    <h3 class="text-[11px] font-bold mb-3 uppercase tracking-tighter">Obtención de Fondos</h3>
                     <ul class="text-[10px] text-gray-600 space-y-2 italic uppercase">
                         <li>• Fondos Públicos y Privados</li>
-                        <li>• Estructuración Estratégica</li>
-                        <li>• Asesoramiento para Inversión</li>
+                        <li>• Estructuración de Proyectos</li>
+                        <li>• Asesoramiento Estratégico</li>
                     </ul>
                 </div>
             </div>
@@ -115,7 +114,7 @@
         <div class="container mx-auto px-6 italic">
             <h2 class="text-2xl font-bold italic uppercase tracking-widest mb-10">Panorama Económico</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="col-span-4 text-center py-10 text-gray-400 font-mono text-xs uppercase italic tracking-widest">Sincronizando...</div>
+                <div class="col-span-4 text-center py-10 text-gray-400 font-mono text-xs uppercase italic tracking-widest">Actualizando titulares diarios...</div>
                 </div>
         </div>
     </section>
@@ -125,24 +124,24 @@
             <h2 class="text-3xl font-bold text-center mb-12 uppercase italic tracking-widest">Preguntas Frecuentes</h2>
             <div class="space-y-4 italic">
                 <details class="group bg-slate-50 p-6 rounded shadow cursor-pointer italic">
-                    <summary class="flex justify-between items-center font-bold text-xs"><span>¿TRABAJAN CON EMPRESAS FUERA DE CHILE?</span><span class="text-brandGold transition group-open:rotate-180">▼</span></summary>
-                    <p class="text-[9px] text-gray-600 mt-4 border-l-2 border-brandGold pl-4 italic">SÍ. ASESORAMOS A EMPRESAS ESPAÑOLAS Y LATINAS, ADAPTANDO MODELOS A NORMATIVA Y DIVISA LOCAL (EURO/DÓLAR).</p>
+                    <summary class="flex justify-between items-center font-bold text-xs uppercase tracking-tighter"><span>¿Trabajan con empresas fuera de Chile?</span><span class="text-brandGold transition group-open:rotate-180">▼</span></summary>
+                    <p class="text-[9px] text-gray-600 mt-4 border-l-2 border-brandGold pl-4 italic uppercase">Sí. Asesoramos a empresas españolas y latinas, adaptando modelos a normativa y divisa local.</p>
                 </details>
                 <details class="group bg-slate-50 p-6 rounded shadow cursor-pointer italic">
-                    <summary class="flex justify-between items-center font-bold text-xs"><span>¿QUÉ METODOLOGÍAS USAN PARA EVALUAR PROYECTOS?</span><span class="text-brandGold transition group-open:rotate-180">▼</span></summary>
-                    <p class="text-[9px] text-gray-600 mt-4 border-l-2 border-brandGold pl-4 italic">UTILIZAMOS ESTÁNDARES INTERNACIONALES VAN/TIR Y ANÁLISIS DE SENSIBILIDAD PARA ESCENARIOS FINANCIEROS.</p>
+                    <summary class="flex justify-between items-center font-bold text-xs uppercase tracking-tighter"><span>¿Qué metodologías usan para evaluar proyectos?</span><span class="text-brandGold transition group-open:rotate-180">▼</span></summary>
+                    <p class="text-[9px] text-gray-600 mt-4 border-l-2 border-brandGold pl-4 italic uppercase tracking-tighter">Utilizamos estándares internacionales VAN/TIR y análisis de sensibilidad para escenarios financieros.</p>
                 </details>
                 <details class="group bg-slate-50 p-6 rounded shadow cursor-pointer italic">
-                    <summary class="flex justify-between items-center font-bold text-xs"><span>¿CÓMO SE ESTRUCTURAN SUS HONORARIOS?</span><span class="text-brandGold transition group-open:rotate-180">▼</span></summary>
-                    <p class="text-[9px] text-gray-600 mt-4 border-l-2 border-brandGold pl-4 italic">OFRECEMOS MODELOS FLEXIBLES: FEE FIJO POR PROYECTO O TARIFAS SEGÚN ALCANCE ESTRATÉGICO.</p>
+                    <summary class="flex justify-between items-center font-bold text-xs uppercase tracking-tighter"><span>¿Cómo se estructuran sus honorarios?</span><span class="text-brandGold transition group-open:rotate-180">▼</span></summary>
+                    <p class="text-[9px] text-gray-600 mt-4 border-l-2 border-brandGold pl-4 italic uppercase tracking-tighter">Ofrecemos modelos flexibles: fee fijo por proyecto o tarifas según alcance estratégico.</p>
                 </details>
                 <details class="group bg-slate-50 p-6 rounded shadow cursor-pointer italic">
-                    <summary class="flex justify-between items-center font-bold text-xs"><span>¿LA SESIÓN DE DIAGNÓSTICO TIENE COSTO?</span><span class="text-brandGold transition group-open:rotate-180">▼</span></summary>
-                    <p class="text-[9px] text-gray-600 mt-4 border-l-2 border-brandGold pl-4 italic">LA SESIÓN INICIAL SIRVE PARA EVALUAR SI SOMOS EL SOCIO ESTRATÉGICO ADECUADO PARA LOS OBJETIVOS DE SU EMPRESA.</p>
+                    <summary class="flex justify-between items-center font-bold text-xs uppercase tracking-tighter"><span>¿La sesión de diagnóstico tiene costo?</span><span class="text-brandGold transition group-open:rotate-180">▼</span></summary>
+                    <p class="text-[9px] text-gray-600 mt-4 border-l-2 border-brandGold pl-4 italic uppercase tracking-tighter">La sesión inicial sirve para evaluar si somos el socio estratégico adecuado para los objetivos de su empresa.</p>
                 </details>
                 <details class="group bg-slate-50 p-6 rounded shadow cursor-pointer italic">
-                    <summary class="flex justify-between items-center font-bold text-xs"><span>¿CÓMO MANEJAN LA CONFIDENCIALIDAD?</span><span class="text-brandGold transition group-open:rotate-180">▼</span></summary>
-                    <p class="text-[9px] text-gray-600 mt-4 border-l-2 border-brandGold pl-4 italic">FIRMAMOS ACUERDOS DE NO DIVULGACIÓN (NDA) RIGUROSOS ANTES DE ACCEDER A CUALQUIER INFORMACIÓN FINANCIERA SENSIBLE.</p>
+                    <summary class="flex justify-between items-center font-bold text-xs uppercase tracking-tighter"><span>¿Cómo manejan la confidencialidad?</span><span class="text-brandGold transition group-open:rotate-180">▼</span></summary>
+                    <p class="text-[9px] text-gray-600 mt-4 border-l-2 border-brandGold pl-4 italic uppercase tracking-tighter">Firmamos acuerdos de no divulgación (NDA) rigurosos antes de acceder a cualquier información financiera sensible.</p>
                 </details>
             </div>
         </div>
@@ -151,12 +150,12 @@
     <section id="contacto" class="py-24 bg-brandDark text-white italic uppercase tracking-widest">
         <div class="container mx-auto px-6 max-w-5xl">
             <h2 class="text-3xl font-bold text-center mb-12 uppercase italic">Hablemos de Negocios</h2>
-            <form class="bg-white p-8 rounded shadow-2xl text-gray-800 border-t-4 border-brandGold mb-16 italic uppercase">
+            <form class="bg-white p-8 rounded shadow-2xl text-gray-800 border-t-4 border-brandGold mb-16 italic uppercase tracking-tighter">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                     <input type="text" placeholder="NOMBRE COMPLETO" class="w-full bg-slate-50 border p-3 rounded text-[10px] outline-none italic">
                     <input type="tel" placeholder="TELÉFONO" class="w-full bg-slate-50 border p-3 rounded text-[10px] outline-none italic">
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4 italic">
                     <input type="email" placeholder="EMAIL CORPORATIVO" class="w-full bg-slate-50 border p-3 rounded text-[10px] outline-none italic">
                     <select id="paisSelector" onchange="actualizarRangos()" class="w-full bg-slate-50 border p-3 rounded text-[10px] outline-none italic font-bold">
                         <option value="chile">🇨🇱 CHILE</option>
@@ -170,12 +169,12 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-gray-800 italic uppercase">
                 <div>
-                    <h4 class="font-bold text-brandGold mb-2 uppercase text-[10px] tracking-widest">OFICINA CENTRAL</h4>
+                    <h4 class="font-bold text-brandGold mb-2 uppercase text-[10px] tracking-widest underline decoration-brandGold underline-offset-4">OFICINA CENTRAL</h4>
                     <p class="text-[10px] text-gray-400 leading-relaxed italic uppercase tracking-tighter">CALLE LA GIOCONDA, 4355<br>LAS CONDES - SANTIAGO DE CHILE</p>
                     <p class="text-[10px] text-brandGold font-bold italic mt-2 uppercase tracking-tighter"><i class="fas fa-envelope mr-1"></i> CONTACTO@REQUINSPA.COM</p>
                 </div>
                 <div class="flex flex-col gap-3">
-                    <h4 class="font-bold text-brandGold mb-2 uppercase text-[10px] tracking-widest">CHILE 🇨🇱</h4>
+                    <h4 class="font-bold text-brandGold mb-2 uppercase text-[10px] tracking-widest underline decoration-brandGold underline-offset-4">CHILE 🇨🇱</h4>
                     <div class="grid grid-cols-2 gap-x-4 border-b border-gray-800 pb-2 italic uppercase">
                         <span class="text-[10px] text-gray-300 font-bold italic tracking-tighter">🇨🇱 +56 9 6822 4180</span>
                         <span class="text-[8px] text-brandGold font-bold text-right italic uppercase tracking-tighter">PYMES</span>
@@ -185,11 +184,11 @@
                     <div class="flex items-center gap-2 italic uppercase">
                         <i class="fab fa-whatsapp text-whatsapp text-sm"></i>
                         <span class="text-[10px] text-gray-300 font-bold italic tracking-tighter">+56 9 6822 4180</span>
-                        <span class="text-[8px] text-whatsapp font-bold ml-auto italic uppercase tracking-tighter">WHATSAPP</span>
+                        <span class="text-[8px] text-whatsapp font-bold ml-auto italic uppercase tracking-tighter">WHATSAPP DIRECTO</span>
                     </div>
                 </div>
                 <div>
-                    <h4 class="font-bold text-brandGold mb-2 uppercase text-[10px] tracking-widest">ESPAÑA 🇪🇸</h4>
+                    <h4 class="font-bold text-brandGold mb-2 uppercase text-[10px] tracking-widest underline decoration-brandGold underline-offset-4">ESPAÑA 🇪🇸</h4>
                     <p class="text-[10px] text-gray-300 font-bold italic border-b border-gray-800 pb-2 italic tracking-tighter uppercase">🇪🇸 +34 682 028 354</p>
                     <p class="text-[8px] text-gray-600 mt-4 italic uppercase tracking-widest">ATENCIÓN EN HORARIO UTC+1 (MADRID)</p>
                 </div>
