@@ -4,14 +4,14 @@ import ssl
 import os
 from datetime import datetime
 
-# 1. Configuración para evitar errores de certificado SSL
+# 1. Configuración SSL
 if hasattr(ssl, '_create_unverified_context'):
     ssl._create_default_https_context = ssl._create_unverified_context
 
 RUTA_BASE = os.getcwd()
 RUTA_INDEX = os.path.join(RUTA_BASE, 'index.html')
 
-# 2. Fuentes de Noticias
+# 2. Fuentes
 FEEDS = {
     'CHILE': 'https://news.google.com/rss/search?q=Chile+Economia+Negocios+when:1d&hl=es-419&gl=CL&ceid=CL:es-419',
     'GLOBAL': 'https://news.google.com/rss/search?q=Mercados+Financieros+Globales+when:1d&hl=es-419&gl=US&ceid=US:es-419'
@@ -20,35 +20,38 @@ FEEDS = {
 def obtener_indicadores():
     print("💰 Consultando indicadores...")
     try:
-        # Usamos un Timeout para que no se quede pegado
         r = requests.get('https://mindicador.cl/api', timeout=10)
         data = r.json()
+        # Construimos el HTML del ticker
         html = f"""
                 <span class="mx-8 text-brandGold">UF: ${int(data['uf']['valor']):,.0f} <span class="up">▲</span></span>
                 <span class="mx-8 text-brandGold">USD: ${data['dolar']['valor']:,.0f} <span class="down">▼</span></span>
                 <span class="mx-8 text-brandGold">EUR: ${data['euro']['valor']:,.0f} <span class="down">▼</span></span>
-                <span class="mx-8 text-brandGold">BTC: ${data['bitcoin']['valor']:,.0f} <span class="up">▲</span></span>
                 <span class="mx-8 text-brandGold text-[9px]">ACTUALIZADO: {datetime.now().strftime('%d/%m %H:%M')}</span>
         """.replace(",", ".")
         return html
     except Exception as e:
-        print(f"⚠️ Error en indicadores: {e}")
+        print(f"⚠️ Error indicadores: {e}")
         return None
 
-print("🔍 Iniciando Cerebro (Versión Web)...")
+# --- EJECUCIÓN ---
+print("🔍 Iniciando Cerebro v3.0...")
 
-# 3. Obtener Datos
+# A. Obtener datos
 html_ticker = obtener_indicadores()
-
 html_noticias = ""
+
 print("📰 Leyendo noticias...")
 for pais, url in FEEDS.items():
     try:
         feed = feedparser.parse(url)
         if feed.entries:
-            # Tomamos solo las 2 primeras de cada fuente para llenar las 4 cajas
             for item in feed.entries[:2]:
-                titulo = item.title.split(' - ')[0] if ' - ' in item.title else item.title
+                # Limpieza simple del título
+                titulo = item.title
+                if ' - ' in titulo:
+                    titulo = titulo.split(' - ')[0]
+                
                 html_noticias += f"""
                 <div class="bg-gray-50 p-6 rounded shadow-sm hover:shadow-md transition border-l-4 border-brandGold">
                     <span class="text-[10px] text-brandGold font-bold uppercase tracking-wider mb-2 block">{pais}</span>
@@ -57,39 +60,49 @@ for pais, url in FEEDS.items():
                         Leer nota completa <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
                 </div>"""
-    except Exception as e:
-        print(f"⚠️ Error leyendo feed {pais}: {e}")
+    except:
+        pass
 
-# 4. Inyectar en el HTML
+# B. Inyectar en HTML (MÉTODO SEGURO SIN SPLIT)
 try:
     if not os.path.exists(RUTA_INDEX):
-        print(f"❌ ERROR CRÍTICO: No encuentro {RUTA_INDEX}")
+        print("❌ No encuentro index.html")
         exit(1)
     
     with open(RUTA_INDEX, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # Inyectar Noticias
-    if html_noticias and "" in content:
-        parts = content.split("")
-        if len(parts) > 1:
-            final_part = parts[1].split("")[1]
-            content = parts[0] + "\n" + html_noticias + "\n                " + final_part
-            print("✅ Noticias inyectadas.")
+    # 1. Inyectar Noticias
+    tag_inicio_noticias = ""
+    tag_fin_noticias = ""
+    
+    idx_inicio = content.find(tag_inicio_noticias)
+    idx_fin = content.find(tag_fin_noticias)
 
-    # Inyectar Ticker
-    if html_ticker and "" in content:
-        parts = content.split("")
-        if len(parts) > 1:
-            final_part = parts[1].split("")[1]
-            content = parts[0] + "\n" + html_ticker + "\n                " + final_part
-            print("✅ Ticker inyectado.")
+    if html_noticias and idx_inicio != -1 and idx_fin != -1:
+        # Reemplazamos exactamente lo que está entre las etiquetas
+        nuevo_contenido = content[:idx_inicio + len(tag_inicio_noticias)] + "\n" + html_noticias + "\n                " + content[idx_fin:]
+        content = nuevo_contenido
+        print("✅ Noticias inyectadas.")
+
+    # 2. Inyectar Ticker
+    tag_inicio_ticker = ""
+    tag_fin_ticker = ""
+    
+    idx_inicio_t = content.find(tag_inicio_ticker)
+    idx_fin_t = content.find(tag_fin_ticker)
+
+    if html_ticker and idx_inicio_t != -1 and idx_fin_t != -1:
+        nuevo_contenido = content[:idx_inicio_t + len(tag_inicio_ticker)] + "\n" + html_ticker + "\n                " + content[idx_fin_t:]
+        content = nuevo_contenido
+        print("✅ Ticker inyectado.")
 
     with open(RUTA_INDEX, 'w', encoding='utf-8') as f:
         f.write(content)
     
-    print("🚀 PROCESO TERMINADO CON ÉXITO.")
+    print("🚀 TODO LISTO. GUARDANDO...")
 
 except Exception as e:
-    print(f"❌ Error guardando archivo: {e}")
+    print(f"❌ Error crítico: {e}")
     exit(1)
+
