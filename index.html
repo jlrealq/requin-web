@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Requin & Asociados | Asesoría Financiera</title>
+    <title>Requin & Asociados | Consultoría Multidisciplinar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script>
         tailwind.config = {
             theme: {
@@ -22,40 +22,13 @@
         }
     </script>
     <style>
-        /* Ticker Financiero (Movimiento) */
-        .ticker-wrap { overflow: hidden; white-space: nowrap; }
-        .ticker { display: inline-block; animation: ticker 30s linear infinite; }
+        .ticker-wrap { overflow: hidden; white-space: nowrap; background: #0f172a; border-bottom: 1px solid #c5a059; }
+        .ticker { display: inline-block; animation: ticker 40s linear infinite; padding: 10px 0; }
         @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-        .up { color: #4ade80; font-weight: bold; }
-        .down { color: #f87171; font-weight: bold; }
-        
-        /* Detalles FAQ */
+        .up { color: #4ade80; } .down { color: #f87171; }
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
-
-        /* Botón Flotante WhatsApp */
-        .float-wa {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25D366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        .float-wa:hover {
-            transform: scale(1.1);
-            background-color: #128C7E;
-        }
+        .float-wa { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25D366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 100; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
     </style>
 </head>
 <body class="bg-slate-50 font-sans text-brandDark flex flex-col min-h-screen">
@@ -67,244 +40,198 @@
     <nav class="bg-brandDark text-white p-4 sticky top-0 z-50 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <img src="Logo-Requin.jpg" alt="Logo Requin" class="h-10 w-auto rounded-sm border border-brandGold"> 
-                <span class="text-xl font-bold tracking-widest text-brandGold">REQUIN <span class="text-white">& ASOC.</span></span>
+                <img src="Logo-Requin.jpg" alt="Logo Requin" class="h-10 w-auto border border-brandGold"> 
+                <span class="text-xl font-bold tracking-widest text-brandGold uppercase">REQUIN <span class="text-white">& ASOC.</span></span>
             </div>
-            <ul class="hidden md:flex space-x-8 text-sm font-medium items-center">
+            <ul class="hidden md:flex space-x-8 text-xs font-bold items-center">
                 <li><a href="#inicio" class="hover:text-brandGold transition">INICIO</a></li>
                 <li><a href="#servicios" class="hover:text-brandGold transition">SERVICIOS</a></li>
                 <li><a href="#noticias" class="hover:text-brandGold transition">MERCADOS</a></li>
-                <li><a href="#contacto" class="bg-brandGold text-brandDark px-5 py-2 rounded font-bold hover:bg-white transition">CONTACTO</a></li>
+                <li><a href="#contacto" class="bg-brandGold text-brandDark px-5 py-2 rounded font-bold hover:bg-white transition uppercase">Contacto</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="bg-gray-900 text-white py-2 border-b border-brandGold ticker-wrap relative z-40">
-        <div class="ticker font-mono text-sm tracking-widest">
+    <div class="ticker-wrap relative z-40">
+        <div class="ticker font-mono text-sm tracking-widest text-white">
             <div id="ticker-content" class="inline-flex">
-                <span class="mx-8 text-brandGold">SISTEMA INICIADO: ESPERANDO DATOS DE MERCADO...</span>
+                <span class="mx-8 text-brandGold uppercase italic text-[10px]">Actualizando indicadores de mercado en tiempo real...</span>
                 </div>
         </div>
     </div>
 
-    <header id="inicio" class="bg-brandDark text-white py-24 relative overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10 text-center md:text-left">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Expertos en <br><span class="text-brandGold">Arquitectura Financiera</span></h1>
-            <p class="text-brandGray text-lg mb-8 max-w-2xl">Optimizamos el flujo de caja, estructuramos capital y evaluamos la viabilidad de sus proyectos con precisión matemática.</p>
+    <header id="inicio" class="bg-brandDark text-white py-24 relative overflow-hidden text-center md:text-left">
+        <div class="container mx-auto px-6 relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 italic leading-tight uppercase">Expertos en <br><span class="text-brandGold tracking-tighter">Arquitectura Financiera</span></h1>
+            <p class="text-brandGray text-lg mb-8 max-w-2xl">Consultoría experta en auditoría, gestión legal tributaria y desarrollo integral de proyectos con alcance internacional.</p>
             <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-                <a href="#contacto" class="bg-brandGold text-brandDark px-8 py-3 rounded font-bold hover:bg-white transition shadow-lg text-center">Solicitar Diagnóstico</a>
-                <a href="#servicios" class="border border-brandGold text-brandGold px-8 py-3 rounded font-bold hover:bg-brandGold hover:text-brandDark transition text-center">Ver Servicios</a>
+                <a href="#contacto" class="bg-brandGold text-brandDark px-8 py-3 rounded font-bold hover:bg-white transition shadow-lg text-center uppercase tracking-wider">Solicitar Diagnóstico</a>
+                <a href="#servicios" class="border border-brandGold text-brandGold px-8 py-3 rounded font-bold hover:bg-brandGold hover:text-brandDark transition text-center uppercase tracking-wider text-xs">Nuestros Servicios</a>
             </div>
         </div>
         <div class="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-gray-800 opacity-20 pointer-events-none"></div>
     </header>
 
-    <section id="servicios" class="py-20 bg-slate-50">
+    <section id="servicios" class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-brandDark uppercase tracking-wider">Nuestros Servicios</h2>
+            <div class="text-center mb-16 uppercase italic">
+                <h2 class="text-3xl font-bold tracking-widest italic">Nuestros Servicios</h2>
                 <div class="h-1 w-24 bg-brandGold mx-auto mt-4"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-brandGold">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-xl font-bold mb-3">Asesoría Financiera</h3>
-                    <p class="text-gray-600 text-sm">Diagnóstico integral y optimización de KPIs estratégicos.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 italic">
+                <div class="bg-slate-50 p-8 rounded shadow-lg border-t-4 border-brandGold hover:-translate-y-2 transition duration-300">
+                    <div class="text-3xl mb-4 text-brandGold"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h3 class="text-sm font-bold mb-3 uppercase tracking-tighter">Contabilidad y Auditoría</h3>
+                    <ul class="text-[11px] text-gray-600 space-y-2">
+                        <li>• Contabilidad General y Corporativa</li>
+                        <li>• Auditoría de Estados Financieros</li>
+                        <li>• Auditoría Forense y Peritajes</li>
+                    </ul>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-brandGold">
-                    <div class="text-4xl mb-4">🚀</div>
-                    <h3 class="text-xl font-bold mb-3">Evaluación de Proyectos</h3>
-                    <p class="text-gray-600 text-sm">Cálculo de VAN, TIR y simulaciones de riesgo para inversiones.</p>
+                <div class="bg-slate-50 p-8 rounded shadow-lg border-t-4 border-brandGold hover:-translate-y-2 transition duration-300">
+                    <div class="text-3xl mb-4 text-brandGold"><i class="fas fa-gavel"></i></div>
+                    <h3 class="text-sm font-bold mb-3 uppercase tracking-tighter text-brandDark italic font-extrabold underline decoration-brandGold">Asesoramiento Legal</h3>
+                    <ul class="text-[11px] text-gray-600 space-y-2">
+                        <li class="font-bold text-brandDark">Especialidad en Derecho Tributario</li>
+                        <li>• Consultoría Legal Civil</li>
+                        <li>• Asesoría en Derecho Laboral</li>
+                    </ul>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-brandGold">
-                    <div class="text-4xl mb-4">⚖️</div>
-                    <h3 class="text-xl font-bold mb-3">Reestructuración</h3>
-                    <p class="text-gray-600 text-sm">Renegociación de pasivos y gestión de crisis de liquidez.</p>
+                <div class="bg-slate-50 p-8 rounded shadow-lg border-t-4 border-brandGold hover:-translate-y-2 transition duration-300">
+                    <div class="text-3xl mb-4 text-brandGold"><i class="fas fa-tasks"></i></div>
+                    <h3 class="text-sm font-bold mb-3 uppercase tracking-tighter">Gestión de Proyectos</h3>
+                    <ul class="text-[11px] text-gray-600 space-y-2">
+                        <li>• Evaluación Técnica y Económica</li>
+                        <li>• Puesta en Marcha Operacional</li>
+                        <li>• Control de Gestión y Seguimiento</li>
+                    </ul>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-brandGold">
-                    <div class="text-4xl mb-4">🤝</div>
-                    <h3 class="text-xl font-bold mb-3">Levantamiento Capital</h3>
-                    <p class="text-gray-600 text-sm">Conexión con banca y fondos privados de inversión.</p>
+                <div class="bg-slate-50 p-8 rounded shadow-lg border-t-4 border-brandGold hover:-translate-y-2 transition duration-300">
+                    <div class="text-3xl mb-4 text-brandGold"><i class="fas fa-landmark"></i></div>
+                    <h3 class="text-sm font-bold mb-3 uppercase tracking-tighter">Obtención de Fondos</h3>
+                    <ul class="text-[11px] text-gray-600 space-y-2">
+                        <li>• Estructuración para Fondos Públicos</li>
+                        <li>• Gestión de Fondos Privados</li>
+                        <li>• Asesoramiento para Inversión</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="noticias" class="py-20 bg-white border-y border-gray-200">
+    <section id="noticias" class="py-20 bg-slate-50 border-y">
         <div class="container mx-auto px-6">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-3xl font-bold text-brandDark">Panorama Económico</h2>
-                    <p class="text-gray-500 mt-2">Titulares actualizados diariamente por IA</p>
-                </div>
-                <span class="text-xs font-mono bg-gray-100 px-2 py-1 rounded text-gray-500">LIVE FEED</span>
+            <div class="flex justify-between items-end mb-12 italic">
+                <h2 class="text-2xl font-bold italic uppercase tracking-widest">Panorama Económico</h2>
+                <span class="text-[10px] font-mono bg-gray-200 px-2 py-1 rounded">LIVE FEED</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="col-span-4 text-center py-10 text-gray-400 bg-gray-50 rounded border border-dashed border-gray-300">
-                    <p>Sincronizando con fuentes globales...</p>
+                <div class="col-span-4 text-center py-10 text-gray-400 font-mono text-xs italic uppercase">
+                    Sincronizando con fuentes globales...
                 </div>
                 </div>
         </div>
     </section>
 
-    <section class="py-20 bg-slate-100">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
-            <div class="space-y-4">
-                <details class="group bg-white p-6 rounded-lg shadow cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-brandDark">
-                        <span>¿Trabajan con empresas fuera de Chile?</span>
-                        <span class="text-brandGold transition group-open:rotate-180">▼</span>
-                    </summary>
-                    <p class="text-gray-600 mt-4 text-sm pl-4 border-l-2 border-brandGold">Sí. Asesoramos a empresas españolas y latinas, adaptando modelos a normativa local y divisa (Euro/Dólar).</p>
-                </details>
-                <details class="group bg-white p-6 rounded-lg shadow cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-brandDark">
-                        <span>¿Qué metodologías usan para evaluar proyectos?</span>
-                        <span class="text-brandGold transition group-open:rotate-180">▼</span>
-                    </summary>
-                    <p class="text-gray-600 mt-4 text-sm pl-4 border-l-2 border-brandGold">Usamos estándares internacionales, herramientas de modelado financiero y software como Opal para análisis de sensibilidad y Monte Carlo.</p>
-                </details>
-                <details class="group bg-white p-6 rounded-lg shadow cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-brandDark">
-                        <span>¿Cómo se estructuran sus honorarios?</span>
-                        <span class="text-brandGold transition group-open:rotate-180">▼</span>
-                    </summary>
-                    <p class="text-gray-600 mt-4 text-sm pl-4 border-l-2 border-brandGold">Flexible: Fee fijo por proyecto, tarifa horaria para consultoría continua, o Success Fee (variable por éxito) en levantamiento de capital.</p>
-                </details>
-                <details class="group bg-white p-6 rounded-lg shadow cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-brandDark">
-                        <span>¿La primera reunión de diagnóstico tiene costo?</span>
-                        <span class="text-brandGold transition group-open:rotate-180">▼</span>
-                    </summary>
-                    <p class="text-gray-600 mt-4 text-sm pl-4 border-l-2 border-brandGold">No. La sesión inicial de 30 minutos es gratuita para evaluar si somos el socio estratégico adecuado.</p>
-                </details>
-                <details class="group bg-white p-6 rounded-lg shadow cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-brandDark">
-                        <span>¿Cómo manejan la confidencialidad?</span>
-                        <span class="text-brandGold transition group-open:rotate-180">▼</span>
-                    </summary>
-                    <p class="text-gray-600 mt-4 text-sm pl-4 border-l-2 border-brandGold">Firmamos un NDA (Acuerdo de Confidencialidad) riguroso antes de recibir cualquier documento sensible.</p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="py-24 bg-brandDark text-white">
+    <section id="contacto" class="py-24 bg-brandDark text-white italic">
         <div class="container mx-auto px-6 max-w-5xl">
-            
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold mb-4">Hablemos de Negocios</h2>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 uppercase italic">Hablemos de Negocios</h2>
                 <p class="text-brandGray">Complete el formulario y un consultor senior analizará su perfil.</p>
             </div>
 
-            <form class="bg-white p-8 rounded-lg shadow-2xl text-gray-800 border-t-4 border-brandGold mb-16">
+            <form class="bg-white p-8 rounded-lg shadow-2xl text-gray-800 border-t-4 border-brandGold mb-16 italic">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
-                        <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Nombre</label>
-                        <input type="text" class="w-full bg-slate-50 border border-gray-300 p-3 rounded focus:border-brandGold focus:bg-white focus:outline-none" placeholder="Su nombre completo">
+                        <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Nombre Completo</label>
+                        <input type="text" class="w-full bg-slate-50 border p-3 rounded outline-none" placeholder="Su nombre">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Teléfono</label>
-                        <input type="tel" class="w-full bg-slate-50 border border-gray-300 p-3 rounded focus:border-brandGold focus:bg-white focus:outline-none" placeholder="+56 9...">
+                        <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Teléfono Directo</label>
+                        <input type="tel" class="w-full bg-slate-50 border p-3 rounded outline-none" placeholder="+56 9...">
                     </div>
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Email Corporativo</label>
-                        <input type="email" class="w-full bg-slate-50 border border-gray-300 p-3 rounded focus:border-brandGold focus:bg-white focus:outline-none" placeholder="nombre@empresa.com">
+                        <input type="email" class="w-full bg-slate-50 border p-3 rounded outline-none" placeholder="empresa@dominio.com">
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase text-brandDark mb-1">País de la Empresa</label>
-                        <select id="paisSelector" onchange="actualizarRangos()" class="w-full bg-slate-50 border border-gray-300 p-3 rounded focus:border-brandGold focus:outline-none">
+                        <select id="paisSelector" onchange="actualizarRangos()" class="w-full bg-slate-50 border p-3 rounded outline-none">
                             <option value="chile">🇨🇱 Chile</option>
                             <option value="espana">🇪🇸 España / Europa</option>
                         </select>
                     </div>
                 </div>
-
                 <div class="mb-6">
-                    <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Nivel de Ventas Anual</label>
-                    <select id="rangoVentas" class="w-full bg-slate-50 border border-gray-300 p-3 rounded focus:border-brandGold focus:outline-none">
-                        <option>Seleccione un rango...</option>
-                    </select>
+                    <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Nivel de Ventas Anual (Aproximado)</label>
+                    <select id="rangoVentas" class="w-full bg-slate-50 border p-3 rounded outline-none font-bold text-brandDark italic"></select>
                 </div>
-
                 <div class="mb-8">
-                    <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Mensaje</label>
-                    <textarea rows="3" class="w-full bg-slate-50 border border-gray-300 p-3 rounded focus:border-brandGold focus:bg-white focus:outline-none" placeholder="¿En qué podemos ayudarle?"></textarea>
+                    <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Mensaje o Requerimiento</label>
+                    <textarea rows="3" class="w-full bg-slate-50 border p-3 rounded outline-none" placeholder="Describa brevemente su necesidad..."></textarea>
                 </div>
-
-                <button type="button" class="w-full bg-brandDark text-white font-bold py-4 rounded hover:bg-gray-800 transition shadow-lg transform hover:-translate-y-1 tracking-widest text-sm">ENVIAR SOLICITUD</button>
+                <button type="button" class="w-full bg-brandDark text-white font-bold py-4 rounded hover:bg-gray-800 transition shadow-lg uppercase tracking-widest text-sm">Enviar Solicitud</button>
             </form>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left border-t border-gray-700 pt-12">
-                
-                <div class="p-4 rounded hover:bg-white/5 transition">
-                    <div class="text-brandGold text-2xl mb-3"><i class="fas fa-map-marker-alt"></i></div>
-                    <h4 class="font-bold text-white mb-1">Oficina Central</h4>
-                    <p class="text-sm text-gray-400">Calle La Gioconda, 4355<br>Las Condes - Santiago de Chile</p>
-                    <p class="text-sm text-brandGold mt-2"><i class="fas fa-envelope mr-2"></i> contacto@requinspa.com</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left pt-12 border-t border-gray-700 italic">
+                <div>
+                    <h4 class="font-bold text-brandGold mb-4 uppercase text-[10px] tracking-widest">Oficina Central</h4>
+                    <p class="text-xs text-gray-300 leading-relaxed mb-4 italic uppercase">Calle La Gioconda, 4355<br>Las Condes - Santiago de Chile</p>
+                    <p class="text-xs text-brandGold font-bold italic uppercase"><i class="fas fa-envelope mr-2"></i> contacto@requinspa.com</p>
                 </div>
-
-                <div class="p-4 rounded hover:bg-white/5 transition">
-                    <div class="text-brandGold text-2xl mb-3">🇨🇱</div>
-                    <h4 class="font-bold text-white mb-2">Contacto Chile</h4>
-                    <div class="space-y-2">
-                        <div class="flex flex-col md:flex-row justify-between md:items-center border-b border-gray-700 pb-2">
-                            <span class="text-gray-300 text-sm">+56 9 6822 4180</span>
-                            <span class="text-[10px] bg-brandGold text-brandDark px-2 py-0.5 rounded font-bold uppercase">Pymes/Empresas</span>
+                <div>
+                    <h4 class="font-bold text-brandGold mb-4 uppercase text-[10px] tracking-widest">Contacto Chile 🇨🇱</h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                            <span class="text-xs text-gray-300 font-bold italic">🇨🇱 +56 9 6822 4180</span>
+                            <span class="text-[9px] text-brandGold uppercase font-bold italic">Pymes y Empresas</span>
                         </div>
-                        <div class="flex flex-col md:flex-row justify-between md:items-center">
-                            <span class="text-gray-300 text-sm">+56 9 9326 0101</span>
-                            <span class="text-[10px] bg-gray-600 text-white px-2 py-0.5 rounded font-bold uppercase">Emprendedores</span>
+                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                            <span class="text-xs text-gray-300 font-bold italic">🇨🇱 +56 9 9326 0101</span>
+                            <span class="text-[9px] text-gray-400 uppercase font-bold italic">Emprendedores</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                            <span class="text-xs text-gray-300 font-bold italic">
+                                <i class="fab fa-whatsapp text-whatsapp mr-1 text-sm"></i> +56 9 6822 4180
+                            </span>
+                            <span class="text-[9px] text-whatsapp uppercase font-bold italic">WhatsApp Directo</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="p-4 rounded hover:bg-white/5 transition">
-                    <div class="text-brandGold text-2xl mb-3">🇪🇸</div>
-                    <h4 class="font-bold text-white mb-2">Contacto Europa</h4>
-                    <div class="flex flex-col justify-between h-full">
-                        <div class="flex flex-col md:flex-row justify-between md:items-center">
-                            <span class="text-gray-300 text-sm">+34 682 028 354</span>
-                            <span class="text-[10px] bg-brandGold text-brandDark px-2 py-0.5 rounded font-bold uppercase">Corporativo</span>
-                        </div>
-                        <p class="text-xs text-gray-500 mt-4 italic">Atención en horario UTC+1 (Madrid)</p>
+                <div>
+                    <h4 class="font-bold text-brandGold mb-4 uppercase text-[10px] tracking-widest">Internacional 🇪🇸</h4>
+                    <div class="flex justify-between items-center border-b border-gray-700 pb-2">
+                        <span class="text-xs text-gray-300 font-bold italic">🇪🇸 +34 682 028 354</span>
+                        <span class="text-[9px] text-brandGold uppercase font-bold italic">Corporativo España</span>
                     </div>
+                    <p class="text-[9px] text-gray-500 mt-4 italic uppercase">Atención en horario UTC+1 (Madrid)</p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <footer class="bg-black text-gray-600 py-6 text-center text-xs border-t border-gray-800">
-        <p class="mb-1">&copy; 2026 Requin Spa & Asociados.</p>
-        <p>Santiago de Chile • Madrid, España</p>
+    <footer class="bg-black text-gray-600 py-6 text-center text-[9px] uppercase tracking-[5px] border-t border-gray-900 italic">
+        &copy; 2026 REQUIN SPA & ASOCIADOS | SANTIAGO · MADRID
     </footer>
 
     <script>
         function actualizarRangos() {
             const pais = document.getElementById('paisSelector').value;
-            const selectorVentas = document.getElementById('rangoVentas');
-            selectorVentas.innerHTML = "";
-            let opciones = [];
-
-            if (pais === 'chile') {
-                opciones = ["Seleccione un rango...", "0 - 100 MM (CLP)", "101 - 500 MM (CLP)", "501 - 1.000 MM (CLP)", "Más de 1.000 MM (CLP)"];
-            } else {
-                opciones = ["Seleccione un rango...", "Menos de 300.000 €", "300.000 € - 2 Millones €", "2 Millones € - 10 Millones €", "Más de 10 Millones €"];
-            }
-
+            const selector = document.getElementById('rangoVentas');
+            selector.innerHTML = "";
+            let opciones = pais === 'chile' ? 
+                ["Seleccione un rango...", "0 - 100 MM (CLP)", "101 - 500 MM (CLP)", "501 - 1.000 MM (CLP)", "Más de 1.000 MM (CLP)"] :
+                ["Seleccione un rango...", "Menos de 300.000 €", "300.000 € - 2 Millones €", "2 Millones € - 10 Millones €", "Más de 10 Millones €"];
             opciones.forEach(texto => {
-                let option = document.createElement("option");
-                option.text = texto;
-                selectorVentas.add(option);
+                let opt = document.createElement("option");
+                opt.text = texto;
+                selector.add(opt);
             });
         }
         window.onload = actualizarRangos;
     </script>
-
 </body>
 </html>
