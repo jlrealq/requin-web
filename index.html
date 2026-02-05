@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Requin &amp; Asociados | Asesoría Integral
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script>
+   tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brandNav: '#1B2E4B', brandSteel: '#707B7C', whatsapp: '#25D366', gold: '#D4AF37' },
+                    fontFamily: { serif: ['Playfair Display', 'serif'], sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+  </script>
+  <style>
+   .hero-gradient {
+            background: linear-gradient(135deg, #1B2E4B 0%, #0f1c2e 100%);
+        }
+
+        .logo-gold-filter {
+            filter: invert(1) brightness(2.8) contrast(1.2) sepia(1) saturate(6) hue-rotate(15deg);
+        }
+
+        .logo-nav {
+            max-height: 65px;
+            width: auto;
+        }
+
+        .logo-hero {
+            max-height: 280px;
+            width: auto;
+            mix-blend-mode: screen;
+            filter: invert(1) brightness(2.5) contrast(1.1) sepia(1) saturate(7) hue-rotate(15deg);
+            -webkit-mask-image: radial-gradient(circle, black 65%, transparent 95%);
+            mask-image: radial-gradient(circle, black 65%, transparent 95%);
+        }
+
+        .ticker-container {
+            overflow: hidden;
+            width: 100%;
+            white-space: nowrap;
+            cursor: default;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 45s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .up {
+            color: #25D366;
+        }
+
+        .down {
+            color: #FF4B4B;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(27, 46, 75, 0.1);
+        }
+
+        .faq-question {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-bottom: 1.5rem;
+        }
+
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            border: 2px solid #1B2E4B;
+            background: white;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            font-weight: bold;
+        }
+
+        .tab-button.active {
+            background: #1B2E4B;
+            color: white;
+            border-color: #D4AF37;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .news-card {
+            background: white;
+            border-top: 4px solid #D4AF37;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+  </style>
+ </head>
+ <body class="font-sans text-gray-800 bg-white overflow-x-hidden italic font-bold">
+  <nav class="fixed w-full z-[150] bg-brandNav/95 backdrop-blur-md shadow-md border-b border-white/10 flex flex-col items-center px-6 py-2">
+   <div class="max-w-7xl mx-auto w-full flex justify-between items-center mb-2">
+    <div class="flex items-center gap-4">
+     <img alt="Logo" class="logo-nav logo-gold-filter" src="Logo-Requin.jpg"/>
+     <span class="text-white hidden sm:block text-lg tracking-[0.2em] font-serif uppercase">
+      REQUIN &amp;
+                    ASOCIADOS
+     </span>
+    </div>
+    <div class="flex space-x-6 items-center text-[10px] tracking-widest uppercase text-white font-bold">
+     <a class="hover:text-gold transition-colors" href="#inicio">
+      Inicio
+     </a>
+     <a class="hover:text-gold transition-colors" href="#servicios">
+      Servicios
+     </a>
+     <a class="hover:text-gold transition-colors" href="#noticias">
+      Noticias
+     </a>
+     <a class="hover:text-gold transition-colors" href="#faq">
+      FAQ
+     </a>
+     <a class="bg-gold text-brandNav px-4 py-2 rounded shadow-lg hover:bg-white transition-all" href="#contacto">
+      Contacto
+     </a>
+    </div>
+   </div>
+   <div class="w-full ticker-container border-t border-white/10 pt-2">
+    <div class="ticker-content text-[11px] tracking-[0.2em] font-sans font-bold uppercase">
+     <span class="mx-8 text-gold">
+      UF: $39,693.25 (02-05)
+      <span class="up">
+       ▲
+      </span>
+     </span>
+     <span class="mx-8 text-gold">
+      USD/CLP: $857.59
+      <span class="up">
+       ▲
+      </span>
+     </span>
+     <span class="mx-8 text-gold">
+      EUR/CLP: $1,012.26
+      <span class="down">
+       ▼
+      </span>
+     </span>
+     <span class="mx-8 text-gold">
+      BITCOIN (USD): $65,918.00
+      <span class="down">
+       ▼
+      </span>
+     </span>
+     <span class="mx-8 text-gold">
+      S&amp;P 500: 6,812.17
+      <span class="down">
+       ▼
+      </span>
+     </span>
+    </div>
+   </div>
+  </nav>
+  <header class="hero-gradient min-h-screen flex items-center pt-40 text-white px-6" id="inicio">
+   <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center gap-12 text-center md:text-left">
+    <img alt="Logo Requin" class="logo-hero" src="Logo-Requin.jpg"/>
+    <div class="flex-1">
+     <h1 class="font-serif text-4xl md:text-7xl mb-4 font-bold leading-tight uppercase tracking-tight">
+      Asesoría Integral
+      <br/>
+      <span class="text-gold">
+       Corporativa
+      </span>
+     </h1>
+     <p class="font-serif text-lg md:text-2xl mb-10 opacity-90 border-l-4 border-gold pl-6 font-light italic">
+      "Donde la precisión técnica se une a la seguridad jurídica"
+     </p>
+     <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+      <a class="bg-white text-brandNav px-10 py-4 rounded-sm uppercase text-[11px] tracking-widest shadow-xl hover:bg-gold hover:text-white transition-colors text-center font-bold" href="#servicios">
+       Ver
+                        Servicios
+      </a>
+      <a class="border border-white text-white px-10 py-4 rounded-sm uppercase text-[11px] tracking-widest hover:bg-white/10 transition-colors text-center font-bold" href="#contacto">
+       Agendar
+                        Cita
+      </a>
+     </div>
+    </div>
+   </div>
+  </header>
+  <section class="py-24 bg-gray-100 px-6 font-bold italic text-center" id="noticias">
+   <h2 class="font-serif text-4xl text-brandNav mb-12 uppercase tracking-widest border-b pb-4 mx-auto max-w-2xl border-gold">
+    Actualidad Económica
+   </h2>
+   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+    <div class="news-card shadow-lg min-h-[250px] text-left">
+     <div>
+      <span class="text-[9px] text-gold uppercase mb-1 block">
+       Mercados
+      </span>
+      <h4 class="text-brandNav text-sm mb-2 uppercase font-bold">
+       Desplome del Oro y la Plata
+      </h4>
+      <p class="text-gray-600 text-[11px] mb-4">
+       Los metales caen hasta un 12% este lunes borrando las
+                        ganancias del año por el fortalecimiento del dólar.
+      </p>
+     </div>
+     <a class="text-gold text-[10px] uppercase hover:underline" href="https://www.finanzas.com" target="_blank">
+      Ver Más →
+     </a>
+    </div>
+    <div class="news-card shadow-lg min-h-[250px] text-left">
+     <div>
+      <span class="text-[9px] text-gold uppercase mb-1 block">
+       Chile
+      </span>
+      <h4 class="text-brandNav text-sm mb-2 uppercase font-bold">
+       Transición de Mando Kast-Boric
+      </h4>
+      <p class="text-gray-600 text-[11px] mb-4">
+       A 37 días del cambio, hoy se retoman las reuniones
+                        bilaterales estratégicas entre los ministerios.
+      </p>
+     </div>
+     <a class="text-gold text-[10px] uppercase hover:underline" href="https://ellibero.cl" target="_blank">
+      Ver Más →
+     </a>
+    </div>
+    <div class="news-card shadow-lg min-h-[250px] text-left">
+     <div>
+      <span class="text-[9px] text-gold uppercase mb-1 block">
+       Finanzas
+      </span>
+      <h4 class="text-brandNav text-sm mb-2 uppercase font-bold">
+       Déficit Fiscal en Chile
+      </h4>
+      <p class="text-gray-600 text-[11px] mb-4">
+       El déficit fiscal de Chile superó los objetivos por tercer
+                        año consecutivo en 2025.
+      </p>
+     </div>
+     <a class="text-gold text-[10px] uppercase hover:underline" href="https://www.bloomberglinea.com" target="_blank">
+      Ver Más →
+     </a>
+    </div>
+    <div class="news-card shadow-lg min-h-[250px] text-left">
+     <div>
+      <span class="text-[9px] text-gold uppercase mb-1 block">
+       Empresas
+      </span>
+      <h4 class="text-brandNav text-sm mb-2 uppercase font-bold">
+       CMPC reporta utilidades
+      </h4>
+      <p class="text-gray-600 text-[11px] mb-4">
+       La papelera informa una fuerte caída en utilidades
+                        presionada por los precios de la celulosa.
+      </p>
+     </div>
+     <a class="text-gold text-[10px] uppercase hover:underline" href="https://www.df.cl" target="_blank">
+      Ver
+                    Más →
+     </a>
+    </div>
+    <div class="news-card shadow-lg min-h-[250px] text-left">
+     <div>
+      <span class="text-[9px] text-gold uppercase mb-1 block">
+       Salud
+      </span>
+      <h4 class="text-brandNav text-sm mb-2 uppercase font-bold">
+       Fuga de afiliados en Isapres
+      </h4>
+      <p class="text-gray-600 text-[11px] mb-4">
+       Más de 110 mil personas abandonaron el sistema privado
+                        durante 2025 tras la crisis del sector.
+      </p>
+     </div>
+     <a class="text-gold text-[10px] uppercase hover:underline" href="https://www.latercera.com" target="_blank">
+      Ver Más →
+     </a>
+    </div>
+    <div class="news-card shadow-lg min-h-[250px] text-left">
+     <div>
+      <span class="text-[9px] text-gold uppercase mb-1 block">
+       EE.UU.
+      </span>
+      <h4 class="text-brandNav text-sm mb-2 uppercase font-bold">
+       Reserva Federal: Cambio de Mando
+      </h4>
+      <p class="text-gray-600 text-[11px] mb-4">
+       El mercado reacciona al nombramiento de Kevin Warsh
+                        impulsando globalmente al dólar.
+      </p>
+     </div>
+     <a class="text-gold text-[10px] uppercase hover:underline" href="https://www.wsj.com" target="_blank">
+      Ver Más →
+     </a>
+    </div>
+   </div>
+  </section>
+  <section class="py-24 bg-gray-50 px-6 font-bold" id="servicios">
+   <div class="max-w-7xl mx-auto text-center font-bold">
+    <h2 class="font-serif text-4xl text-brandNav mb-12 uppercase tracking-widest border-b pb-4 mx-auto max-w-2xl border-gold">
+     Servicios Especializados
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-brandNav italic">
+     <div class="bg-white p-8 shadow-lg border-t-4 border-brandNav group hover:scale-105 transition-transform text-left">
+      <h3 class="uppercase text-sm mb-4 tracking-widest text-gold font-serif">
+       Defensa Legal e
+                        Institucional
+      </h3>
+      <p class="text-gray-600 text-[12px] font-light leading-relaxed mb-4">
+       Representación en litigios
+                        civiles, mercantiles y laborales. Blindaje contractual y cumplimiento normativo.
+      </p>
+     </div>
+     <div class="bg-white p-8 shadow-lg border-t-4 border-brandNav group hover:scale-105 transition-transform text-left">
+      <h3 class="uppercase text-sm mb-4 tracking-widest text-gold font-serif">
+       Auditoría y Control Forense
+      </h3>
+      <p class="text-gray-600 text-[12px] font-light leading-relaxed mb-4">
+       Investigación de fraudes para
+                        garantizar la integridad de activos y transparencia absoluta.
+      </p>
+     </div>
+     <div class="bg-white p-8 shadow-lg border-t-4 border-brandNav group hover:scale-105 transition-transform text-left">
+      <h3 class="uppercase text-sm mb-4 tracking-widest text-gold font-serif">
+       Consultoría Financiera IFRS
+      </h3>
+      <p class="text-gray-600 text-[12px] font-light leading-relaxed mb-4">
+       Gestión contable bajo
+                        estándares internacionales. Reportabilidad estratégica para toma de decisiones.
+      </p>
+     </div>
+     <div class="bg-white p-8 shadow-lg border-t-4 border-gold group hover:scale-105 transition-transform text-left">
+      <h3 class="uppercase text-sm mb-4 tracking-widest text-gold font-serif">
+       Gestión Integral de
+                        Proyectos
+      </h3>
+      <p class="text-gray-600 text-[12px] font-light leading-relaxed mb-4">
+       Búsqueda de financiación y
+                        gestión de subvenciones públicas desde la concepción.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="py-24 bg-white px-6 font-bold italic" id="faq">
+   <div class="max-w-4xl mx-auto font-bold">
+    <h2 class="font-serif text-4xl text-brandNav mb-12 uppercase tracking-widest text-center border-b border-gold pb-4">
+     Preguntas Frecuentes
+    </h2>
+    <div class="space-y-2 text-brandNav">
+     <div class="faq-item">
+      <div class="faq-question">
+       <span class="text-sm uppercase tracking-wider font-bold">
+        ¿Cómo garantizan
+                            la confidencialidad?
+       </span>
+       <span>
+        ▼
+       </span>
+      </div>
+      <div class="faq-answer">
+       <p class="text-gray-600 text-sm font-light leading-relaxed">
+        Implementamos protocolos de
+                            seguridad de grado bancario y acuerdos de confidencialidad (NDA) estrictos con cada cliente.
+                            Todos nuestros sistemas cumplen con los estándares internacionales de protección de datos y
+                            contamos con auditorías periódicas de seguridad.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item">
+      <div class="faq-question">
+       <span class="text-sm uppercase tracking-wider font-bold">
+        ¿En qué sectores
+                            tienen experiencia?
+       </span>
+       <span>
+        ▼
+       </span>
+      </div>
+      <div class="faq-answer">
+       <p class="text-gray-600 text-sm font-light leading-relaxed">
+        Contamos con experiencia consolidada
+                            en Minería, Energía, Retail, Banca, Sector Público, Construcción y Tecnología. Nuestro
+                            equipo multidisciplinario se adapta a las necesidades específicas de cada industria.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item">
+      <div class="faq-question">
+       <span class="text-sm uppercase tracking-wider font-bold">
+        ¿Cuál es el
+                            tiempo de respuesta para una consulta?
+       </span>
+       <span>
+        ▼
+       </span>
+      </div>
+      <div class="faq-answer">
+       <p class="text-gray-600 text-sm font-light leading-relaxed">
+        Nos comprometemos a responder todas
+                            las consultas en un plazo máximo de 24 horas hábiles. Para casos de urgencia, disponemos de
+                            canales de comunicación directa que garantizan atención inmediata.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item">
+      <div class="faq-question">
+       <span class="text-sm uppercase tracking-wider font-bold">
+        ¿Trabajan con
+                            empresas de cualquier tamaño?
+       </span>
+       <span>
+        ▼
+       </span>
+      </div>
+      <div class="faq-answer">
+       <p class="text-gray-600 text-sm font-light leading-relaxed">
+        Sí, ofrecemos servicios adaptados a
+                            empresas de todos los tamaños, desde startups y pymes hasta grandes corporaciones
+                            multinacionales. Diseñamos soluciones escalables según las necesidades y el presupuesto de
+                            cada cliente.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item">
+      <div class="faq-question">
+       <span class="text-sm uppercase tracking-wider font-bold">
+        ¿Ofrecen
+                            servicios en países distintos a Chile y España?
+       </span>
+       <span>
+        ▼
+       </span>
+      </div>
+      <div class="faq-answer">
+       <p class="text-gray-600 text-sm font-light leading-relaxed">
+        Aunque nuestras oficinas principales
+                            están en Chile y España, colaboramos con una red de socios internacionales que nos permite
+                            ofrecer servicios en toda Latinoamérica, Europa y Estados Unidos, adaptándonos a las
+                            regulaciones locales de cada jurisdicción.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="py-24 bg-brandNav text-white px-6 font-bold" id="contacto">
+   <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 font-bold">
+    <div class="bg-white p-8 rounded-sm text-brandNav shadow-2xl font-sans italic">
+     <h2 class="font-serif text-3xl font-bold uppercase tracking-widest mb-6 text-center">
+      Inicie su
+                    requerimiento
+     </h2>
+     <form action="https://formspree.io/f/mvzrarkk" class="space-y-4" id="contact-form" method="POST">
+      <input class="w-full border p-3 text-sm outline-none focus:border-gold" name="solicitante" placeholder="Nombre" required="" type="text"/>
+      <input class="w-full border p-3 text-sm outline-none focus:border-gold" name="email" placeholder="Email Corporativo" required="" type="email"/>
+      <input class="w-full border p-3 text-sm outline-none focus:border-gold" name="telefono" placeholder="Teléfono" required="" type="tel"/>
+      <!-- País -->
+      <div class="space-y-2">
+       <label class="text-xs uppercase tracking-wider font-bold text-gray-700">
+        País
+       </label>
+       <div class="flex gap-2">
+        <button class="tab-button country-tab active" data-country="chile" type="button">
+         🇨🇱
+                                Chile
+        </button>
+        <button class="tab-button country-tab" data-country="espana" type="button">
+         🇪🇸
+                                España
+        </button>
+       </div>
+       <input id="selected-country" name="pais" type="hidden" value="Chile"/>
+      </div>
+      <!-- Rango de Facturación -->
+      <div class="space-y-2">
+       <label class="text-xs uppercase tracking-wider font-bold text-gray-700">
+        Rango de Facturación
+                            Anual
+       </label>
+       <div class="grid grid-cols-2 gap-2">
+        <button class="tab-button billing-tab" data-billing="0-50MM" type="button">
+         0-50 MM
+        </button>
+        <button class="tab-button billing-tab" data-billing="50-100MM" type="button">
+         50-100
+                                MM
+        </button>
+        <button class="tab-button billing-tab" data-billing="100-500MM" type="button">
+         100-500
+                                MM
+        </button>
+        <button class="tab-button billing-tab" data-billing="500-1000MM" type="button">
+         500-1000
+                                MM
+        </button>
+        <button class="tab-button billing-tab" data-billing="+1000MM" style="grid-column: span 2;" type="button">
+         Más de 1,000 MM
+        </button>
+       </div>
+       <input id="selected-billing" name="facturacion" type="hidden" value=""/>
+      </div>
+      <button class="w-full bg-brandNav text-white py-4 font-bold uppercase text-[11px] tracking-[0.3em] hover:bg-gold transition-colors" type="submit">
+       Enviar
+      </button>
+     </form>
+    </div>
+    <div class="space-y-12">
+     <h2 class="font-serif text-3xl font-bold uppercase border-b border-gold pb-4">
+      Canales Directos
+     </h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 font-sans">
+      <div class="space-y-3">
+       <div class="flex items-center gap-3">
+        <span>
+         🇨🇱
+        </span>
+        <h4 class="text-gold font-bold">
+         Chile
+        </h4>
+       </div>
+       <p class="text-sm opacity-90">
+        🇨🇱 +56 993260101
+        <span class="text-[11px] text-gold italic">
+         (Emprendedores)
+        </span>
+       </p>
+       <p class="text-sm opacity-90">
+        🇨🇱 +56 968224180
+        <span class="text-[11px] text-gold italic">
+         (Pymes y Empresas)
+        </span>
+       </p>
+       <p class="text-sm opacity-90 flex items-center gap-2">
+        <svg class="w-4 h-4 fill-current text-whatsapp" viewbox="0 0 24 24">
+         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.76-2.058-.28-.298-.03-.459.121-.607.133-.132.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z">
+         </path>
+        </svg>
+        +56 968224180
+       </p>
+      </div>
+      <div class="space-y-3">
+       <div class="flex items-center gap-3">
+        <span>
+         🇪🇸
+        </span>
+        <h4 class="text-gold font-bold">
+         España
+        </h4>
+       </div>
+       <p class="text-sm opacity-90">
+        +34 654 028 354
+       </p>
+      </div>
+     </div>
+     <div class="pt-6 border-t border-white/10 flex flex-col gap-4">
+      <a class="text-sm uppercase tracking-widest text-gold hover:text-white" href="mailto:contacto@requinspa.com">
+       contacto@requinspa.com
+      </a>
+      <a class="flex items-center justify-center gap-3 bg-whatsapp text-white w-full py-4 rounded shadow-xl font-bold uppercase text-xs" href="https://wa.me/56968224180" target="_blank">
+       <svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.76-2.058-.28-.298-.03-.459.121-.607.133-.132.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z">
+        </path>
+       </svg>
+       WhatsApp Directo
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <footer class="bg-slate-950 py-16 text-center text-white italic px-6 font-bold">
+   <img alt="Logo" class="logo-footer-img logo-gold-filter mx-auto mb-4" src="Logo-Requin.jpg"/>
+   <h2 class="font-serif text-2xl font-bold uppercase italic">
+    Requin &amp; Asociados
+   </h2>
+   <p class="text-[9px] text-gray-400 mt-4">
+    © 2026 REQUIN SPA. TODOS LOS DERECHOS RESERVADOS.
+   </p>
+  </footer>
+  <script>
+   // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => q.parentNode.classList.toggle('active'));
+        });
+
+        // Country Tab Selection
+        document.querySelectorAll('.country-tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                document.querySelectorAll('.country-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                const country = this.dataset.country === 'chile' ? 'Chile' : 'España';
+                document.getElementById('selected-country').value = country;
+            });
+        });
+
+        // Billing Tab Selection
+        document.querySelectorAll('.billing-tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                document.querySelectorAll('.billing-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById('selected-billing').value = this.dataset.billing;
+            });
+        });
+  </script>
+ </body>
+</html>
