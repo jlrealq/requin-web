@@ -1,157 +1,356 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Requin & Asociados | Consultoría</title>
+    <title>Requin & Asociados | Consultoría Multidisciplinar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: sans-serif !important; -webkit-font-smoothing: antialiased; }
-        .ticker-wrap { overflow: hidden; white-space: nowrap; background: #0f172a; border-bottom: 1px solid #c5a059; padding: 12px 0; }
-        .ticker { display: inline-block; animation: ticker 40s linear infinite; }
-        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-        .float-wa { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25D366; color: #FFF; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 100; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
+        body {
+            font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif !important;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .ticker-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+            background: #0f172a;
+            border-bottom: 2px solid #c5a059;
+            padding: 12px 0;
+        }
+
+        .ticker {
+            display: inline-block;
+            animation: ticker 45s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .float-wa {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            z-index: 100;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .up {
+            color: #10b981;
+        }
+
+        .down {
+            color: #ef4444;
+        }
     </style>
 </head>
+
 <body class="bg-gray-50 text-slate-900 flex flex-col min-h-screen">
 
-    <a href="https://wa.me/56968224180" target="_blank" class="float-wa"><i class="fab fa-whatsapp"></i></a>
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/56968224180" target="_blank" class="float-wa">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
+    <!-- Navegación -->
     <nav class="bg-slate-900 text-white p-4 sticky top-0 z-50 shadow-xl">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <img src="Logo-Requin.jpg" alt="Logo" class="h-8 border border-yellow-600">
-                <span class="font-bold text-yellow-600 uppercase tracking-tighter italic">REQUIN & ASOC.</span>
+            <div class="flex items-center gap-3">
+                <img src="Logo-Requin.jpg" alt="Logo Requin & Asociados" class="h-10 border border-yellow-600">
+                <span class="text-xl font-bold text-yellow-600 uppercase tracking-wide italic">REQUIN & ASOCIADOS</span>
             </div>
-            <div class="hidden md:flex gap-6 text-[10px] font-bold uppercase italic items-center">
-                <a href="#inicio" class="hover:text-yellow-500">Inicio</a>
-                <a href="#servicios" class="hover:text-yellow-500">Servicios</a>
-                <a href="#contacto" class="bg-yellow-600 px-3 py-1 rounded text-slate-900">Contacto</a>
+            <div class="hidden md:flex gap-6 text-xs font-bold uppercase italic items-center">
+                <a href="#inicio" class="hover:text-yellow-500 transition">Inicio</a>
+                <a href="#servicios" class="hover:text-yellow-500 transition">Servicios</a>
+                <a href="#noticias" class="hover:text-yellow-500 transition">Mercados</a>
+                <a href="#contacto"
+                    class="bg-yellow-600 px-4 py-2 rounded text-slate-900 hover:bg-yellow-500 transition">Contacto</a>
             </div>
         </div>
     </nav>
 
+    <!-- Ticker de Indicadores -->
     <div class="ticker-wrap text-white font-mono text-xs">
         <div class="ticker">
-            <span class="mx-10 text-yellow-500 italic uppercase">Sincronizando indicadores economicos...</span>
-            </div>
+            <!--TICKER_START-->
+            <span class="mx-10 text-yellow-500 italic uppercase">Cargando indicadores económicos...</span>
+            <!--TICKER_END-->
+        </div>
     </div>
 
+    <!-- Hero Section -->
     <header id="inicio" class="bg-slate-900 text-white py-24 text-center md:text-left italic">
         <div class="container mx-auto px-6">
-            <h1 class="text-4xl md:text-6xl font-bold uppercase mb-4 italic">Expertos en <br><span class="text-yellow-600">Arquitectura Financiera</span></h1>
-            <p class="text-slate-400 text-lg max-w-xl italic">Auditoria, gestion legal tributaria y desarrollo de proyectos con precision matematica.</p>
+            <h1 class="text-5xl md:text-6xl font-bold uppercase mb-6 leading-tight">
+                Expertos en <br><span class="text-yellow-600">Arquitectura Financiera</span>
+            </h1>
+            <p class="text-slate-400 text-xl mb-8 max-w-2xl">
+                Auditoría, gestión legal tributaria y desarrollo integral de proyectos con precisión matemática.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+                <a href="#contacto"
+                    class="bg-yellow-600 text-slate-900 px-8 py-3 rounded font-bold hover:bg-yellow-500 transition shadow-lg text-center uppercase tracking-widest text-sm">
+                    Solicitar Diagnóstico
+                </a>
+                <a href="#servicios"
+                    class="border border-yellow-600 text-yellow-600 px-8 py-3 rounded font-bold hover:bg-yellow-600 hover:text-slate-900 transition text-center uppercase tracking-widest text-sm">
+                    Ver Servicios
+                </a>
+            </div>
         </div>
     </header>
 
-    <section id="servicios" class="py-16 bg-white italic">
+    <!-- Servicios -->
+    <section id="servicios" class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-2xl font-bold text-center uppercase mb-12 italic border-b-2 border-yellow-600 inline-block">Nuestros Servicios</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-[11px] italic">
-                <div class="p-6 bg-gray-50 border-t-4 border-yellow-600 shadow uppercase">
-                    <h3 class="font-bold mb-3 text-slate-900">Contabilidad y Auditoria</h3>
-                    <p class="leading-relaxed">• Contabilidad General Corporativa<br>• Auditoria de Estados Financieros<br>• Auditoria Forense y Peritajes</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold uppercase mb-4 italic">Nuestros Servicios</h2>
+                <div class="h-1 w-24 bg-yellow-600 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Servicio 1 -->
+                <div class="p-8 bg-gray-50 border-t-4 border-yellow-600 shadow-lg hover:shadow-xl transition">
+                    <div class="text-3xl mb-4 text-yellow-600">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 class="text-sm font-bold mb-4 uppercase tracking-wide">Contabilidad y Auditoría</h3>
+                    <ul class="text-xs text-gray-600 space-y-2 uppercase">
+                        <li>• Contabilidad General Corporativa</li>
+                        <li>• Auditoría de Estados Financieros</li>
+                        <li>• Auditoría Forense y Peritajes</li>
+                    </ul>
                 </div>
-                <div class="p-6 bg-gray-50 border-t-4 border-yellow-600 shadow uppercase">
-                    <h3 class="font-bold mb-3 text-blue-900 underline italic">Asesoramiento Legal</h3>
-                    <p class="leading-relaxed font-bold italic">Especialidad en Derecho Tributario</p>
-                    <p class="mt-2 leading-relaxed">• Consultoria Legal Civil<br>• Asesoria en Derecho Laboral</p>
+
+                <!-- Servicio 2 -->
+                <div class="p-8 bg-gray-50 border-t-4 border-yellow-600 shadow-lg hover:shadow-xl transition">
+                    <div class="text-3xl mb-4 text-yellow-600">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3 class="text-sm font-bold mb-4 uppercase tracking-wide">Asesoramiento Legal</h3>
+                    <p class="text-xs font-bold text-blue-900 mb-2 uppercase italic underline">Especialidad en Derecho
+                        Tributario</p>
+                    <ul class="text-xs text-gray-600 space-y-2 uppercase">
+                        <li>• Consultoría Legal Civil</li>
+                        <li>• Asesoría en Derecho Laboral</li>
+                    </ul>
                 </div>
-                <div class="p-6 bg-gray-50 border-t-4 border-yellow-600 shadow uppercase">
-                    <h3 class="font-bold mb-3 text-slate-900">Gestion de Proyectos</h3>
-                    <p class="leading-relaxed">• Evaluacion y Viabilidad<br>• Puesta en Marcha Operacional<br>• Control de Gestion y Seguimiento</p>
+
+                <!-- Servicio 3 -->
+                <div class="p-8 bg-gray-50 border-t-4 border-yellow-600 shadow-lg hover:shadow-xl transition">
+                    <div class="text-3xl mb-4 text-yellow-600">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="text-sm font-bold mb-4 uppercase tracking-wide">Gestión de Proyectos</h3>
+                    <ul class="text-xs text-gray-600 space-y-2 uppercase">
+                        <li>• Evaluación Técnica y Económica</li>
+                        <li>• Puesta en Marcha Operacional</li>
+                        <li>• Control de Gestión Integral</li>
+                    </ul>
                 </div>
-                <div class="p-6 bg-gray-50 border-t-4 border-yellow-600 shadow uppercase">
-                    <h3 class="font-bold mb-3 text-slate-900">Obtencion de Fondos</h3>
-                    <p class="leading-relaxed">• Gestion de Fondos Publicos<br>• Levantamiento Capital Privado<br>• Estructuracion Estrategica</p>
+
+                <!-- Servicio 4 -->
+                <div class="p-8 bg-gray-50 border-t-4 border-yellow-600 shadow-lg hover:shadow-xl transition">
+                    <div class="text-3xl mb-4 text-yellow-600">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="text-sm font-bold mb-4 uppercase tracking-wide">Obtención de Fondos</h3>
+                    <ul class="text-xs text-gray-600 space-y-2 uppercase">
+                        <li>• Gestión de Fondos Públicos</li>
+                        <li>• Levantamiento Capital Privado</li>
+                        <li>• Estructuración Estratégica</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="noticias" class="py-16 bg-gray-100 italic border-y">
+    <!-- Panorama Económico / Noticias -->
+    <section id="noticias" class="py-20 bg-gray-100 border-y">
         <div class="container mx-auto px-6">
-            <h2 class="text-xl font-bold uppercase mb-8 italic">Panorama Economico</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 italic">
-                <div class="col-span-4 text-center text-gray-500 uppercase text-[10px] italic">Sincronizando titulares...</div>
+            <h2 class="text-3xl font-bold uppercase mb-10 italic">Panorama Económico</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!--NOTICIAS_START-->
+                <div class="col-span-full text-center text-gray-500 py-10 uppercase text-sm italic">
+                    Cargando últimas noticias económicas...
                 </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-white italic uppercase">
-        <div class="container mx-auto px-6 max-w-3xl italic">
-            <h2 class="text-2xl font-bold text-center uppercase mb-10 italic">Preguntas Frecuentes</h2>
-            <div class="space-y-4 text-[10px] italic uppercase tracking-tighter">
-                <details class="p-4 bg-gray-50 shadow"><summary class="font-bold cursor-pointer">¿Trabajan fuera de Chile?</summary><p class="mt-2 border-l-2 border-yellow-600 pl-2">Si. Asesoramos a empresas españolas y latinas adaptando modelos a divisa local.</p></details>
-                <details class="p-4 bg-gray-50 shadow"><summary class="font-bold cursor-pointer">¿Que metodologias usan?</summary><p class="mt-2 border-l-2 border-yellow-600 pl-2">Utilizamos estandares internacionales VAN/TIR y analisis de sensibilidad.</p></details>
-                <details class="p-4 bg-gray-50 shadow"><summary class="font-bold cursor-pointer">¿Como son los honorarios?</summary><p class="mt-2 border-l-2 border-yellow-600 pl-2">Modelos flexibles: fee fijo por proyecto o segun alcance estrategico.</p></details>
-                <details class="p-4 bg-gray-50 shadow"><summary class="font-bold cursor-pointer">¿La sesion inicial tiene costo?</summary><p class="mt-2 border-l-2 border-yellow-600 pl-2">La sesion sirve para evaluar el encaje estrategico con los objetivos de su empresa.</p></details>
-                <details class="p-4 bg-gray-50 shadow"><summary class="font-bold cursor-pointer">¿Como manejan la privacidad?</summary><p class="mt-2 border-l-2 border-yellow-600 pl-2">Firmamos acuerdos de confidencialidad (NDA) antes de tratar informacion sensible.</p></details>
+                <!--NOTICIAS_END-->
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="py-16 bg-slate-900 text-white italic uppercase">
-        <div class="container mx-auto px-6 max-w-5xl italic">
-            <h2 class="text-2xl font-bold text-center uppercase mb-10 text-yellow-600 italic">Contacto</h2>
-            
-            <form class="bg-white p-6 rounded shadow-xl text-slate-900 mb-12 italic text-xs uppercase">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <input type="text" placeholder="Nombre completo" class="border p-2 rounded outline-none">
-                    <input type="tel" placeholder="Telefono" class="border p-2 rounded outline-none">
+    <!-- FAQ -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl font-bold text-center uppercase mb-12 italic">Preguntas Frecuentes</h2>
+            <div class="space-y-4">
+                <details class="group p-6 bg-gray-50 rounded shadow cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-sm uppercase">
+                        <span>¿Trabajan con empresas fuera de Chile?</span>
+                        <span class="text-yellow-600 transition group-open:rotate-180">▼</span>
+                    </summary>
+                    <p class="text-xs text-gray-600 mt-4 border-l-2 border-yellow-600 pl-4 uppercase">
+                        Sí. Asesoramos a empresas españolas y latinoamericanas, adaptando modelos a normativa y divisa
+                        local (Euro/Dólar).
+                    </p>
+                </details>
+
+                <details class="group p-6 bg-gray-50 rounded shadow cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-sm uppercase">
+                        <span>¿Qué metodologías usan para evaluar proyectos?</span>
+                        <span class="text-yellow-600 transition group-open:rotate-180">▼</span>
+                    </summary>
+                    <p class="text-xs text-gray-600 mt-4 border-l-2 border-yellow-600 pl-4 uppercase">
+                        Utilizamos estándares internacionales VAN/TIR y análisis de sensibilidad para escenarios
+                        financieros.
+                    </p>
+                </details>
+
+                <details class="group p-6 bg-gray-50 rounded shadow cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-sm uppercase">
+                        <span>¿Cómo se estructuran sus honorarios?</span>
+                        <span class="text-yellow-600 transition group-open:rotate-180">▼</span>
+                    </summary>
+                    <p class="text-xs text-gray-600 mt-4 border-l-2 border-yellow-600 pl-4 uppercase">
+                        Ofrecemos modelos flexibles: fee fijo por proyecto o tarifas según alcance estratégico.
+                    </p>
+                </details>
+
+                <details class="group p-6 bg-gray-50 rounded shadow cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-sm uppercase">
+                        <span>¿La sesión de diagnóstico tiene costo?</span>
+                        <span class="text-yellow-600 transition group-open:rotate-180">▼</span>
+                    </summary>
+                    <p class="text-xs text-gray-600 mt-4 border-l-2 border-yellow-600 pl-4 uppercase">
+                        La sesión inicial sirve para evaluar si somos el socio estratégico adecuado para los objetivos
+                        de su empresa.
+                    </p>
+                </details>
+
+                <details class="group p-6 bg-gray-50 rounded shadow cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-sm uppercase">
+                        <span>¿Cómo manejan la confidencialidad?</span>
+                        <span class="text-yellow-600 transition group-open:rotate-180">▼</span>
+                    </summary>
+                    <p class="text-xs text-gray-600 mt-4 border-l-2 border-yellow-600 pl-4 uppercase">
+                        Firmamos acuerdos de no divulgación (NDA) rigurosos antes de acceder a cualquier información
+                        financiera sensible.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-24 bg-slate-900 text-white">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-4xl font-bold text-center uppercase mb-12 text-yellow-600 italic">Hablemos de Negocios</h2>
+
+            <!-- Formulario -->
+            <form class="bg-white p-8 rounded shadow-2xl text-slate-900 mb-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <input type="text" placeholder="NOMBRE COMPLETO"
+                        class="border p-3 rounded text-sm outline-none focus:border-yellow-600 uppercase" required>
+                    <input type="tel" placeholder="TELÉFONO"
+                        class="border p-3 rounded text-sm outline-none focus:border-yellow-600 uppercase" required>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <input type="email" placeholder="Email corporativo" class="border p-2 rounded outline-none">
-                    <select id="paisSel" onchange="updR()" class="border p-2 rounded outline-none font-bold italic"><option value="cl">CHILE</option><option value="es">ESPAÑA</option></select>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <input type="email" placeholder="EMAIL CORPORATIVO"
+                        class="border p-3 rounded text-sm outline-none focus:border-yellow-600 uppercase" required>
+                    <select id="paisSelector" onchange="actualizarRangos()"
+                        class="border p-3 rounded text-sm outline-none focus:border-yellow-600 font-bold uppercase bg-white">
+                        <option value="chile">🇨🇱 CHILE</option>
+                        <option value="espana">🇪🇸 ESPAÑA</option>
+                    </select>
                 </div>
-                <select id="rangoV" class="w-full border p-2 rounded mb-4 font-bold outline-none italic uppercase"></select>
-                <textarea rows="3" placeholder="Mensaje" class="w-full border p-2 rounded mb-4 outline-none italic uppercase"></textarea>
-                <button type="button" class="w-full bg-slate-900 text-white font-bold py-3 rounded hover:bg-yellow-600 transition uppercase italic">Enviar Solicitud</button>
+                <select id="rangoVentas"
+                    class="w-full border p-3 rounded text-sm font-bold mb-6 outline-none focus:border-yellow-600 uppercase bg-white"></select>
+                <textarea rows="4" placeholder="¿EN QUÉ PODEMOS AYUDARLE?"
+                    class="w-full border p-3 rounded text-sm outline-none focus:border-yellow-600 mb-6 uppercase"></textarea>
+                <button type="button"
+                    class="w-full bg-slate-900 text-white font-bold py-4 rounded hover:bg-yellow-600 hover:text-slate-900 transition shadow-lg uppercase tracking-widest text-sm">
+                    Enviar Solicitud
+                </button>
             </form>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-slate-700 italic uppercase">
+            <!-- Información de Contacto -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-slate-700">
                 <div>
-                    <h4 class="font-bold text-yellow-600 mb-3 text-[10px] uppercase">Oficina Central</h4>
-                    <p class="text-[9px] uppercase italic">Calle La Gioconda, 4355<br>Las Condes - Santiago</p>
-                    <p class="text-[10px] text-yellow-600 font-bold mt-2 italic uppercase">contacto@requinspa.com</p>
+                    <h4 class="font-bold text-yellow-600 mb-3 text-xs uppercase tracking-wider">Oficina Central</h4>
+                    <p class="text-xs uppercase mb-2">Calle La Gioconda, 4355<br>Las Condes - Santiago de Chile</p>
+                    <p class="text-sm text-yellow-600 font-bold uppercase">
+                        <i class="fas fa-envelope mr-2"></i>contacto@requinspa.com
+                    </p>
                 </div>
-                <div class="flex flex-col gap-3">
-                    <h4 class="font-bold text-yellow-600 mb-1 text-[10px] uppercase">Chile</h4>
-                    <div class="grid grid-cols-2 gap-x-2 border-b border-slate-700 pb-2 italic text-[9px]">
-                        <span class="font-bold">🇨🇱 +56 9 6822 4180</span>
-                        <span class="text-right text-yellow-600 font-bold uppercase">Pymes</span>
-                        <span class="font-bold">🇨🇱 +56 9 9326 0101</span>
-                        <span class="text-right text-slate-500 font-bold uppercase">Proyectos</span>
-                    </div>
-                    <div class="flex items-center justify-between border-b border-slate-700 pb-2 text-[9px]">
-                        <span class="font-bold"><i class="fab fa-whatsapp text-green-500"></i> +56 9 6822 4180</span>
-                        <span class="text-green-500 font-bold uppercase">WhatsApp</span>
-                    </div>
-                </div>
+
                 <div>
-                    <h4 class="font-bold text-yellow-600 mb-3 text-[10px] uppercase">España</h4>
-                    <p class="text-[9px] border-b border-slate-700 pb-2 italic uppercase font-bold tracking-tighter">🇪🇸 +34 682 028 354</p>
-                    <p class="text-[8px] text-slate-500 mt-2 italic uppercase">Horario de atencion UTC+1 (Madrid)</p>
+                    <h4 class="font-bold text-yellow-600 mb-3 text-xs uppercase tracking-wider">Chile 🇨🇱</h4>
+                    <div class="space-y-2 text-xs">
+                        <div class="flex justify-between border-b border-slate-700 pb-2">
+                            <span class="font-bold">🇨🇱 +56 9 6822 4180</span>
+                            <span class="text-yellow-600 font-bold">PYMES</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-700 pb-2">
+                            <span class="font-bold">🇨🇱 +56 9 9326 0101</span>
+                            <span class="text-slate-400 font-bold">PROYECTOS</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold"><i class="fab fa-whatsapp text-green-500"></i> +56 9 6822
+                                4180</span>
+                            <span class="text-green-500 font-bold">WHATSAPP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-yellow-600 mb-3 text-xs uppercase tracking-wider">España 🇪🇸</h4>
+                    <p class="text-xs font-bold border-b border-slate-700 pb-2 mb-2">🇪🇸 +34 682 028 354</p>
+                    <p class="text-xs text-slate-500 uppercase">Horario de atención UTC+1 (Madrid)</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-black text-gray-700 py-6 text-center text-[8px] uppercase tracking-[5px] italic border-t border-slate-900">
+    <!-- Footer -->
+    <footer class="bg-black text-gray-600 py-8 text-center text-xs uppercase tracking-widest border-t border-slate-900">
         © 2026 REQUIN SPA & ASOCIADOS | SANTIAGO · MADRID
     </footer>
 
+    <!-- Scripts -->
     <script>
-        function updR() {
-            const p = document.getElementById('paisSel').value;
-            const s = document.getElementById('rangoV');
-            s.innerHTML = "";
-            let o = p === 'cl' ? ["0 - 100 MM (CLP)", "101 - 500 MM (CLP)", "501 - 1.000 MM (CLP)", "Mas de 1.000 MM (CLP)"] : ["Menos de 300.000 EUR", "300.000 EUR - 2M EUR", "Mas de 10M EUR"];
-            o.forEach(t => { let opt = document.createElement("option"); opt.text = t; s.add(opt); });
+        function actualizarRangos() {
+            const pais = document.getElementById('paisSelector').value;
+            const selector = document.getElementById('rangoVentas');
+            selector.innerHTML = "";
+            let opciones = pais === 'chile' ?
+                ["NIVEL DE VENTAS ANUAL (MM CLP)", "0 - 100 MM", "101 - 500 MM", "501 - 1.000 MM", "MÁS DE 1.000 MM"] :
+                ["NIVEL DE VENTAS ANUAL (EUR)", "MENOS DE 300K €", "300K - 2M €", "MÁS DE 2M €"];
+            opciones.forEach(texto => {
+                let opt = document.createElement("option");
+                opt.text = texto;
+                selector.add(opt);
+            });
         }
-        window.onload = updR;
+        window.onload = actualizarRangos;
     </script>
 </body>
+
 </html>
