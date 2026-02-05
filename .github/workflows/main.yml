@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: '0 11 * * *' # Ejecutar a las 8:00 AM Chile (11:00 UTC)
 
+# Permisos necesarios para escribir en gh-pages
+permissions:
+  contents: write
+
 jobs:
   web-deploy:
     name: 🚀 Actualizar y Subir
@@ -26,10 +30,12 @@ jobs:
       run: |
         python cerebro.py
 
-    - name: 📂 Subir al Servidor (FTP)
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    - name: 🌐 Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./
+        publish_branch: gh-pages
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        commit_message: '🤖 Actualización automática de datos'

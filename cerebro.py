@@ -18,10 +18,16 @@ FEEDS = {
 }
 
 def obtener_indicadores():
-    print("💰 Consultando indicadores...")
+    print("💰 Consultando indicadores económicos...")
     try:
         r = requests.get('https://mindicador.cl/api', timeout=10)
+        r.raise_for_status()  # Lanza excepción si hay error HTTP
         data = r.json()
+        
+        # Validar que los datos existen
+        if 'uf' not in data or 'dolar' not in data or 'euro' not in data:
+            raise ValueError("Datos incompletos desde la API")
+        
         # Construimos el HTML del ticker
         html = f"""
                 <span class="mx-8 text-brandGold">UF: ${int(data['uf']['valor']):,.0f} <span class="up">▲</span></span>
@@ -29,9 +35,17 @@ def obtener_indicadores():
                 <span class="mx-8 text-brandGold">EUR: ${data['euro']['valor']:,.0f} <span class="down">▼</span></span>
                 <span class="mx-8 text-brandGold text-[9px]">ACTUALIZADO: {datetime.now().strftime('%d/%m %H:%M')}</span>
         """.replace(",", ".")
+        
+        print(f"✅ Indicadores obtenidos: UF=${int(data['uf']['valor']):,.0f}, USD=${data['dolar']['valor']:,.0f}, EUR=${data['euro']['valor']:,.0f}")
         return html
+    except requests.exceptions.RequestException as e:
+        print(f"⚠️ Error de red al obtener indicadores: {e}")
+        return None
+    except (KeyError, ValueError) as e:
+        print(f"⚠️ Error procesando datos de indicadores: {e}")
+        return None
     except Exception as e:
-        print(f"⚠️ Error indicadores: {e}")
+        print(f"⚠️ Error inesperado en indicadores: {e}")
         return None
 
 # --- EJECUCIÓN ---
@@ -41,9 +55,11 @@ print("🔍 Iniciando Cerebro v3.0...")
 html_ticker = obtener_indicadores()
 html_noticias = ""
 
-print("📰 Leyendo noticias...")
+print("📰 Obteniendo noticias...")
+noticias_count = 0
 for pais, url in FEEDS.items():
     try:
+        print(f"  Consultando feed: {pais}...")
         feed = feedparser.parse(url)
         if feed.entries:
             for item in feed.entries[:2]:
@@ -60,8 +76,14 @@ for pais, url in FEEDS.items():
                         Leer nota completa <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
                 </div>"""
-    except:
-        pass
+                noticias_count += 1
+            print(f"  ✅ {pais}: {min(2, len(feed.entries))} noticias obtenidas")
+        else:
+            print(f"  ⚠️ {pais}: No hay entradas en el feed")
+    except Exception as e:
+        print(f"  ⚠️ Error obteniendo noticias de {pais}: {e}")
+
+print(f"📊 Total de noticias obtenidas: {noticias_count}")
 
 # B. Inyectar en HTML (MÉTODO SEGURO SIN SPLIT)
 try:
