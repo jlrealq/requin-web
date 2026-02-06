@@ -1,7 +1,7 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1770343413495,
+    "generatedTime": 1770344604106,
     "data": [
         {
             "type": "file",
@@ -37,7 +37,7 @@
             "type": "file",
             "name": "index.html",
             "size": 26079,
-            "hash": "d02ddb3c8dfa12ca6469edd84a3fc347402f990e34ee37c563d669335663876f"
+            "hash": "627c1f4f62118fc29145318ece2a5718f2c06882071a8a56253f3354c0b4311e"
         }
     ]
 }
