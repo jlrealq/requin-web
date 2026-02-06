@@ -4,6 +4,7 @@ on:
     branches: [ main ]
   schedule:
     - cron: '0 11 * * *' # Ejecutar a las 8:00 AM Chile (11:00 UTC)
+    - cron: '0 18 * * *' # Ejecutar a las 3:00 PM Chile (18:00 UTC)
 
 # Permisos necesarios para escribir en gh-pages
 permissions:
