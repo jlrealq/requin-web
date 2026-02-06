@@ -39,6 +39,10 @@ FEEDS_NOTICIAS = {
     'ESPAÑA': {
         'url': 'https://news.google.com/rss/search?q=España+Economía+Negocios+when:1d&hl=es&gl=ES&ceid=ES:es',
         'cantidad': 1
+    },
+    'LEGAL CHILE': {
+        'url': 'https://news.google.com/rss/search?q=Chile+Normativa+Legal+Ley+Regulación+when:2d&hl=es-419&gl=CL&ceid=CL:es-419',
+        'cantidad': 2
     }
 }
 
