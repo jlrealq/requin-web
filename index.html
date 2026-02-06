@@ -6,9 +6,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Requin & Asociados | Consultoría Multidisciplinar</title>
+    <meta name="description"
+        content="Requin & Asociados: Consultoría multidisciplinar experta en arquitectura financiera, auditoría, gestión legal tributaria y desarrollo de proyectos.">
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:title" content="Requin & Asociados | Arquitectura Financiera y Legal">
+    <meta property="og:description"
+        content="Expertos en auditoría, gestión legal tributaria y desarrollo integral de proyectos con precisión matemática.">
+    <meta property="og:image" content="https://requinspa.com/Logo-Requin.jpg">
+    <meta property="og:url" content="https://requinspa.com">
+    <meta property="og:type" content="website">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif !important;
             -webkit-font-smoothing: antialiased;
@@ -102,7 +116,7 @@
                 EUR/CLP: $1.022 <span class="up">▲</span>
             </span>
             <span class="mx-10 text-gray-400 text-[10px] italic uppercase">
-                ACTUALIZADO: 06/02 13:52
+                ACTUALIZADO: 06/02 14:03
             </span>
             <!--TICKER_END-->
         </div>
@@ -335,33 +349,35 @@
             <h2 class="text-4xl font-bold text-center uppercase mb-12 text-yellow-600 italic">Hablemos de Negocios</h2>
 
             <!-- Formulario -->
-            <form class="bg-white p-8 rounded shadow-2xl text-slate-900 mb-16">
+            <form action="https://formspree.io/f/mvzrarkk" method="POST"
+                class="bg-white p-8 rounded shadow-2xl text-slate-900 mb-16">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <input type="text" placeholder="NOMBRE COMPLETO"
+                    <input type="text" name="nombre" placeholder="NOMBRE COMPLETO"
                         class="border p-3 rounded text-sm outline-none focus:border-yellow-600 uppercase" required>
-                    <input type="tel" placeholder="TELÉFONO"
+                    <input type="tel" name="telefono" placeholder="TELÉFONO"
                         class="border p-3 rounded text-sm outline-none focus:border-yellow-600 uppercase" required>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <input type="text" placeholder="NOMBRE EMPRESA"
+                    <input type="text" name="empresa" placeholder="NOMBRE EMPRESA"
                         class="border p-3 rounded text-sm outline-none focus:border-yellow-600 uppercase" required>
-                    <input type="text" placeholder="RUT"
+                    <input type="text" name="rut" placeholder="RUT"
                         class="border p-3 rounded text-sm outline-none focus:border-yellow-600 uppercase" required>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <input type="email" placeholder="EMAIL CORPORATIVO"
+                    <input type="email" name="email" placeholder="EMAIL CORPORATIVO"
                         class="border p-3 rounded text-sm outline-none focus:border-yellow-600 uppercase" required>
-                    <select id="paisSelector" onchange="actualizarRangos()"
+                    <select id="paisSelector" name="pais" onchange="actualizarRangos()"
                         class="border p-3 rounded text-sm outline-none focus:border-yellow-600 font-bold uppercase bg-white">
                         <option value="chile">🇨🇱 CHILE</option>
                         <option value="espana">🇪🇸 ESPAÑA</option>
                     </select>
                 </div>
-                <select id="rangoVentas"
+                <select id="rangoVentas" name="rango_ventas"
                     class="w-full border p-3 rounded text-sm font-bold mb-6 outline-none focus:border-yellow-600 uppercase bg-white"></select>
-                <textarea rows="4" placeholder="¿EN QUÉ PODEMOS AYUDARLE?"
-                    class="w-full border p-3 rounded text-sm outline-none focus:border-yellow-600 mb-6 uppercase"></textarea>
-                <button type="button"
+                <textarea name="mensaje" rows="4" placeholder="¿EN QUÉ PODEMOS AYUDARLE?"
+                    class="w-full border p-3 rounded text-sm outline-none focus:border-yellow-600 mb-6 uppercase"
+                    required></textarea>
+                <button type="submit"
                     class="w-full bg-slate-900 text-white font-bold py-4 rounded hover:bg-yellow-600 hover:text-slate-900 transition shadow-lg uppercase tracking-widest text-sm">
                     Enviar Solicitud
                 </button>
