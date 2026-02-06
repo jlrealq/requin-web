@@ -22,10 +22,24 @@ if hasattr(ssl, '_create_unverified_context'):
 RUTA_BASE = os.getcwd()
 RUTA_INDEX = os.path.join(RUTA_BASE, 'index.html')
 
-# Fuentes de noticias
+# Fuentes de noticias y cantidad a obtener por región
 FEEDS_NOTICIAS = {
-    'CHILE': 'https://news.google.com/rss/search?q=Chile+Economía+Negocios+when:1d&hl=es-419&gl=CL&ceid=CL:es-419',
-    'GLOBAL': 'https://news.google.com/rss/search?q=Mercados+Financieros+Globales+when:1d&hl=es-419&gl=US&ceid=US:es-419'
+    'CHILE': {
+        'url': 'https://news.google.com/rss/search?q=Chile+Economía+Negocios+when:1d&hl=es-419&gl=CL&ceid=CL:es-419',
+        'cantidad': 3
+    },
+    'USA': {
+        'url': 'https://news.google.com/rss/search?q=USA+Economy+Business+when:1d&hl=es&gl=US&ceid=US:es',
+        'cantidad': 1
+    },
+    'EUROPA': {
+        'url': 'https://news.google.com/rss/search?q=Europa+Economía+Negocios+when:1d&hl=es&gl=ES&ceid=ES:es',
+        'cantidad': 1
+    },
+    'ESPAÑA': {
+        'url': 'https://news.google.com/rss/search?q=España+Economía+Negocios+when:1d&hl=es&gl=ES&ceid=ES:es',
+        'cantidad': 1
+    }
 }
 
 # Tags de marcado en HTML
@@ -103,8 +117,11 @@ def obtener_noticias():
     html_noticias = ""
     noticias_count = 0
     
-    for region, url in FEEDS_NOTICIAS.items():
+    for region, config in FEEDS_NOTICIAS.items():
         try:
+            url = config['url']
+            cantidad = config['cantidad']
+            
             print(f"  📡 Consultando feed: {region}...")
             feed = feedparser.parse(url)
             
@@ -112,8 +129,8 @@ def obtener_noticias():
                 print(f"  ⚠️ {region}: No hay entradas en el feed")
                 continue
             
-            # Obtener las 2 primeras noticias
-            for item in feed.entries[:2]:
+            # Obtener la cantidad especificada de noticias para esta región
+            for item in feed.entries[:cantidad]:
                 # Limpiar título (remover fuente al final)
                 titulo = item.title
                 if ' - ' in titulo:
@@ -132,7 +149,7 @@ def obtener_noticias():
                 """
                 noticias_count += 1
             
-            print(f"  ✅ {region}: {min(2, len(feed.entries))} noticias obtenidas")
+            print(f"  ✅ {region}: {min(cantidad, len(feed.entries))} noticias obtenidas")
             
         except Exception as e:
             print(f"  ⚠️ Error obteniendo noticias de {region}: {type(e).__name__}: {e}")
