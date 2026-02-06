@@ -1,6 +1,11 @@
 name: Actualizar Noticias e Indicadores Económicos
 
 on:
+  # Ejecutar en cada push a main
+  push:
+    branches:
+      - main
+  
   # Ejecutar diariamente a las 11:00 UTC (8:00 AM Chile UTC-3)
   schedule:
     - cron: '0 11 * * *'
