@@ -12,7 +12,7 @@ import feedparser
 import requests
 import ssl
 import os
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 # Configuración SSL para feeds
 if hasattr(ssl, '_create_unverified_context'):
@@ -58,7 +58,9 @@ def obtener_indicadores():
         uf_valor = int(data['uf']['valor'])
         usd_valor = data['dolar']['valor']
         eur_valor = data['euro']['valor']
-        timestamp = datetime.now().strftime('%d/%m %H:%M')
+        # Zona horaria de Chile (UTC-3)
+        chile_tz = timezone(timedelta(hours=-3))
+        timestamp = datetime.now(chile_tz).strftime('%d/%m %H:%M')
         
         # Construir HTML del ticker
         html = f"""
@@ -231,7 +233,8 @@ def main():
         print("✅ ¡PROCESO COMPLETADO EXITOSAMENTE!")
         print("=" * 60)
         print(f"   Archivo actualizado: {RUTA_INDEX}")
-        print(f"   Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        chile_tz = timezone(timedelta(hours=-3))
+        print(f"   Timestamp: {datetime.now(chile_tz).strftime('%Y-%m-%d %H:%M:%S')}")
         print()
         return 0
         
