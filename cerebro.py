@@ -137,57 +137,98 @@ def get_news_from_rss(feed_url, max_items=3):
 
 def get_all_news():
     """Obtiene todas las noticias de las fuentes configuradas"""
-    # Noticias de respaldo (placeholder - en producción se reemplazarían con RSS feeds reales)
-    all_news = {
+    current_date = datetime.now().strftime('%d-%m-%Y')
+    
+    # Noticias de respaldo con fecha actualizada
+    fallback_news = {
         'chile': [
             {
-                'title': 'Economía Chilena Muestra Señales de Recuperación',
-                'description': 'Los indicadores económicos del segundo trimestre muestran un crecimiento sostenido en diversos sectores productivos del país.',
+                'title': f'Actualización Económica {current_date}',
+                'description': 'Revisa las últimas noticias económicas en nuestras fuentes oficiales. Sistema de actualización automática activo.',
                 'link': 'https://www.df.cl'
             },
             {
-                'title': 'Banco Central Mantiene Tasa de Interés',
-                'description': 'La autoridad monetaria decidió mantener la tasa de política en niveles actuales tras analizar el contexto macroeconómico.',
+                'title': f'Indicadores del Banco Central - {current_date}',
+                'description': 'Consulta los últimos datos macroeconómicos y decisiones de política monetaria del Banco Central de Chile.',
                 'link': 'https://www.bcentral.cl'
             },
             {
-                'title': 'Exportaciones Mineras Alcanzan Nuevo Récord',
-                'description': 'El sector minero reporta exportaciones históricas impulsadas por el aumento en el precio del cobre a nivel internacional.',
+                'title': f'Mercados Financieros Hoy {current_date}',
+                'description': 'Análisis actualizado de los principales mercados financieros y su impacto en la economía nacional.',
                 'link': 'https://www.latercera.com'
             }
         ],
         'usa': [
             {
-                'title': 'Fed Signals Cautious Approach to Rate Cuts',
-                'description': 'Federal Reserve officials indicate a measured strategy for future monetary policy adjustments amid economic uncertainties.',
+                'title': f'US Economic Update {current_date}',
+                'description': 'Latest developments in US markets, Federal Reserve policy, and economic indicators affecting global markets.',
                 'link': 'https://www.wsj.com'
             }
         ],
         'europe': [
             {
-                'title': 'European Markets Rally on Economic Data',
-                'description': 'Stock markets across the EU show strong performance following positive manufacturing and services sector reports.',
+                'title': f'European Markets Today {current_date}',
+                'description': 'Current status of European stock exchanges, ECB policy updates, and regional economic performance.',
                 'link': 'https://www.ft.com'
             }
         ],
         'spain': [
             {
-                'title': 'España Registra Crecimiento del PIB',
-                'description': 'La economía española muestra fortaleza con datos del PIB superando las expectativas del mercado.',
+                'title': f'Economía Española {current_date}',
+                'description': 'Últimas noticias sobre la economía española, mercados bursátiles y políticas económicas.',
                 'link': 'https://cincodias.elpais.com'
             }
         ]
     }
     
-    # Intentar obtener noticias reales de RSS (opcional)
-    try:
-        for source in NEWS_SOURCES['chile'][:1]:
+    all_news =fallback_news.copy()
+    
+    # Intentar obtener noticias reales de RSS
+    print("  → Intentando obtener noticias de RSS feeds...")
+    
+    # Chile: intentar múltiples fuentes
+    for source in NEWS_SOURCES['chile']:
+        try:
             news = get_news_from_rss(source, max_items=3)
             if news and len(news) >= 3:
                 all_news['chile'] = news[:3]
+                print(f"  ✓ Noticias de Chile obtenidas de RSS")
                 break
-    except:
-        pass
+        except:
+            continue
+    
+    # USA
+    for source in NEWS_SOURCES['usa']:
+        try:
+            news = get_news_from_rss(source, max_items=1)
+            if news and len(news) >= 1:
+                all_news['usa'] = news[:1]
+                print(f"  ✓ Noticias de USA obtenidas de RSS")
+                break
+        except:
+            continue
+    
+    # Europa
+    for source in NEWS_SOURCES['europe']:
+        try:
+            news = get_news_from_rss(source, max_items=1)
+            if news and len(news) >= 1:
+                all_news['europe'] = news[:1]
+                print(f"  ✓ Noticias de Europa obtenidas de RSS")
+                break
+        except:
+            continue
+    
+    # España
+    for source in NEWS_SOURCES['spain']:
+        try:
+            news = get_news_from_rss(source, max_items=1)
+            if news and len(news) >= 1:
+                all_news['spain'] = news[:1]
+                print(f"  ✓ Noticias de España obtenidas de RSS")
+                break
+        except:
+            continue
     
     return all_news
 
