@@ -1,412 +1,268 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-Cerebro - Sistema de actualización automática de noticias e indicadores económicos
-Actualiza index.html con las últimas noticias e indicadores financieros
+Cerebro - Sistema de actualización automática de datos para Requin & Asociados
+Versión 4.0 - Optimizado para GitHub Pages
+
+Este script:
+1. Obtiene indicadores económicos desde mindicador.cl
+2. Obtiene noticias económicas desde Google News RSS
+3. Inyecta los datos en index.html usando tags de marcado
 """
 
-import requests
-from bs4 import BeautifulSoup
-import json
-import re
-from datetime import datetime
 import feedparser
+import requests
+import ssl
+import os
+from datetime import datetime, timezone, timedelta
 
-# ============================================================================
-# CONFIGURACIÓN
-# ============================================================================
+# Configuración SSL para feeds
+if hasattr(ssl, '_create_unverified_context'):
+    ssl._create_default_https_context = ssl._create_unverified_context
 
-# APIs y URLs
-MINDICADOR_API = "https://mindicador.cl/api"
-COINDESK_API = "https://api.coingecko.com/api/v3/simple/price"
-YAHOO_FINANCE_BASE = "https://query1.finance.yahoo.com/v8/finance/chart/"
+# Rutas
+RUTA_BASE = os.getcwd()
+RUTA_INDEX = os.path.join(RUTA_BASE, 'index.html')
 
-# Fuentes RSS para noticias (pueden ajustarse según disponibilidad)
-NEWS_SOURCES = {
-    'chile': [
-        'https://www.df.cl/noticias/economia-y-politica/rss',
-        'https://www.latercera.com/feed/',
-        'https://www.elmercurio.com/rss/economia'
-    ],
-    'usa': [
-        'https://feeds.finance.yahoo.com/rss/2.0/headline',
-    ],
-    'europe': [
-        'https://www.ft.com/?format=rss',
-    ],
-    'spain': [
-        'https://cincodias.elpais.com/rss/',
-    ]
+# Fuentes de noticias y cantidad a obtener por región
+FEEDS_NOTICIAS = {
+    'CHILE': {
+        'url': 'https://news.google.com/rss/search?q=Chile+Economía+Negocios+when:1d&hl=es-419&gl=CL&ceid=CL:es-419',
+        'cantidad': 3
+    },
+    'USA': {
+        'url': 'https://news.google.com/rss/search?q=USA+Economy+Business+when:1d&hl=es&gl=US&ceid=US:es',
+        'cantidad': 1
+    },
+    'EUROPA': {
+        'url': 'https://news.google.com/rss/search?q=Europa+Economía+Negocios+when:1d&hl=es&gl=ES&ceid=ES:es',
+        'cantidad': 1
+    },
+    'ESPAÑA': {
+        'url': 'https://news.google.com/rss/search?q=España+Economía+Negocios+when:1d&hl=es&gl=ES&ceid=ES:es',
+        'cantidad': 1
+    },
+    'LEGAL CHILE': {
+        'url': 'https://news.google.com/rss/search?q=Chile+Normativa+Legal+Ley+Regulación+when:2d&hl=es-419&gl=CL&ceid=CL:es-419',
+        'cantidad': 2
+    }
 }
 
-# ============================================================================
-# FUNCIONES PARA OBTENER INDICADORES ECONÓMICOS
-# ============================================================================
+# Tags de marcado en HTML
+TICKER_START = '<!--TICKER_START-->'
+TICKER_END = '<!--TICKER_END-->'
+NOTICIAS_START = '<!--NOTICIAS_START-->'
+NOTICIAS_END = '<!--NOTICIAS_END-->'
 
-def get_uf_and_currencies():
-    """Obtiene UF, USD/CLP y EUR/CLP desde la API de mindicador.cl"""
+
+def obtener_indicadores():
+    """
+    Obtiene indicadores económicos desde mining.cl API
+    
+    Returns:
+        str: HTML formateado con indicadores o None si hay error
+    """
+    print("💰 Consultando indicadores económicos...")
     try:
-        response = requests.get(MINDICADOR_API, timeout=10)
+        response = requests.get('https://mindicador.cl/api', timeout=10)
+        response.raise_for_status()
         data = response.json()
         
-        # UF
-        uf_value = data['uf']['valor']
-        uf_date = data['uf']['fecha'].split('T')[0][-5:]  # Solo MM/DD
+        # Validar que los datos necesarios existen
+        required_fields = ['uf', 'dolar', 'euro']
+        for field in required_fields:
+            if field not in data or 'valor' not in data[field]:
+                raise ValueError(f"Falta el campo '{field}' en la respuesta de la API")
         
-        # USD
-        usd_value = data['dolar']['valor']
+        # Obtener valores
+        uf_valor = int(data['uf']['valor'])
+        usd_valor = data['dolar']['valor']
+        eur_valor = data['euro']['valor']
+        # Zona horaria de Chile (UTC-3)
+        chile_tz = timezone(timedelta(hours=-3))
+        timestamp = datetime.now(chile_tz).strftime('%d/%m %H:%M')
         
-        # EUR
-        eur_value = data['euro']['valor']
+        # Construir HTML del ticker
+        html = f"""
+            <span class="mx-10 text-yellow-500 italic uppercase">
+                UF: ${uf_valor:,.0f} <span class="up">▲</span>
+            </span>
+            <span class="mx-10 text-yellow-500 italic uppercase">
+                USD/CLP: ${usd_valor:,.0f} <span class="down">▼</span>
+            </span>
+            <span class="mx-10 text-yellow-500 italic uppercase">
+                EUR/CLP: ${eur_valor:,.0f} <span class="up">▲</span>
+            </span>
+            <span class="mx-10 text-gray-400 text-[10px] italic uppercase">
+                ACTUALIZADO: {timestamp}
+            </span>
+        """.replace(",", ".")
         
-        # Por simplicidad, usar "up" por defecto (se puede mejorar guardando valores previos)
-        uf_change = "up"
-        usd_change = "up"
-        eur_change = "down"
+        print(f"✅ Indicadores obtenidos: UF=${uf_valor:,.0f}, USD=${usd_valor:,.0f}, EUR=${eur_valor:,.0f}")
+        return html.strip()
         
-        return {
-            'uf': {'value': f'{uf_value:,.2f}', 'change': uf_change, 'date': uf_date},
-            'usd': {'value': f'{usd_value:,.2f}', 'change': usd_change},
-            'eur': {'value': f'{eur_value:,.2f}', 'change': eur_change},
-        }
+    except requests.exceptions.RequestException as e:
+        print(f"⚠️ Error de red al obtener indicadores: {e}")
+        return None
+    except (KeyError, ValueError) as e:
+        print(f"⚠️ Error procesando datos de indicadores: {e}")
+        return None
     except Exception as e:
-        print(f"Error obteniendo datos de mindicador: {e}")
+        print(f"⚠️ Error inesperado en indicadores: {type(e).__name__}: {e}")
         return None
 
-def get_bitcoin_price():
-    """Obtiene el precio de Bitcoin en USD"""
-    try:
-        params = {
-            'ids': 'bitcoin',
-            'vs_currencies': 'usd',
-            'include_24hr_change': 'true'
-        }
-        response = requests.get(COINDESK_API, params=params, timeout=10)
-        data = response.json()
-        
-        price = data['bitcoin']['usd']
-        change = "up" if data['bitcoin'].get('usd_24h_change', 0) > 0 else "down"
-        
-        return {'value': f'{price:,.2f}', 'change': change}
-    except Exception as e:
-        print(f"Error obteniendo precio de Bitcoin: {e}")
-        return None
 
-def get_sp500():
-    """Obtiene el valor del S&P 500"""
-    try:
-        # Intentar obtener de Yahoo Finance
-        url = f"{YAHOO_FINANCE_BASE}%5EGSPC"
-        headers = {'User-Agent': 'Mozilla/5.0'}
-        response = requests.get(url, headers=headers, timeout=10)
-        
-        if response.status_code == 200:
-            data = response.json()
-            quote = data['chart']['result'][0]['meta']
-            current_price = quote['regularMarketPrice']
-            previous_close = quote['chartPreviousClose']
-            change = "up" if current_price > previous_close else "down"
-            return {'value': f'{current_price:,.2f}', 'change': change}
-    except:
-        pass
+def obtener_noticias():
+    """
+    Obtiene noticias económicas desde Google News RSS
     
-    # Valor de respaldo
-    return {'value': '5,800.50', 'change': 'up'}
-
-# ============================================================================
-# FUNCIONES PARA OBTENER NOTICIAS
-# ============================================================================
-
-def get_news_from_rss(feed_url, max_items=3):
-    """Obtiene noticias desde un feed RSS"""
-    try:
-        feed = feedparser.parse(feed_url)
-        news = []
-        
-        for entry in feed.entries[:max_items]:
-            news.append({
-                'title': entry.title,
-                'description': entry.get('description', entry.get('summary', ''))[:150] + '...',
-                'link': entry.link
-            })
-        
-        return news
-    except Exception as e:
-        print(f"Error obteniendo noticias de {feed_url}: {e}")
-        return []
-
-def get_all_news():
-    """Obtiene todas las noticias de las fuentes configuradas"""
-    current_date = datetime.now().strftime('%d-%m-%Y')
+    Returns:
+        str: HTML formateado con noticias
+    """
+    print("📰 Obteniendo noticias económicas...")
+    html_noticias = ""
+    noticias_count = 0
     
-    # Noticias de respaldo con fecha actualizada
-    fallback_news = {
-        'chile': [
-            {
-                'title': f'Actualización Económica {current_date}',
-                'description': 'Revisa las últimas noticias económicas en nuestras fuentes oficiales. Sistema de actualización automática activo.',
-                'link': 'https://www.df.cl'
-            },
-            {
-                'title': f'Indicadores del Banco Central - {current_date}',
-                'description': 'Consulta los últimos datos macroeconómicos y decisiones de política monetaria del Banco Central de Chile.',
-                'link': 'https://www.bcentral.cl'
-            },
-            {
-                'title': f'Mercados Financieros Hoy {current_date}',
-                'description': 'Análisis actualizado de los principales mercados financieros y su impacto en la economía nacional.',
-                'link': 'https://www.latercera.com'
-            }
-        ],
-        'usa': [
-            {
-                'title': f'US Economic Update {current_date}',
-                'description': 'Latest developments in US markets, Federal Reserve policy, and economic indicators affecting global markets.',
-                'link': 'https://www.wsj.com'
-            }
-        ],
-        'europe': [
-            {
-                'title': f'European Markets Today {current_date}',
-                'description': 'Current status of European stock exchanges, ECB policy updates, and regional economic performance.',
-                'link': 'https://www.ft.com'
-            }
-        ],
-        'spain': [
-            {
-                'title': f'Economía Española {current_date}',
-                'description': 'Últimas noticias sobre la economía española, mercados bursátiles y políticas económicas.',
-                'link': 'https://cincodias.elpais.com'
-            }
-        ]
-    }
-    
-    all_news =fallback_news.copy()
-    
-    # Intentar obtener noticias reales de RSS
-    print("  → Intentando obtener noticias de RSS feeds...")
-    
-    # Chile: intentar múltiples fuentes
-    for source in NEWS_SOURCES['chile']:
+    for region, config in FEEDS_NOTICIAS.items():
         try:
-            news = get_news_from_rss(source, max_items=3)
-            if news and len(news) >= 3:
-                all_news['chile'] = news[:3]
-                print(f"  ✓ Noticias de Chile obtenidas de RSS")
-                break
-        except:
-            continue
-    
-    # USA
-    for source in NEWS_SOURCES['usa']:
-        try:
-            news = get_news_from_rss(source, max_items=1)
-            if news and len(news) >= 1:
-                all_news['usa'] = news[:1]
-                print(f"  ✓ Noticias de USA obtenidas de RSS")
-                break
-        except:
-            continue
-    
-    # Europa
-    for source in NEWS_SOURCES['europe']:
-        try:
-            news = get_news_from_rss(source, max_items=1)
-            if news and len(news) >= 1:
-                all_news['europe'] = news[:1]
-                print(f"  ✓ Noticias de Europa obtenidas de RSS")
-                break
-        except:
-            continue
-    
-    # España
-    for source in NEWS_SOURCES['spain']:
-        try:
-            news = get_news_from_rss(source, max_items=1)
-            if news and len(news) >= 1:
-                all_news['spain'] = news[:1]
-                print(f"  ✓ Noticias de España obtenidas de RSS")
-                break
-        except:
-            continue
-    
-    return all_news
-
-# ============================================================================
-# ACTUALIZACIÓN DEL HTML
-# ============================================================================
-
-def update_html(indicators, news):
-    """Actualiza el archivo index.html con los nuevos datos"""
-    
-    html_file = 'index.html'
-    
-    try:
-        with open(html_file, 'r', encoding='utf-8') as f:
-            html_content = f.read()
-        
-        soup = BeautifulSoup(html_content, 'html.parser')
-        
-        # ========== ACTUALIZAR INDICADORES ==========
-        ticker_content = soup.find('div', class_='ticker-content')
-        
-        if ticker_content and indicators:
-            uf = indicators.get('uf', {})
-            usd = indicators.get('usd', {})
-            eur = indicators.get('eur', {})
-            btc = indicators.get('bitcoin', {})
-            sp500 = indicators.get('sp500', {})
+            url = config['url']
+            cantidad = config['cantidad']
             
-            # Formatear símbolos
-            uf_symbol = '▲' if uf.get('change') == 'up' else '▼'
-            uf_class = 'up' if uf.get('change') == 'up' else 'down'
+            print(f"  📡 Consultando feed: {region}...")
+            feed = feedparser.parse(url)
             
-            usd_symbol = '▲' if usd.get('change') == 'up' else '▼'
-            usd_class = 'up' if usd.get('change') == 'up' else 'down'
+            if not feed.entries:
+                print(f"  ⚠️ {region}: No hay entradas en el feed")
+                continue
             
-            eur_symbol = '▲' if eur.get('change') == 'up' else '▼'
-            eur_class = 'up' if eur.get('change') == 'up' else 'down'
-            
-            btc_symbol = '▲' if btc.get('change') == 'up' else '▼'
-            btc_class = 'up' if btc.get('change') == 'up' else 'down'
-            
-            sp500_symbol = '▲' if sp500.get('change') == 'up' else '▼'
-            sp500_class = 'up' if sp500.get('change') == 'up' else 'down'
-            
-            # Crear nuevo contenido del ticker
-            new_ticker = f'''
-                <span class="mx-8 text-gold">UF: ${uf.get('value', '0')} ({uf.get('date', '')}) <span class="{uf_class}">{uf_symbol}</span></span>
-                <span class="mx-8 text-gold">USD/CLP: ${usd.get('value', '0')} <span class="{usd_class}">{usd_symbol}</span></span>
-                <span class="mx-8 text-gold">EUR/CLP: ${eur.get('value', '0')} <span class="{eur_class}">{eur_symbol}</span></span>
-                <span class="mx-8 text-gold">BITCOIN (USD): ${btc.get('value', '0')} <span class="{btc_class}">{btc_symbol}</span></span>
-                <span class="mx-8 text-gold">S&P 500: {sp500.get('value', '0')} <span class="{sp500_class}">{sp500_symbol}</span></span>
-            '''
-            
-            ticker_content.clear()
-            ticker_content.append(BeautifulSoup(new_ticker, 'html.parser'))
-        
-        # ========== ACTUALIZAR NOTICIAS ==========
-        news_grid = soup.find('div', class_='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3')
-        
-        if news_grid and news:
-            # Limpiar noticias actuales
-            news_grid.clear()
-            
-            # Construir nuevas noticias
-            all_news_items = []
-            
-            # Chile (3 noticias)
-            for item in news.get('chile', [])[:3]:
-                all_news_items.append({
-                    'category': 'Chile',
-                    'title': item['title'],
-                    'description': item['description'],
-                    'link': item['link']
-                })
-            
-            # EEUU (1 noticia)
-            for item in news.get('usa', [])[:1]:
-                all_news_items.append({
-                    'category': 'EE.UU.',
-                    'title': item['title'],
-                    'description': item['description'],
-                    'link': item['link']
-                })
-            
-            # Europa (1 noticia)
-            for item in news.get('europe', [])[:1]:
-                all_news_items.append({
-                    'category': 'Europa',
-                    'title': item['title'],
-                    'description': item['description'],
-                    'link': item['link']
-                })
-            
-            # España (1 noticia)
-            for item in news.get('spain', [])[:1]:
-                all_news_items.append({
-                    'category': 'España',
-                    'title': item['title'],
-                    'description': item['description'],
-                    'link': item['link']
-                })
-            
-            # Crear HTML de cada noticia
-            for item in all_news_items:
-                news_card = f'''
-                <div class="news-card shadow-lg min-h-[250px] text-left">
-                    <div>
-                        <span class="text-[9px] text-gold uppercase mb-1 block">{item['category']}</span>
-                        <h4 class="text-brandNav text-sm mb-2 uppercase font-bold">{item['title']}</h4>
-                        <p class="text-gray-600 text-[11px] mb-4">{item['description']}</p>
-                    </div>
-                    <a href="{item['link']}" target="_blank" class="text-gold text-[10px] uppercase hover:underline">Ver Más →</a>
+            # Obtener la cantidad especificada de noticias para esta región
+            for item in feed.entries[:cantidad]:
+                # Limpiar título (remover fuente al final)
+                titulo = item.title
+                if ' - ' in titulo:
+                    titulo = titulo.split(' - ')[0]
+                
+                # Generar HTML de la tarjeta
+                html_noticias += f"""
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
+                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">{region}</span>
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">{titulo}</h4>
+                    <a href="{item.link}" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
+                        Leer artículo completo
+                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                    </a>
                 </div>
-                '''
-                news_grid.append(BeautifulSoup(news_card, 'html.parser'))
-        
-        # Guardar cambios
-        with open(html_file, 'w', encoding='utf-8') as f:
-            f.write(str(soup.prettify()))
-        
-        print("✅ index.html actualizado exitosamente")
-        return True
-        
-    except Exception as e:
-        print(f"❌ Error actualizando HTML: {e}")
-        return False
+                """
+                noticias_count += 1
+            
+            print(f"  ✅ {region}: {min(cantidad, len(feed.entries))} noticias obtenidas")
+            
+        except Exception as e:
+            print(f"  ⚠️ Error obteniendo noticias de {region}: {type(e).__name__}: {e}")
+            continue
+    
+    print(f"📊 Total de noticias obtenidas: {noticias_count}")
+    return html_noticias.strip() if html_noticias else None
 
-# ============================================================================
-# MAIN
-# ============================================================================
+
+def inyectar_contenido(html_content, html_ticker, html_noticias):
+    """
+    Inyecta ticker y noticias en el HTML usando tags de marcado
+    
+    Args:
+        html_content (str): Contenido HTML completo
+        html_ticker (str): HTML del ticker a inyectar
+        html_noticias (str): HTML de noticias a inyectar
+    
+    Returns:
+        str: HTML actualizado
+    """
+    content = html_content
+    
+    # Inyectar ticker si está disponible
+    if html_ticker:
+        idx_start = content.find(TICKER_START)
+        idx_end = content.find(TICKER_END)
+        
+        if idx_start != -1 and idx_end != -1:
+            before = content[:idx_start + len(TICKER_START)]
+            after = content[idx_end:]
+            content = f"{before}\n            {html_ticker}\n            {after}"
+            print("✅ Ticker inyectado correctamente")
+        else:
+            print("⚠️ No se encontraron los tags del ticker en el HTML")
+    
+    # Inyectar noticias si están disponibles
+    if html_noticias:
+        idx_start = content.find(NOTICIAS_START)
+        idx_end = content.find(NOTICIAS_END)
+        
+        if idx_start != -1 and idx_end != -1:
+            before = content[:idx_start + len(NOTICIAS_START)]
+            after = content[idx_end:]
+            content = f"{before}\n                {html_noticias}\n                {after}"
+            print("✅ Noticias inyectadas correctamente")
+        else:
+            print("⚠️ No se encontraron los tags de noticias en el HTML")
+    
+    return content
+
 
 def main():
     """Función principal"""
-    print("🚀 Iniciando actualización de datos económicos...")
-    print(f"📅 Fecha: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("=" * 60)
+    print("🧠 CEREBRO v4.0 - Sistema de Actualización Automática")
+    print("=" * 60)
+    print()
     
-    # Obtener indicadores
-    print("\n📊 Obteniendo indicadores económicos...")
-    indicators = {}
+    # Verificar que existe index.html
+    if not os.path.exists(RUTA_INDEX):
+        print(f"❌ ERROR: No se encuentra el archivo: {RUTA_INDEX}")
+        print("   Asegúrate de ejecutar este script desde la raíz del proyecto")
+        return 1
     
-    currencies = get_uf_and_currencies()
-    if currencies:
-        indicators.update(currencies)
-        print("  ✓ UF, USD/CLP, EUR/CLP obtenidos")
+    # 1. Obtener datos
+    html_ticker = obtener_indicadores()
+    html_noticias = obtener_noticias()
     
-    bitcoin = get_bitcoin_price()
-    if bitcoin:
-        indicators['bitcoin'] = bitcoin
-        print("  ✓ Bitcoin obtenido")
+    # Verificar si obtuvimos al menos algo
+    if not html_ticker and not html_noticias:
+        print()
+        print("❌ ERROR: No se pudo obtener ningún dato")
+        print("   El archivo HTML no será actualizado")
+        return 1
     
-    sp500 = get_sp500()
-    if sp500:
-        indicators['sp500'] = sp500
-        print("  ✓ S&P 500 obtenido")
+    # 2. Leer HTML
+    print()
+    print("📂 Leyendo index.html...")
+    try:
+        with open(RUTA_INDEX, 'r', encoding='utf-8') as f:
+            html_original = f.read()
+    except Exception as e:
+        print(f"❌ ERROR al leer index.html: {e}")
+        return 1
     
-    # Obtener noticias
-    print("\n📰 Obteniendo noticias económicas...")
-    news = get_all_news()
+    # 3. Inyectar contenido
+    print()
+    print("💉 Inyectando datos en HTML...")
+    html_actualizado = inyectar_contenido(html_original, html_ticker, html_noticias)
     
-    chile_count = len(news.get('chile', []))
-    usa_count = len(news.get('usa', []))
-    europe_count = len(news.get('europe', []))
-    spain_count = len(news.get('spain', []))
-    
-    print(f"  ✓ Chile: {chile_count} noticias")
-    print(f"  ✓ EEUU: {usa_count} noticias")
-    print(f"  ✓ Europa: {europe_count} noticias")
-    print(f"  ✓ España: {spain_count} noticias")
-    
-    # Actualizar HTML
-    print("\n🔄 Actualizando index.html...")
-    success = update_html(indicators, news)
-    
-    if success:
-        print("\n✅ ¡Actualización completada exitosamente!")
-    else:
-        print("\n❌ Error en la actualización")
-        exit(1)
+    # 4. Guardar HTML actualizado
+    try:
+        with open(RUTA_INDEX, 'w', encoding='utf-8') as f:
+            f.write(html_actualizado)
+        print()
+        print("=" * 60)
+        print("✅ ¡PROCESO COMPLETADO EXITOSAMENTE!")
+        print("=" * 60)
+        print(f"   Archivo actualizado: {RUTA_INDEX}")
+        chile_tz = timezone(timedelta(hours=-3))
+        print(f"   Timestamp: {datetime.now(chile_tz).strftime('%Y-%m-%d %H:%M:%S')}")
+        print()
+        return 0
+        
+    except Exception as e:
+        print(f"❌ ERROR al guardar index.html: {e}")
+        return 1
+
 
 if __name__ == "__main__":
-    main()
+    exit(main())
