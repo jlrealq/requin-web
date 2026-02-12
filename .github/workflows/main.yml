@@ -1,0 +1,77 @@
+name: Robot Noticias e Indicadores
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 11 * * *' # Ejecutar a las 8:00 AM Chile (11:00 UTC)
+    - cron: '0 18 * * *' # Ejecutar a las 3:00 PM Chile (18:00 UTC)
+
+# Permisos necesarios para escribir en gh-pages
+permissions:
+  contents: write
+
+jobs:
+  web-deploy:
+    name: 🚀 Actualizar y Subir
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Obtener código
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: 🐍 Instalar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: 📦 Instalar herramientas
+      run: |
+        pip install -r requirements.txt
+
+    - name: 🧠 Ejecutar Cerebro
+      run: |
+        python cerebro.py
+
+    - name: 📝 Commit y push de cambios
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add index.html
+        if git diff --staged --quiet; then
+          echo "No hay cambios para commitear"
+        else
+          git commit -m "🤖 Actualización automática de datos - $(date '+%Y-%m-%d %H:%M:%S')"
+          git pull --rebase origin main
+          git push origin main
+        fi
+
+    - name: 📤 Subir a Servidor FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: /public_html/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/.github/**
+          **/requirements.txt
+          **/cerebro.py
+          **/*.md
+          **/*.jpg
+          **/*.jpeg
+          **/*.png
+
+    - name: 🌐 Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./
+        publish_branch: gh-pages
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
+        commit_message: '🤖 Actualización automática de datos'
