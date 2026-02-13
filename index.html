@@ -4,11 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<<<<<<< HEAD
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-=======
-    <meta name="viewport" content="width=device-width, initial-scale=1.">
->>>>>>> cd2e8242b016e5465cbcd0b5dd6b2f724e18e8ac
     <title>Requin & Asociados | Consultoría Multidisciplinar</title>
     <meta name="description"
         content="Requin & Asociados: Consultoría multidisciplinar experta en arquitectura financiera, auditoría, gestión legal tributaria y desarrollo de proyectos.">
@@ -70,14 +66,11 @@
             font-size: 30px;
             z-index: 100;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-<<<<<<< HEAD
             transition: transform 0.3s ease;
         }
 
         .float-wa:hover {
             transform: scale(1.1);
-=======
->>>>>>> cd2e8242b016e5465cbcd0b5dd6b2f724e18e8ac
         }
 
         .up {
@@ -87,10 +80,7 @@
         .down {
             color: #ef4444;
         }
-    </style>
-</head>
 
-<<<<<<< HEAD
         /* --- NEW ANIMATIONS & MICRO-INTERACTIONS --- */
 
         /* Fade In Up Logic */
@@ -105,9 +95,6 @@
             opacity: 1;
             transform: none;
         }
-
-        /* Staggered excessive delay classes if needed, 
-           but IntersectionObserver handles natural scroll trigger nicely */
 
         /* Card Hover Effects */
         .service-card {
@@ -177,38 +164,6 @@
 
         .nav-link:hover::after {
             width: 100%;
-        }
-
-        /* Calculator Styles */
-        input[type=range] {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 100%;
-            background: transparent;
-        }
-
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            height: 24px;
-            width: 24px;
-            border-radius: 50%;
-            background: #ca8a04;
-            cursor: pointer;
-            margin-top: -10px;
-            box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
-        }
-
-        input[type=range]::-webkit-slider-runnable-track {
-            width: 100%;
-            height: 4px;
-            cursor: pointer;
-            background: #cbd5e1;
-            border-radius: 2px;
-        }
-
-        .calculator-card {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
         }
     </style>
 </head>
@@ -366,152 +321,6 @@
                         <li>• Levantamiento Capital Privado</li>
                         <li>• Estructuración Estratégica</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CALCULATOR SECTION -->
-    <section id="calculadora" class="py-24 bg-slate-900 relative overflow-hidden">
-        <!-- Decoration -->
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
-            <div class="absolute -top-24 -left-24 w-96 h-96 bg-yellow-600 rounded-full blur-3xl"></div>
-            <div class="absolute top-1/2 right-0 w-64 h-64 bg-slate-700 rounded-full blur-3xl"></div>
-        </div>
-
-        <div class="container mx-auto px-6 relative z-10 fade-in-section">
-            <div class="text-center mb-12">
-                <span class="text-yellow-600 font-bold uppercase tracking-widest text-xs mb-2 block">Herramienta
-                    Estratégica</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-white uppercase italic mb-6">Simulador de Rentabilidad
-                </h2>
-                <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-                    Proyecte el impacto real de una optimización financiera y tributaria en su empresa. Descubra el
-                    capital oculto en su balance.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-                <!-- Inputs Panel -->
-                <div
-                    class="lg:col-span-7 bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm shadow-2xl">
-                    <h3 class="text-white text-xl font-bold uppercase mb-8 border-b border-white/10 pb-4">
-                        <i class="fas fa-sliders-h text-yellow-600 mr-3"></i>Datos Financieros
-                    </h3>
-
-                    <!-- Slider 1 -->
-                    <div class="mb-8">
-                        <div class="flex justify-between text-sm mb-4 font-bold uppercase">
-                            <label class="text-slate-300">Facturación Anual Estimada</label>
-                            <span class="text-yellow-500" id="incomeDisplay">$500.000.000</span>
-                        </div>
-                        <input type="range" min="50000000" max="5000000000" step="10000000" value="500000000"
-                            id="incomeInput" oninput="calculate()">
-                        <div class="flex justify-between text-[10px] text-slate-500 mt-2 uppercase">
-                            <span>$50M</span>
-                            <span>$5.000M+</span>
-                        </div>
-                    </div>
-
-                    <!-- Slider 2 -->
-                    <div class="mb-8">
-                        <div class="flex justify-between text-sm mb-4 font-bold uppercase">
-                            <label class="text-slate-300">Margen EBITDA Actual (%)</label>
-                            <span class="text-yellow-500" id="marginDisplay">15%</span>
-                        </div>
-                        <input type="range" min="1" max="50" step="1" value="15" id="marginInput" oninput="calculate()">
-                        <div class="flex justify-between text-[10px] text-slate-500 mt-2 uppercase">
-                            <span>1% (Riesgo)</span>
-                            <span>50% (Óptimo)</span>
-                        </div>
-                    </div>
-
-                    <!-- Toggle Strategy -->
-                    <div class="mb-6">
-                        <h4 class="text-sm text-slate-300 font-bold uppercase mb-4">Estrategia de Optimización</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <button
-                                class="strategy-btn active bg-yellow-600 text-slate-900 font-bold py-3 px-4 rounded border border-yellow-600 uppercase text-xs transition"
-                                onclick="setStrategy(1, this)">Conservadora</button>
-                            <button
-                                class="strategy-btn bg-transparent text-slate-400 font-bold py-3 px-4 rounded border border-slate-600 hover:border-yellow-600 hover:text-white uppercase text-xs transition"
-                                onclick="setStrategy(2, this)">Moderada</button>
-                            <button
-                                class="strategy-btn bg-transparent text-slate-400 font-bold py-3 px-4 rounded border border-slate-600 hover:border-yellow-600 hover:text-white uppercase text-xs transition"
-                                onclick="setStrategy(3, this)">Agresiva</button>
-                        </div>
-                        <p class="text-xs text-slate-500 mt-3 italic" id="strategyDesc">Optimización de costos fijos y
-                            revisión tributaria básica.</p>
-                    </div>
-                </div>
-
-                <!-- Results Panel -->
-                <div class="lg:col-span-5 relative">
-                    <!-- Floating Badge -->
-                    <div
-                        class="absolute -top-4 -right-4 bg-yellow-600 text-slate-900 font-bold text-xs uppercase px-4 py-1 rounded shadow-lg z-20">
-                        Proyección IA
-                    </div>
-
-                    <div
-                        class="bg-gradient-to-br from-white to-gray-100 p-8 rounded-2xl shadow-2xl border-t-4 border-yellow-600 h-full flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-slate-900 text-lg font-bold uppercase mb-2">Resultado Proyectado</h3>
-                            <p class="text-xs text-slate-500 uppercase mb-8">Estimación anual basada en auditoría Requin
-                            </p>
-
-                            <div class="space-y-6">
-                                <!-- Pre-Optimization -->
-                                <div>
-                                    <div class="flex justify-between text-xs text-slate-500 uppercase mb-1 font-bold">
-                                        <span>Utilidad Actual</span>
-                                        <span id="currentProfit">$75.000.000</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-gray-400 h-2 rounded-full" style="width: 50%"></div>
-                                    </div>
-                                </div>
-
-                                <!-- Post-Optimization -->
-                                <div>
-                                    <div class="flex justify-between text-sm text-slate-900 uppercase mb-1 font-bold">
-                                        <span>Utilidad Optimizada</span>
-                                        <span class="text-green-600" id="optimizedProfit">$86.250.000</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-3 relative overflow-hidden">
-                                        <div class="bg-yellow-600 h-3 rounded-full absolute top-0 left-0 transition-all duration-1000"
-                                            id="barOptimized" style="width: 65%"></div>
-                                        <div class="active-scan absolute top-0 left-0 h-full w-full bg-white/20"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Big Number -->
-                            <div
-                                class="mt-10 p-6 bg-slate-900 rounded-lg text-center relative overflow-hidden group hover:scale-[1.02] transition duration-300">
-                                <div class="relative z-10">
-                                    <p class="text-slate-400 text-xs uppercase tracking-widest mb-1">Capital Recuperable
-                                        Anual</p>
-                                    <h4 class="text-3xl md:text-4xl font-bold text-yellow-500" id="savingsProfit">
-                                        +$11.250.000</h4>
-                                    <p class="text-[10px] text-green-400 mt-2 uppercase font-bold"><i
-                                            class="fas fa-arrow-up mr-1"></i><span id="percentIncrease">15%</span> de
-                                        incremento</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-8">
-                            <button
-                                class="w-full bg-yellow-600 text-slate-900 font-bold py-4 rounded hover:bg-yellow-500 transition shadow-lg uppercase tracking-widest text-xs btn-premium">
-                                Solicitar Auditoría Detallada
-                            </button>
-                            <p class="text-[10px] text-center text-slate-400 mt-3 uppercase">
-                                *Cifras estimadas. Requiere validación contable por especialistas de Requin & Asociados.
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -740,65 +549,6 @@
 
     <!-- Scripts -->
     <script>
-        // Calculator Logic
-        let strategyMultiplier = 0.15; // Default Conservative
-
-        function formatCurrency(value) {
-            return new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 }).format(value);
-        }
-
-        function setStrategy(level, btn) {
-            // Reset styles
-            document.querySelectorAll('.strategy-btn').forEach(b => {
-                b.classList.remove('bg-yellow-600', 'text-slate-900', 'border-yellow-600');
-                b.classList.add('bg-transparent', 'text-slate-400', 'border-slate-600');
-            });
-            // Set active
-            btn.classList.remove('bg-transparent', 'text-slate-400', 'border-slate-600');
-            btn.classList.add('bg-yellow-600', 'text-slate-900', 'border-yellow-600');
-
-            if (level === 1) {
-                strategyMultiplier = 0.15;
-                document.getElementById('strategyDesc').innerText = "Optimización de costos fijos y revisión tributaria básica.";
-            } else if (level === 2) {
-                strategyMultiplier = 0.25;
-                document.getElementById('strategyDesc').innerText = "Reestructuración de pasivos e ingeniería financiera.";
-            } else {
-                strategyMultiplier = 0.40;
-                document.getElementById('strategyDesc').innerText = "Holding de inversiones y planificación tributaria internacional.";
-            }
-            calculate();
-        }
-
-        function calculate() {
-            const income = parseInt(document.getElementById('incomeInput').value);
-            const margin = parseInt(document.getElementById('marginInput').value) / 100;
-
-            const currentProfit = income * margin;
-            const savings = currentProfit * strategyMultiplier;
-            const optimizedProfit = currentProfit + savings;
-
-            // Update Displays
-            document.getElementById('incomeDisplay').innerText = formatCurrency(income);
-            document.getElementById('marginDisplay').innerText = (margin * 100).toFixed(0) + '%';
-
-            document.getElementById('currentProfit').innerText = formatCurrency(currentProfit);
-            document.getElementById('optimizedProfit').innerText = formatCurrency(optimizedProfit);
-            document.getElementById('savingsProfit').innerText = "+" + formatCurrency(savings);
-            document.getElementById('percentIncrease').innerText = (strategyMultiplier * 100).toFixed(0) + '%';
-
-            // Update Graphics (simplified logic for bar width)
-            // Max potential scale could be assumed for visual proportion
-            const widthPercentage = Math.min((optimizedProfit / (currentProfit * 1.5)) * 100, 100);
-            document.getElementById('barOptimized').style.width = `${widthPercentage}%`;
-        }
-
-        // Initialize Calculator
-        document.addEventListener("DOMContentLoaded", function () {
-            calculate();
-        });
-
-
         function actualizarRangos() {
             const pais = document.getElementById('paisSelector').value;
             const selector = document.getElementById('rangoVentas');
@@ -818,423 +568,19 @@
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
 
-=======
-<body class="bg-gray-50 text-slate-900 flex flex-col min-h-screen">
-
-    <!-- WhatsApp flotante -->
-    <a href="https://wa.me/56968224180" target="_blank" class="float-wa">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Navegación -->
-    <nav class="bg-slate-900 text-white p-4 sticky top-0 z-50 shadow-xl">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="Logo-Requin.jpg" alt="Logo Requin & Asociados" class="h-10 border border-yellow-600">
-                <span class="text-xl font-bold text-yellow-600 uppercase tracking-wide italic">REQUIN & ASOCIADOS</span>
-            </div>
-            
-            <!-- Botón Hamburguesa Móvil -->
-            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none p-2">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-
-            <!-- Menú Desktop -->
-            <div class="hidden md:flex gap-6 text-xs font-bold uppercase italic items-center">
-                <a href="#inicio" class="hover:text-yellow-500 transition">Inicio</a>
-                <a href="#servicios" class="hover:text-yellow-500 transition">Servicios</a>
-                <a href="#noticias" class="hover:text-yellow-500 transition">Mercados</a>
-                <a href="#contacto"
-                    class="bg-yellow-600 px-4 py-2 rounded text-slate-900 hover:bg-yellow-500 transition">Contacto</a>
-            </div>
-        </div>
-
-        <!-- Menú Móvil (Oculto por defecto) -->
-        <div id="mobile-menu" class="hidden md:hidden mt-4 bg-slate-800 rounded-lg overflow-hidden border-t border-slate-700 shadow-xl">
-            <div class="flex flex-col p-4 space-y-4 text-center font-bold uppercase italic text-sm">
-                <a href="#inicio" class="hover:text-yellow-500 transition block py-2 border-b border-slate-700">Inicio</a>
-                <a href="#servicios" class="hover:text-yellow-500 transition block py-2 border-b border-slate-700">Servicios</a>
-                <a href="#noticias" class="hover:text-yellow-500 transition block py-2 border-b border-slate-700">Mercados</a>
-                <a href="#contacto" class="bg-yellow-600 px-4 py-3 rounded text-slate-900 hover:bg-yellow-500 transition block mt-2 shadow-lg">Contacto</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Ticker de Indicadores -->
-    <div class="ticker-wrap text-white font-mono text-xs">
-        <div class="ticker">
-            <!--TICKER_START-->
-            <span class="mx-10 text-yellow-500 italic uppercase">
-                UF: $39.699 <span class="up">▲</span>
-            </span>
-            <span class="mx-10 text-yellow-500 italic uppercase">
-                USD/CLP: $856 <span class="down">▼</span>
-            </span>
-            <span class="mx-10 text-yellow-500 italic uppercase">
-                EUR/CLP: $1.018 <span class="up">▲</span>
-            </span>
-            <span class="mx-10 text-gray-400 text-[10px] italic uppercase">
-                ACTUALIZADO: 12/02 11:35
-            </span>
-            <!--TICKER_END-->
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <header id="inicio" class="bg-slate-900 text-white py-24 text-center md:text-left italic">
-        <div class="container mx-auto px-6">
-            <h1 class="text-5xl md:text-6xl font-bold uppercase mb-6 leading-tight">
-                Expertos en <br><span class="text-yellow-600">Arquitectura Financiera</span>
-            </h1>
-            <p class="text-slate-400 text-xl mb-8 max-w-2xl">
-                Auditoría, gestión legal tributaria y desarrollo integral de proyectos con precisión matemática.
-            </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-                <a href="#contacto"
-                    class="bg-yellow-600 text-slate-900 px-8 py-3 rounded font-bold hover:bg-yellow-500 transition shadow-lg text-center uppercase tracking-widest text-sm">
-                    Solicitar Diagnóstico
-                </a>
-                <a href="#servicios"
-                    class="border border-yellow-600 text-yellow-600 px-8 py-3 rounded font-bold hover:bg-yellow-600 hover:text-slate-900 transition text-center uppercase tracking-widest text-sm">
-                    Ver Servicios
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Servicios -->
-    <section id="servicios" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold uppercase mb-4 italic">Nuestros Servicios</h2>
-                <div class="h-1 w-24 bg-yellow-600 mx-auto"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Servicio 1 -->
-                <div class="p-8 bg-gray-50 border-t-4 border-yellow-600 shadow-lg hover:shadow-xl transition">
-                    <div class="text-3xl mb-4 text-yellow-600">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                    </div>
-                    <h3 class="text-sm font-bold mb-4 uppercase tracking-wide">Contabilidad y Auditoría</h3>
-                    <ul class="text-xs text-gray-600 space-y-2 uppercase">
-                        <li>• Contabilidad General Corporativa</li>
-                        <li>• Auditoría de Estados Financieros</li>
-                        <li>• Auditoría Forense y Peritajes</li>
-                    </ul>
-                </div>
-
-                <!-- Servicio 2 -->
-                <div class="p-8 bg-gray-50 border-t-4 border-yellow-600 shadow-lg hover:shadow-xl transition">
-                    <div class="text-3xl mb-4 text-yellow-600">
-                        <i class="fas fa-gavel"></i>
-                    </div>
-                    <h3 class="text-sm font-bold mb-4 uppercase tracking-wide">Asesoramiento Legal</h3>
-                    <p class="text-xs text-gray-600 mb-2 uppercase">Especialidad en Derecho
-                        Tributario</p>
-                    <ul class="text-xs text-gray-600 space-y-2 uppercase">
-                        <li>• Consultoría Legal Civil</li>
-                        <li>• Asesoría en Derecho Laboral</li>
-                    </ul>
-                </div>
-
-                <!-- Servicio 3 -->
-                <div class="p-8 bg-gray-50 border-t-4 border-yellow-600 shadow-lg hover:shadow-xl transition">
-                    <div class="text-3xl mb-4 text-yellow-600">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <h3 class="text-sm font-bold mb-4 uppercase tracking-wide">Gestión de Proyectos</h3>
-                    <ul class="text-xs text-gray-600 space-y-2 uppercase">
-                        <li>• Evaluación Técnica y Económica</li>
-                        <li>• Puesta en Marcha Operacional</li>
-                        <li>• Control de Gestión Integral</li>
-                    </ul>
-                </div>
-
-                <!-- Servicio 4 -->
-                <div class="p-8 bg-gray-50 border-t-4 border-yellow-600 shadow-lg hover:shadow-xl transition">
-                    <div class="text-3xl mb-4 text-yellow-600">
-                        <i class="fas fa-landmark"></i>
-                    </div>
-                    <h3 class="text-sm font-bold mb-4 uppercase tracking-wide">Obtención de Fondos</h3>
-                    <ul class="text-xs text-gray-600 space-y-2 uppercase">
-                        <li>• Gestión de Fondos Públicos</li>
-                        <li>• Levantamiento Capital Privado</li>
-                        <li>• Estructuración Estratégica</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Panorama Económico / Noticias -->
-    <section id="noticias" class="py-20 bg-gray-100 border-y">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold uppercase mb-10 italic">Panorama Económico</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!--NOTICIAS_START-->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
-                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">CHILE</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Dólar abre estable en Chile con cobre firme y dólar global contenido</h4>
-                    <a href="https://news.google.com/rss/articles/CBMimAFBVV95cUxOZXhUWk91ZXhxNkZmWldDT3ZENnZ6M1k3cUpwR3JuMGE0aHRIVkh2YWVWMVdGZGtmTnFLQ21pdzJQU0R3RTIxbjF5cFktd0FxS2pxejNXQmNOcGRqNnR3N2kxVThVXzNaV0toZTFWWDl5ckZadjlvVmpKLU43ODUtZmxYeGJlZ0MxN3M3UUNGRmNqQm9ZZUhoNA?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
-                        Leer artículo completo
-                        <i class="fas fa-external-link-alt text-[10px]"></i>
-                    </a>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
-                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">CHILE</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Lanzan en Chile libro sobre Economía Verde</h4>
-                    <a href="https://news.google.com/rss/articles/CBMidEFVX3lxTE4zVnZEQkJscnhjaEd1ZWQweF93VFdxLXI0T2dBT0RmTTJYVWsyZUVsUDk4M3c0WVdGRklmc01JTzl6elpXWFJhRFRmNHpSMUM3cDl0N0RxTEFiOVdJMGhaWHVodjAwVkt4aVBnUTZmcUROWHFy?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
-                        Leer artículo completo
-                        <i class="fas fa-external-link-alt text-[10px]"></i>
-                    </a>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
-                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">CHILE</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Funciona con membresías: supermercado PriceSmart (EEUU) define las dos comunas para su arribo a Chile</h4>
-                    <a href="https://news.google.com/rss/articles/CBMijAJBVV95cUxQMDRDQmM0bzVfdnR2RGtTQ0FoSFJGMUJodTQzVDF4OXptdEdkVFZSN3Y5cS1PRE0zdlV0ZUtxRWIyWVJiNGFQNjl0YlhHY1BHbHZFeFBfU2NRLVBBMWdaX3RRYS14c3AtWnI3LWlJeFJpc3RFcHYyWGpTZVpoRGpINFM3VDh5NkVsd1NhcGhFMS1BWmtnbW1QVmxKWllNeFVYOXdHSTVLV3d3bjBJYWZwQldRSVJSU2NJUUdVbTdVcE11OGlkZ2gzMUxPOUI5eS1uNDNRSDAtVm5USGlMWnJxR0ppMzlVVFNIM3VpSUtwV3FRZkNYQ2VQMzJDV3p2RUVFZUJLMWQ1d1l4S19r?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
-                        Leer artículo completo
-                        <i class="fas fa-external-link-alt text-[10px]"></i>
-                    </a>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
-                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">USA</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">DBI califica como exitosa la participación de la delegación boliviana en el Foro Económico de la CAF en Panamá</h4>
-                    <a href="https://news.google.com/rss/articles/CBMi7gFBVV95cUxOcmxSTDYwUHc1eHBHeGhvNklUU2JqRlZxS0NLaFNlUEV4YjJRN1R0R1U2OFJ1eGRDVV9Dc3p6cHhUVVo4REs2bGpPR19iN0hWQnNHQS1PYlhoM2kta0taLXhLczFpZ1JhM2w4TVVVUm5yWHRvcTdMb0NXbHN2R3NhNmJXSTQ0aXcta3hERzBjZXZfaWh3OVF2dDRfMmxBd2lLVm9LMFFPd0VhZ0hkSXlHWW1IVWRrYXVHU3k3TDk4ZzJ6TzN0Q2hMd0lZRXdBMEdfTFgtMU9MOGJMRnM3cFViWC10aVlETTVqbDlPeWd30gHzAUFVX3lxTE82R2NDZGZuRHVSSjFNVTNZdVFqa2pKRG5zSFB6VE9pdUZFWlF1Uzg0bFI4YlE4ZDl3Q00wVndBN29UU2RmaERJZ3djdElkamVDMmlJQjJuaG9pVXFCeUNRZ3l6em5qOGczX3VhaF9wYTJWZ2dibWpGY2RYNjhmVjl0aFhUZXAtZGVJOExFTnFYekREaElQZFpXVTFodV9wSjI0ckEya1Z2N3hzUC1UZnlkakFBeDc1VWduZ0xBTzdLMlItVUljdzBydTktcmE5X2RXSUNZU0otVHJMSjVFMWZSMFQ3ay0zemt5ZlNVdVFTODV3TQ?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
-                        Leer artículo completo
-                        <i class="fas fa-external-link-alt text-[10px]"></i>
-                    </a>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
-                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">EUROPA</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Economía.- Orbán pide cortar la ayuda a Ucrania y destinarla a competitividad: "La guerra es mala para los negocios"</h4>
-                    <a href="https://news.google.com/rss/articles/CBMigAJBVV95cUxPbVkyaUhwVkowZ05NRDdSZzZxWUpmVkxJcDBicmUtWTdqTm5nYmtwR25PbkQzU1N4akQ3ME9TSmhZTVpqZXN6dGl1U1c3SmVQSXg0NkRnNUxaOURxckt5T09XdDR0QUI4c2hESDZhNGxkTkVuN0dpM3RTRk9NbVRkd2w4enZmQnc5UHhzZDF2c3Z5NU1pVGp0cjNpRElRU0dQdWw2RlBuXzgyQm1lYklKMmRoZW5iWkF4RElieG5DazhQYllVQ3E1QTZvSGNzQUZvMFFoS3hzTGxoN1RrSC1UcHBFVGl4UHM4OUVrbXlfRVZTS3VFM2diMi11TjJucGVv0gGGAkFVX3lxTE9JUjlCbnkxNWRiVnBJaTdLVVl4UnQ4QXVBclRXSFFYam9OZElXRHFoV2lNd2lTUkJEbE1aNWZTZEFvN2lJNW93bUZrS1JncURWM0w0aHlDSUFXc2JEMnY2MjFoODBDcTRxQk5VaVBHLVhtaVltV0p6Q3hEOVZEcGVMV3oxdmhYZEUxNDI0Wl94dWMzQXRBdFlxVThCUFhrSVdYTDd5Rmw1M2FWRzgyc1dvNTFZNjc3bzF1cjRheUZ2cUQ1aWpZT3R1Q3JVRHhHSWttVklTMzBrNUFWWm9FV1NVellIbkFsaThlTUJ4VDdab3UwS1J1ZlF1RUpfU0ZGQVdUeVljMlE?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
-                        Leer artículo completo
-                        <i class="fas fa-external-link-alt text-[10px]"></i>
-                    </a>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
-                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">ESPAÑA</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">La Información Económica: actualidad económica de mercados y bolsas</h4>
-                    <a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTE1VOEVvLVFJZExEUERIN2hMNW9zeGMweFhzTTBob1EtQ3EzYkNEbThrblZ6Uk5VZGNfc3RRd2F4T3k0VGNxZDZLZ2tlbDZDODk1?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
-                        Leer artículo completo
-                        <i class="fas fa-external-link-alt text-[10px]"></i>
-                    </a>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
-                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">LEGAL CHILE</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Cómo funciona el proyecto de ley que busca prohibir uso de redes sociales a menores de 16 años</h4>
-                    <a href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxPdVA3X1BkX2QxREIzdW0yQVIyR2xzczlyVWZHSUl3MnpwSXpqNlppLWNQc2lDdjVCSHNubjVOaUlsdW5fYmg5UEFBQWNITFhzOU1nWnVLUm5ydzB6YXg5b2ZQSXJPR25oVk1vVzRSY0o3OWJpWEtIR3pfWGViMU5RYWs2eVp1RXc5NDNkZjZsSHAtM3FQQkdUeDJ0amlVR3k2S0xOdDcyWHFleXNJQ1RSZDVad1Rfa1ctUVBheW5MeW5jZVBKR09EbWhDa1BjWkJDZHN3MjB3M1VDcXV1Qkdn?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
-                        Leer artículo completo
-                        <i class="fas fa-external-link-alt text-[10px]"></i>
-                    </a>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
-                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">LEGAL CHILE</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Ley 21.802 regula la seguridad municipal y establece nuevas reglas para inspectoras e inspectores municipales</h4>
-                    <a href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxNX1NveUNOSjk2dllzei1MZGEyM0ZHS0ppdkl3eEJHdzRidDVPbjh3SDF5X1JkeW9pbHgxV0RldlVDcUZhNE9zQjVhYmtMTEZJYnV4ZmRkQ216Si1JdDByUUdvZTJkTlhXX3Y1UkVWUEVLemJGczJ0UFpPYkk5UDZEdjdiTmUzX2M2eXQ5NkxqRGxTT2dQcEl6UDVSVF9ZSkVsdlUyLWhEdHZwc3gxX0JfeWV2ejg0SDNoMXR6Rm41a3VuVzFsdS1HQjdIUkhmZjZUQ1ZEQVFMS0l0b1Zf?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
-                        Leer artículo completo
-                        <i class="fas fa-external-link-alt text-[10px]"></i>
-                    </a>
-                </div>
-                <!--NOTICIAS_END-->
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-center uppercase mb-12 italic">Preguntas Frecuentes</h2>
-            <div class="space-y-4">
-                <details class="group p-6 bg-gray-50 rounded shadow cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-sm uppercase">
-                        <span>¿Trabajan con empresas fuera de Chile?</span>
-                        <span class="text-yellow-600 transition group-open:rotate-180">▼</span>
-                    </summary>
-                    <p class="text-xs text-gray-600 mt-4 border-l-2 border-yellow-600 pl-4 uppercase">
-                        Sí. Asesoramos a empresas españolas y latinoamericanas, adaptando modelos a normativa y divisa
-                        local (Euro/Dólar).
-                    </p>
-                </details>
-
-                <details class="group p-6 bg-gray-50 rounded shadow cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-sm uppercase">
-                        <span>¿Qué metodologías usan para evaluar proyectos?</span>
-                        <span class="text-yellow-600 transition group-open:rotate-180">▼</span>
-                    </summary>
-                    <p class="text-xs text-gray-600 mt-4 border-l-2 border-yellow-600 pl-4 uppercase">
-                        Utilizamos estándares internacionales VAN/TIR y análisis de sensibilidad para escenarios
-                        financieros.
-                    </p>
-                </details>
-
-                <details class="group p-6 bg-gray-50 rounded shadow cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-sm uppercase">
-                        <span>¿Cómo se estructuran sus honorarios?</span>
-                        <span class="text-yellow-600 transition group-open:rotate-180">▼</span>
-                    </summary>
-                    <p class="text-xs text-gray-600 mt-4 border-l-2 border-yellow-600 pl-4 uppercase">
-                        Ofrecemos modelos flexibles: fee fijo por proyecto o tarifas según alcance estratégico.
-                    </p>
-                </details>
-
-                <details class="group p-6 bg-gray-50 rounded shadow cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-sm uppercase">
-                        <span>¿La sesión de diagnóstico tiene costo?</span>
-                        <span class="text-yellow-600 transition group-open:rotate-180">▼</span>
-                    </summary>
-                    <p class="text-xs text-gray-600 mt-4 border-l-2 border-yellow-600 pl-4 uppercase">
-                        La sesión inicial sirve para evaluar si somos el socio estratégico adecuado para los objetivos
-                        de su empresa.
-                    </p>
-                </details>
-
-                <details class="group p-6 bg-gray-50 rounded shadow cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-sm uppercase">
-                        <span>¿Cómo manejan la confidencialidad?</span>
-                        <span class="text-yellow-600 transition group-open:rotate-180">▼</span>
-                    </summary>
-                    <p class="text-xs text-gray-600 mt-4 border-l-2 border-yellow-600 pl-4 uppercase">
-                        Firmamos acuerdos de no divulgación (NDA) rigurosos antes de acceder a cualquier información
-                        financiera sensible.
-                    </p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="py-24 bg-slate-900 text-white">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <h2 class="text-4xl font-bold text-center uppercase mb-12 text-yellow-600 italic">Hablemos de Negocios</h2>
-
-            <!-- Formulario -->
-            <form action="https://formspree.io/f/mvzrarkk" method="POST"
-                class="bg-white p-8 rounded shadow-2xl text-slate-900 mb-16">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <input type="text" name="nombre" placeholder="NOMBRE COMPLETO"
-                        class="border p-3 rounded text-sm outline-none focus:border-yellow-600 uppercase" required>
-                    <input type="tel" name="telefono" placeholder="TELÉFONO"
-                        class="border p-3 rounded text-sm outline-none focus:border-yellow-600 uppercase" required>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <input type="text" name="empresa" placeholder="NOMBRE EMPRESA"
-                        class="border p-3 rounded text-sm outline-none focus:border-yellow-600 uppercase" required>
-                    <input type="text" name="rut" placeholder="RUT"
-                        class="border p-3 rounded text-sm outline-none focus:border-yellow-600 uppercase" required>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <input type="email" name="email" placeholder="EMAIL CORPORATIVO"
-                        class="border p-3 rounded text-sm outline-none focus:border-yellow-600 uppercase" required>
-                    <select id="paisSelector" name="pais" onchange="actualizarRangos()"
-                        class="border p-3 rounded text-sm outline-none focus:border-yellow-600 font-bold uppercase bg-white">
-                        <option value="chile">🇨🇱 CHILE</option>
-                        <option value="espana">🇪🇸 ESPAÑA</option>
-                    </select>
-                </div>
-                <select id="rangoVentas" name="rango_ventas"
-                    class="w-full border p-3 rounded text-sm font-bold mb-6 outline-none focus:border-yellow-600 uppercase bg-white"></select>
-                <textarea name="mensaje" rows="4" placeholder="¿EN QUÉ PODEMOS AYUDARLE?"
-                    class="w-full border p-3 rounded text-sm outline-none focus:border-yellow-600 mb-6 uppercase"
-                    required></textarea>
-                <button type="submit"
-                    class="w-full bg-slate-900 text-white font-bold py-4 rounded hover:bg-yellow-600 hover:text-slate-900 transition shadow-lg uppercase tracking-widest text-sm">
-                    Enviar Solicitud
-                </button>
-            </form>
-
-            <!-- Información de Contacto -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-slate-700">
-                <div>
-                    <h4 class="font-bold text-yellow-600 mb-3 text-xs uppercase tracking-wider">Oficina Central</h4>
-                    <p class="text-xs uppercase mb-2">Calle La Gioconda, 4355<br>Las Condes - Santiago de Chile</p>
-                    <p class="text-sm text-yellow-600 font-bold uppercase">
-                        <a href="mailto:contacto@requinspa.com" class="hover:text-white transition">
-                            <i class="fas fa-envelope mr-2"></i>contacto@requinspa.com
-                        </a>
-                    </p>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-yellow-600 mb-3 text-xs uppercase tracking-wider">Chile 🇨🇱</h4>
-                    <div class="space-y-2 text-xs">
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span class="font-bold">🇨🇱 +56 9 6822 4180</span>
-                            <span class="text-yellow-600 font-bold">PYMES Y EMPRESAS</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-700 pb-2">
-                            <span class="font-bold">🇨🇱 +56 9 9326 0101</span>
-                            <span class="text-yellow-600 font-bold">EMPRENDEDORES</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold"><i class="fab fa-whatsapp text-green-500"></i> +56 9 6822
-                                4180</span>
-                            <span class="text-green-500 font-bold">WHATSAPP</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-yellow-600 mb-3 text-xs uppercase tracking-wider">España 🇪🇸</h4>
-                    <p class="text-xs font-bold border-b border-slate-700 pb-2 mb-2">🇪🇸 +34 682 028 354</p>
-                    <p class="text-xs text-slate-500 uppercase">Horario de atención UTC+1 (Madrid)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black text-gray-600 py-8 text-center text-xs uppercase tracking-widest border-t border-slate-900">
-        © 2026 REQUIN SPA & ASOCIADOS | SANTIAGO · MADRID
-    </footer>
-
-    <!-- Scripts -->
-    <script>
-        function actualizarRangos() {
-            const pais = document.getElementById('paisSelector').value;
-            const selector = document.getElementById('rangoVentas');
-            selector.innerHTML = "";
-            let opciones = pais === 'chile' ?
-                ["NIVEL DE VENTAS ANUAL (MM CLP)", "0 - 100 MM", "101 - 500 MM", "501 - 1.000 MM", "MÁS DE 1.000 MM"] :
-                ["NIVEL DE VENTAS ANUAL (EUR)", "MENOS DE 300K €", "300K - 2M €", "MÁS DE 2M €"];
-            opciones.forEach(texto => {
-                let opt = document.createElement("option");
-                opt.text = texto;
-                selector.add(opt);
+            // Cerrar menú al hacer click en un enlace
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
             });
         }
-        window.onload = actualizarRangos;
 
-        // Lógica del Menú Móvil
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
->>>>>>> cd2e8242b016e5465cbcd0b5dd6b2f724e18e8ac
-        // Cerrar menú al hacer click en un enlace
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
-        });
-    </script>
-</body>
-
-<<<<<<< HEAD
         // INTERSECTION OBSERVER FOR ANIMATIONS
         document.addEventListener("DOMContentLoaded", function () {
             const observerOptions = {
@@ -1261,6 +607,3 @@
 </body>
 
 </html>
-=======
-</html>
->>>>>>> cd2e8242b016e5465cbcd0b5dd6b2f724e18e8ac
