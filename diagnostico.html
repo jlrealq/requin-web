@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requin & Asociados | Simulador de Arquitectura Financiera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif !important;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Premium Input Styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #ca8a04;
+            cursor: pointer;
+            margin-top: -10px;
+            box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #cbd5e1;
+            border-radius: 2px;
+        }
+
+        select,
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        select:focus,
+        input:focus {
+            border-color: #ca8a04;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Specific override for light background inputs */
+        input.light-input {
+            background-color: #f8fafc !important;
+            /* slate-50 */
+            border-color: #cbd5e1 !important;
+            /* slate-300 */
+            color: #0f172a !important;
+            /* slate-900 */
+        }
+
+        input.light-input:focus {
+            background-color: #ffffff !important;
+            border-color: #ca8a04 !important;
+        }
+
+        /* Gauge Canvas */
+        #gauge-canvas {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-white min-h-screen">
+
+    <!-- Header Simulado -->
+    <nav class="bg-slate-900/80 backdrop-blur-md border-b border-white/10 p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="text-xl font-bold text-yellow-600 uppercase tracking-wide italic flex items-center gap-2">
+                    <i class="fas fa-chart-line"></i> REQUIN & ASOCIADOS
+                </div>
+            </div>
+            <a href="index.html" class="text-xs font-bold uppercase text-yellow-500 hover:text-white transition">
+                <i class="fas fa-arrow-left mr-2"></i>Volver al Sitio
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-12 relative">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
+            <div class="absolute top-20 left-1/4 w-96 h-96 bg-yellow-600/10 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-20 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]"></div>
+        </div>
+
+        <div class="text-center mb-12">
+            <span class="text-yellow-600 font-bold uppercase tracking-widest text-xs mb-3 block">Herramienta de
+                Diagnóstico Preliminar</span>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 uppercase italic">Simulador de Arquitectura Financiera</h1>
+            <p class="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
+                Descubra el nivel de eficiencia fiscal de su empresa y proyecte el capital oculto que podría liberar
+                mediante una reestructuración estratégica.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-7xl mx-auto">
+
+            <!-- INPUTS PANEL -->
+            <div class="lg:col-span-4 space-y-6">
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-md shadow-xl">
+                    <h3 class="text-lg font-bold uppercase mb-6 flex items-center text-white/90">
+                        <span
+                            class="w-8 h-8 rounded-full bg-yellow-600 flex items-center justify-center text-slate-900 mr-3 text-sm">1</span>
+                        Perfil de la Empresa
+                    </h3>
+
+                    <div class="space-y-6">
+                        <!-- Industria -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-400 mb-2">Industria /
+                                Sector</label>
+                            <div class="relative">
+                                <i class="fas fa-building absolute left-4 top-3.5 text-yellow-600/70"></i>
+                                <select id="inputIndustry"
+                                    class="w-full pl-10 pr-4 py-3 rounded-lg text-sm appearance-none cursor-pointer hover:border-yellow-600/50 transition bg-slate-800"
+                                    onchange="calculate()">
+                                    <option value="retail">Comercio / Retail</option>
+                                    <option value="services" selected>Servicios Profesionales</option>
+                                    <option value="transport">Transporte y Logística</option>
+                                    <option value="real_estate">Inmobiliario / Construcción</option>
+                                    <option value="technology">Tecnología / SaaS</option>
+                                    <option value="manufacturing">Manufactura / Industrial</option>
+                                    <option value="healthcare">Salud / Médico</option>
+                                    <option value="other">Otro Sector</option>
+                                </select>
+                                <i
+                                    class="fas fa-chevron-down absolute right-4 top-3.5 text-slate-500 text-xs pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <!-- Régimen Tributario -->
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-400 mb-2">Régimen Tributario
+                                Actual</label>
+                            <div class="relative">
+                                <i class="fas fa-file-invoice-dollar absolute left-4 top-3.5 text-yellow-600/70"></i>
+                                <select id="inputTaxRegime"
+                                    class="w-full pl-10 pr-4 py-3 rounded-lg text-sm appearance-none cursor-pointer hover:border-yellow-600/50 transition bg-slate-800"
+                                    onchange="calculate()">
+                                    <option value="14a">14 A - Semi Integrado (Estándar)</option>
+                                    <option value="14d3">14 D3 - Pro Pyme General</option>
+                                    <option value="14d8">14 D8 - Pro Pyme Transparente</option>
+                                    <option value="unk">No estoy seguro / Desconocido</option>
+                                </select>
+                                <i
+                                    class="fas fa-chevron-down absolute right-4 top-3.5 text-slate-500 text-xs pointer-events-none"></i>
+                            </div>
+                            <p class="text-[10px] text-slate-500 mt-2 italic">*Si desconoce su régimen, seleccionaremos
+                                el escenario conservador por defecto.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-md shadow-xl">
+                    <h3 class="text-lg font-bold uppercase mb-6 flex items-center text-white/90">
+                        <span
+                            class="w-8 h-8 rounded-full bg-yellow-600 flex items-center justify-center text-slate-900 mr-3 text-sm">2</span>
+                        Datos Financieros
+                    </h3>
+
+                    <!-- Facturación -->
+                    <div class="mb-8">
+                        <div class="flex justify-between text-xs mb-2 font-bold uppercase">
+                            <label class="text-slate-400">Facturación Anual</label>
+                            <span class="text-yellow-500" id="displayIncome">$500.000.000</span>
+                        </div>
+                        <input type="range" min="50000000" max="5000000000" step="10000000" value="500000000"
+                            id="inputIncome" oninput="calculate()">
+                        <div class="flex justify-between text-[10px] text-slate-600 mt-1">
+                            <span>$50M</span>
+                            <span>$5.000M+</span>
+                        </div>
+                    </div>
+
+                    <!-- Margen -->
+                    <div>
+                        <div class="flex justify-between text-xs mb-2 font-bold uppercase">
+                            <label class="text-slate-400">Margen EBITDA (%)</label>
+                            <span class="text-yellow-500" id="displayMargin">15%</span>
+                        </div>
+                        <input type="range" min="1" max="50" step="1" value="15" id="inputMargin" oninput="calculate()">
+                        <div class="flex justify-between text-[10px] text-slate-600 mt-1">
+                            <span>1%</span>
+                            <span>50%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESULTS PANEL -->
+            <div class="lg:col-span-8 space-y-6">
+                <!-- Main Score Card -->
+                <div
+                    class="bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl border border-white/10 relative overflow-hidden shadow-2xl">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-600/5 rounded-full blur-3xl"></div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+                        <!-- Gauge Visualization -->
+                        <div class="text-center">
+                            <h4 class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">Score de
+                                Eficiencia Fiscal</h4>
+                            <div class="relative w-48 h-48 mx-auto">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                    <!-- Background Circle -->
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#1e293b" stroke-width="8">
+                                    </circle>
+                                    <!-- Progress Circle -->
+                                    <circle id="score-circle" cx="50" cy="50" r="45" fill="none" stroke="#ca8a04"
+                                        stroke-width="8" stroke-dasharray="283" stroke-dashoffset="100"
+                                        stroke-linecap="round" class="transition-all duration-1000 ease-out"></circle>
+                                </svg>
+                                <div
+                                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                                    <span id="efficiency-score" class="text-4xl font-bold text-white block">65%</span>
+                                    <span class="text-[10px] text-slate-500 uppercase font-bold">Potencial</span>
+                                </div>
+                            </div>
+                            <p id="score-text" class="text-xs text-yellow-500 mt-2 font-bold uppercase">Mejorable</p>
+                        </div>
+
+                        <!-- Financial Impact -->
+                        <div
+                            class="text-center md:text-left border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-12">
+                            <h4 class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Capital
+                                Recuperable Anual</h4>
+                            <div class="flex items-baseline justify-center md:justify-start gap-1 mb-2">
+                                <span class="text-lg text-green-500 font-bold">+</span>
+                                <h2 id="savings-display"
+                                    class="text-4xl md:text-5xl font-bold text-yellow-500 tracking-tighter">$11.250.000
+                                </h2>
+                            </div>
+                            <p class="text-sm text-slate-300 leading-snug mb-6">
+                                Este es el monto estimado que su empresa deja de percibir anualmente por ineficiencias
+                                estructurales en su planificación.
+                            </p>
+
+                            <!-- Key Metrics Grid -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white/5 p-3 rounded border border-white/5">
+                                    <span class="block text-[10px] text-slate-500 uppercase">Utilidad Actual</span>
+                                    <span id="profit-current" class="text-sm font-bold text-white">$75.000.000</span>
+                                </div>
+                                <div class="bg-white/5 p-3 rounded border border-white/5">
+                                    <span class="block text-[10px] text-slate-500 uppercase">Utilidad Optimizada</span>
+                                    <span id="profit-optimized"
+                                        class="text-sm font-bold text-green-400">$86.250.000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action / Lead Capture -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-yellow-600"></div>
+
+                    <div class="text-center">
+                        <h3 class="text-slate-900 text-2xl font-bold uppercase italic mb-2">Obtenga su Informe
+                            Profesional</h3>
+                        <p class="text-slate-600 text-sm mb-6 max-w-lg mx-auto">
+                            Descargue un diagnóstico completo en PDF con benchmark de su industria, proyecciones a 5
+                            años y 3 recomendaciones tácticas de implementación inmediata.
+                        </p>
+                    </div>
+
+                    <form id="leadForm" class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 mb-6"
+                        onsubmit="generatePDF(event)">
+                        <input type="text" id="leadName" placeholder="Su Nombre"
+                            class="light-input w-full px-4 py-3 rounded border border-slate-300 bg-slate-50 text-slate-900 focus:border-yellow-600 focus:bg-white"
+                            required>
+                        <input type="email" id="leadEmail" placeholder="Email Corporativo"
+                            class="light-input w-full px-4 py-3 rounded border border-slate-300 bg-slate-50 text-slate-900 focus:border-yellow-600 focus:bg-white"
+                            required>
+                        <button type="submit"
+                            class="w-full bg-slate-900 text-white font-bold py-3 rounded hover:bg-yellow-600 hover:text-slate-900 transition shadow-lg uppercase text-xs tracking-wider flex items-center justify-center gap-2 group">
+                            <span>Descargar PDF</span>
+                            <i class="fas fa-file-download group-hover:scale-110 transition"></i>
+                        </button>
+                    </form>
+
+                    <p class="text-[10px] text-center text-slate-400 uppercase">
+                        <i class="fas fa-lock mr-1"></i> Sus datos son confidenciales y están protegidos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/diagnostico.js?v=2"></script>
+</body>
+
+</html>
