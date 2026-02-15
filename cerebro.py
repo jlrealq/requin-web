@@ -26,11 +26,7 @@ RUTA_INDEX = os.path.join(RUTA_BASE, 'index.html')
 FEEDS_NOTICIAS = {
     'CHILE': {
         'url': 'https://news.google.com/rss/search?q=Chile+Economía+Negocios+when:1d&hl=es-419&gl=CL&ceid=CL:es-419',
-        'cantidad': 3
-    },
-    'USA': {
-        'url': 'https://news.google.com/rss/search?q=USA+Economy+Business+when:1d&hl=es&gl=US&ceid=US:es',
-        'cantidad': 1
+        'cantidad': 4
     },
     'EUROPA': {
         'url': 'https://news.google.com/rss/search?q=Europa+Economía+Negocios+when:1d&hl=es&gl=ES&ceid=ES:es',
