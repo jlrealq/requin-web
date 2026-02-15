@@ -136,6 +136,12 @@ def obtener_noticias():
                 if ' - ' in titulo:
                     titulo = titulo.split(' - ')[0]
                 
+                # Normalizar títulos en mayúsculas (convertir a Title Case)
+                # Verificar si las letras del título están en mayúsculas
+                letras = [c for c in titulo if c.isalpha()]
+                if letras and all(c.isupper() for c in letras):
+                    titulo = titulo.title()
+                
                 # Generar HTML de la tarjeta
                 html_noticias += f"""
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
