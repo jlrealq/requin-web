@@ -1,7 +1,7 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1771117758145,
+    "generatedTime": 1771117766980,
     "data": [
         {
             "type": "file",
@@ -14,48 +14,6 @@
             "name": ".nojekyll",
             "size": 0,
             "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-        },
-        {
-            "type": "file",
-            "name": "CONFIGURACION_GITHUB_PAGES.md",
-            "size": 3715,
-            "hash": "6ca644f6c7e8dee0aefdf8f29f7f5cd7bbfcf9b48780c5eb389090a1161755df"
-        },
-        {
-            "type": "file",
-            "name": "GUIA_DESPLIEGUE.md",
-            "size": 7360,
-            "hash": "10b6a6241fde82688f88b99537d1bd47c56878f0feac7026958a37a6bcf0be42"
-        },
-        {
-            "type": "file",
-            "name": "Gemini_Generated_Image_yxjsspyxjsspyxjs.png",
-            "size": 1567223,
-            "hash": "8871f4f7ef619bf1cae5719421788c0be9b72d9c34ecdfef99df3fc1abfc3f49"
-        },
-        {
-            "type": "file",
-            "name": "Logo-Requin.jpg",
-            "size": 73967,
-            "hash": "eed551658623d68ac38b38e8e9eec1fae86f2fad55586766c4cf391f2e3949cb"
-        },
-        {
-            "type": "file",
-            "name": "Logo-Requin.png",
-            "size": 1753224,
-            "hash": "285a7f3166561a290a870a892fc21536a75ee04904cf687e4ea4581dad84db79"
-        },
-        {
-            "type": "file",
-            "name": "Logo-Requin_block.jpeg",
-            "size": 1241470,
-            "hash": "389791266a0563441c8a355a1866dee6e6452c51b5b10d7cb483a1a2d7266199"
-        },
-        {
-            "type": "file",
-            "name": "Logo-Requin_transparent.png",
-            "size": 157025,
-            "hash": "9d69caf4827cf0436a2f0dc3c569adee093c7a7a94b6fd9d817c5c6e2f6101d5"
         },
         {
             "type": "file",
@@ -78,20 +36,20 @@
         {
             "type": "file",
             "name": "index.html",
-            "size": 40757,
-            "hash": "f9ad26909dca86dcff18e595fc0abe456028152084bd07376fb7430ad34e6673"
-        },
-        {
-            "type": "file",
-            "name": "index_interactive.html",
-            "size": 31086,
-            "hash": "8968aa9db321dcb2d0337ac6b39c193f3d258cae9fcfa5e062fc326d4a60fbd3"
+            "size": 40945,
+            "hash": "9de2ba0418669a123d5768de0c4a6b27619595cb5d7781630d584f1dfc146bc2"
         },
         {
             "type": "file",
             "name": "index_backup.html",
             "size": 35306,
             "hash": "7758d2698b702bf90dcf9482ad2d3af29a444312c68faeb36e9f7238d20ca7e7"
+        },
+        {
+            "type": "file",
+            "name": "index_interactive.html",
+            "size": 31086,
+            "hash": "8968aa9db321dcb2d0337ac6b39c193f3d258cae9fcfa5e062fc326d4a60fbd3"
         },
         {
             "type": "file",
