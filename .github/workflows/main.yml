@@ -37,12 +37,22 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        
+        # Asegurar que tenemos la última versión
+        git fetch origin main
+        git reset --hard origin/main
+        
+        # Ejecutar cerebro nuevamente para generar contenido actualizado
+        python cerebro.py
+        
+        # Agregar cambios
         git add index.html
+        
+        # Verificar si hay cambios
         if git diff --staged --quiet; then
           echo "No hay cambios para commitear"
         else
           git commit -m "🤖 Actualización automática de datos - $(date '+%Y-%m-%d %H:%M:%S')"
-          git pull --rebase origin main
           git push origin main
         fi
 
