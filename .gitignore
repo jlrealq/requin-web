@@ -28,3 +28,5 @@ ENV/
 # Logs
 *.log
 backend/node_modules/
+
+**/node_modules
