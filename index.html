@@ -5,6 +5,13 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Requin &amp; Asociados | Premium Financial Architecture</title>
+    <meta name="description"
+        content="Transformamos la complejidad fiscal en una ventaja competitiva sostenible para su empresa. Expertos en Arquitectura Financiera, Asesoramiento Legal, Levantamiento de Capital y Contabilidad Estratégica." />
+    <meta property="og:title" content="Requin & Asociados | Premium Financial Architecture" />
+    <meta property="og:description"
+        content="Estrategia & Patrimonio. Expertos en Arquitectura Financiera a nivel global." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="Logo-Requin.jpg" type="image/jpeg" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -54,10 +61,20 @@
     <div
         class="bg-charcoal text-[10px] uppercase tracking-widest py-2 px-4 flex justify-between items-center border-b border-gold/20 overflow-hidden whitespace-nowrap">
         <div class="flex gap-6 animate-marquee">
-            <span class="text-champagne/60">UF: <span class="text-gold">$37.124,50</span></span>
-            <span class="text-champagne/60">USD/CLP: <span class="text-gold">$945,20</span></span>
-            <span class="text-champagne/60">EUR/CLP: <span class="text-gold">$1.028,15</span></span>
-            <span class="text-champagne/60">IPSA: <span class="text-gold">+0,45%</span></span>
+            <!--TICKER_START-->
+            <span class="mx-10 text-yellow-500 italic uppercase">
+                UF: $39.807 <span class="up">▲</span>
+            </span>
+            <span class="mx-10 text-yellow-500 italic uppercase">
+                USD/CLP: $884 <span class="down">▼</span>
+            </span>
+            <span class="mx-10 text-yellow-500 italic uppercase">
+                EUR/CLP: $1.035 <span class="up">▲</span>
+            </span>
+            <span class="mx-10 text-gray-400 text-[10px] italic uppercase">
+                ACTUALIZADO: 03/03 20:48
+            </span>
+            <!--TICKER_END-->
         </div>
         <div class="flex gap-6">
             <span class="text-champagne/60 font-bold">MARKET LIVE</span>
@@ -111,15 +128,49 @@
             <p class="text-charcoal/70 text-lg font-light leading-relaxed mb-10">Transformamos la complejidad fiscal en
                 una ventaja competitiva sostenible para su empresa.</p>
             <div class="flex flex-col gap-4">
-                <button
-                    class="bg-charcoal text-champagne py-4 px-8 rounded-sm font-medium hover:bg-charcoal-light transition-all uppercase text-xs tracking-widest">Descubrir
-                    Soluciones</button>
-                <button
-                    class="border border-charcoal/20 text-charcoal py-4 px-8 rounded-sm font-medium hover:bg-charcoal/5 transition-all uppercase text-xs tracking-widest">Agenda
-                    de Consultoría</button>
+                <a href="#servicios"
+                    class="inline-block text-center bg-charcoal text-champagne py-4 px-8 rounded-sm font-medium hover:bg-charcoal-light transition-all uppercase text-xs tracking-widest">Descubrir
+                    Soluciones</a>
+                <a href="#contacto"
+                    class="inline-block text-center border border-charcoal/20 text-charcoal py-4 px-8 rounded-sm font-medium hover:bg-charcoal/5 transition-all uppercase text-xs tracking-widest">Agenda
+                    de Consultoría</a>
             </div>
         </div>
     </header>
+    <section id="filosofia" class="py-20 px-6 bg-white border-b border-charcoal/5">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-center">
+            <div class="w-full md:w-1/2 relative">
+                <div class="absolute inset-0 bg-gold/10 transform translate-x-4 translate-y-4 rounded-sm"></div>
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80&w=800"
+                    alt="Consultoría Premium"
+                    class="relative z-10 w-full object-cover h-[400px] rounded-sm shadow-lg grayscale hover:grayscale-0 transition-all duration-700" />
+            </div>
+            <div class="w-full md:w-1/2 space-y-6">
+                <span class="text-gold text-xs font-bold tracking-[0.2em] uppercase">Nuestra Filosofía</span>
+                <h2 class="text-3xl font-serif text-charcoal leading-tight">Más que asesores. Arquitectos de su
+                    patrimonio.</h2>
+                <div class="w-12 h-1 bg-gold"></div>
+                <p class="text-charcoal/70 leading-relaxed font-light">En Requin & Asociados, no nos limitamos a
+                    reportar el pasado financiero; diseñamos el futuro de su corporación. Nuestra metodología integra el
+                    rigor contable con estrategias legales de vanguardia, creando estructuras blindadas que maximizan la
+                    rentabilidad en entornos económicos inestables.</p>
+                <p class="text-charcoal/70 leading-relaxed font-light">Confiados por líderes del sector, nuestra
+                    discreción, precisión y visión global nos convierten en el aliado definitivo para el escalamiento
+                    seguro de sus operaciones.</p>
+                <div class="pt-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-gold">verified_user</span>
+                        </div>
+                        <div>
+                            <span class="block font-bold text-sm uppercase tracking-wide">Compromiso</span>
+                            <span class="text-xs text-charcoal/50">Confidencialidad Absoluta</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="servicios" class="py-20 px-6">
         <div class="max-w-5xl mx-auto">
             <div class="mb-12 border-l-2 border-gold pl-4">
@@ -319,19 +370,21 @@
                         <span id="sim-recovery" class="text-4xl font-serif text-gold">$142.500<span
                                 class="text-xl">.00</span></span>
                     </div>
-                    <div class="w-full space-y-4">
-                        <input
-                            class="w-full bg-charcoal/50 border border-gold/20 text-sm py-3 px-4 rounded focus:ring-gold focus:border-gold"
-                            placeholder="Nombre completo" type="text" />
-                        <input
-                            class="w-full bg-charcoal/50 border border-gold/20 text-sm py-3 px-4 rounded focus:ring-gold focus:border-gold"
-                            placeholder="Email corporativo" type="email" />
-                        <button
-                            class="w-full bg-gold text-charcoal font-bold py-4 rounded-sm flex items-center justify-center gap-2 uppercase text-xs tracking-widest">
+                    <form action="https://formspree.io/f/mvzrarkk" method="POST" class="w-full space-y-4">
+                        <input type="hidden" name="subject" value="Nuevo Lead de Simulador de Eficiencia" />
+                        <input name="simulador_nombre"
+                            class="w-full bg-charcoal/50 border border-gold/20 text-sm py-3 px-4 rounded focus:ring-gold focus:border-gold placeholder-champagne/50 font-sans"
+                            placeholder="Nombre completo" type="text" required />
+                        <input name="simulador_email"
+                            class="w-full bg-charcoal/50 border border-gold/20 text-sm py-3 px-4 rounded focus:ring-gold focus:border-gold placeholder-champagne/50 font-sans"
+                            placeholder="Email corporativo" type="email" required />
+                        <input type="hidden" id="simulador_resultado" name="simulador_resultado" value="" />
+                        <button type="submit"
+                            class="w-full bg-gold hover:bg-gold/90 text-charcoal font-bold py-4 rounded-sm flex items-center justify-center gap-2 uppercase text-xs tracking-widest transition-colors mb-2">
                             <span class="material-symbols-outlined text-sm">picture_as_pdf</span>
-                            Descargar Informe PDF
+                            Solicitar Informe PDF
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -394,113 +447,79 @@
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl font-serif mb-12 text-center">Actualidad & Noticias</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-                <div
-                    class="bg-champagne-dark/40 p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-gold">
-                    <span class="text-xs text-gold font-bold uppercase tracking-wider mb-2 block">CHILE</span>
-                    <h4 class="text-charcoal font-serif text-sm font-bold mb-3 leading-snug">Quiénes son los dos
-                        chilenos detrás de startup de EE.UU. apoyada por Nvidia en financiación de US$ 315 millones</h4>
-                    <a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxOUEFtMU9aRk04aUVWQTN5dkdTU3dmQWl1NndLTDBFRXhVVllpSXhZRnlGYjBQV3lfU0swMGk1cFFhdkZNdUdoMU1jSlQ3cWhuRVk2OHVzTzdhRmRxbjN0VXJDOGxKRlNpT2JjYzBiMVQybjQ3OF93eFpVRTBDTGMzQmVkTmgyUlljMDlXbUg2YkItbWJYa1pzSGhTcUJTbm5YV0hSNWE1NlN3Y2J0VlBlakxzcDNYa1o4bE9kZ2VweFppWm9yNzZla1hwYTUtdw?oc=5"
-                        target="_blank"
-                        class="text-xs text-charcoal-light hover:text-gold transition flex items-center gap-2 uppercase font-bold">
+                <!--NOTICIAS_START-->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
+                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">CHILE</span>
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">La crisis de una constructora que recortó más de la mitad de personal y enfrenta demandas por impagos</h4>
+                    <a href="https://news.google.com/rss/articles/CBMijwJBVV95cUxQN01FaktGRGdXZnZ6aUVCNWVKVjd4bUxLT0s2R2RPMkJ5bmJFNjBiTmh4d2M1a3A0d0JEYkZFUlpPemVoSUphVjU1TGZQUWxJSThZSnV1VWVVWEYxTXFOOXRhZXVMSjJDRFI4SGJOeXdSY2JXZDJ5SDhEVWVCU2lNVWFzazQ3RDd3SmcwMTJNcV81QTNfQnc3RXQ5QjFjQTZnOEdock1ZZUJzbnpJMmpOdjZoWGRQUlZPeGJGR3U1UnN5blVzNTA4allBV3EyV3lJclc1dTlVWERqWFUzUDBabUFtTG5CZG5vUzQ0c2hsWXN5dnB4Vko4Y1A5SW5ZSFUwb1N1Z29nWldPeWNfVTR3?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
                 </div>
-
-                <div
-                    class="bg-champagne-dark/40 p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-gold">
-                    <span class="text-xs text-gold font-bold uppercase tracking-wider mb-2 block">CHILE</span>
-                    <h4 class="text-charcoal font-serif text-sm font-bold mb-3 leading-snug">EMPRENDEDORAS TRANSFORMARON
-                        SUS NEGOCIOS TRAS PARTICIPAR EN PROGRAMA DE COLLAHUASI</h4>
-                    <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxQMzFGZGV3ZDlfaUJfeU9Sb1N3WXIzTFVWSS1IU3NTbUl6NWNlNEZwTEtoZ003bjU5dmpJckR4aGNTc0hZcXJqQ0FRTzRISmplTGFRTTBjd3Q2azc4YVFoMS02bENhb2pUbnM1ekIya2JrOV9SajFlSjd1TmY3VnJGZWVKdlctVGUzTi13Q29rcC03YjF2Z3lFOHZOZWducnI4TlV2SEUzcjdFYWM?oc=5"
-                        target="_blank"
-                        class="text-xs text-charcoal-light hover:text-gold transition flex items-center gap-2 uppercase font-bold">
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
+                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">CHILE</span>
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">A días del 8M: Subsecretaría de Economía realiza encuentro con gremios para abordar implementación de la ley Más Mujeres en Directorios</h4>
+                    <a href="https://news.google.com/rss/articles/CBMi9wFBVV95cUxQSG5kcHlMbklEQ3E5cXlBV0dnc21JSmEzUS1aSFRtQzlfemhHS2FDVTBielp2dDBLTWs0MjZHLUZlemJuOVotWWpYZ3ZzekdOUDNJdlJPcnJJOUpBNmNOdjFlS24wRk5CdjFxcUYxendZb0dCeC1feTkwUjBuM0diQjBWS2pZLXFSR0Z3WlFkcGltbno5MGI1aU1aZ1R3MHdLM3dwSW9jcnFoY21HYjJDNjVNT01FU2NMRDBMclZFV1YwREdxUXdTU09QSG9BMFhVQmVkRGg4QmhXRU9udW1FMVU1dUxfMVJ6VjBZeWQ0Z25fNS1YWTRJ?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
                 </div>
-
-                <div
-                    class="bg-champagne-dark/40 p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-gold">
-                    <span class="text-xs text-gold font-bold uppercase tracking-wider mb-2 block">CHILE</span>
-                    <h4 class="text-charcoal font-serif text-sm font-bold mb-3 leading-snug">Lanzan en Chile libro sobre
-                        Economía Verde</h4>
-                    <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxNQWJ4aXJ6R1IyN09oYWJIZ0VQU1piMDBDUTRFY053eHRmenJJYm1iaFNQS3dfS28wSmJOMWtaMzkwRHZlVGt4TThCQ3o1LXFxOWdwbV9MeFlTdE5DdDFkZ1hnX1pmaURSSGhnbGt4OXpFY2tRYkwyN21ZVjdOeVRvdUt3?oc=5"
-                        target="_blank"
-                        class="text-xs text-charcoal-light hover:text-gold transition flex items-center gap-2 uppercase font-bold">
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
+                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">CHILE</span>
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Aseguran que crisis en Medio Oriente no afectará a industria portuaria chilena</h4>
+                    <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxORnBwaHp2MENhYVd2THhhWkZPM2RwcGZrTTQ0c3gwODlYWTRJS2QzcWhzcllIcm1wZF9zQU5PeWxiTWZRLWR3aldCQzZQTTY0el9HVGlRckZFNlpiT3lBcHZURGp4OUVTSkdYM0RheFFKU1RMdXNlanBXV2ctXzJXV2pJVUVXNWhEOWpRblcyUGt0QTMyVkMyNkd1MWdCYnAyNlZhbFREUGUyQQ?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
                 </div>
-
-                <div
-                    class="bg-champagne-dark/40 p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-gold">
-                    <span class="text-xs text-gold font-bold uppercase tracking-wider mb-2 block">CHILE</span>
-                    <h4 class="text-charcoal font-serif text-sm font-bold mb-3 leading-snug">La hermana "chilena" de la
-                        Presidenta electa de Costa Rica: “Su valentía será clave”</h4>
-                    <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxNYWNfcjhXNy1JN3hkcFV2NU5Hank5LW8xT3FqVGlGWjJiTVZqWDJuLWUzN1VvUmM5UDNha1pJQTFzQWMwd2psenZhcTNzc1VSSW1rOGVMLUs1QW5xbV9IcVNSOUZwTkliVXVTSVd6ZUE4Vms5cjJBZ21mT0w3a1NQakVTZERHeE40eExzX0cxcllBSXhvOGZOaVVkd2VrTTBkMXViazl3?oc=5"
-                        target="_blank"
-                        class="text-xs text-charcoal-light hover:text-gold transition flex items-center gap-2 uppercase font-bold">
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
+                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">CHILE</span>
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Cuando la “necesidad de la empresa” se vuelve la regla y no la excepción</h4>
+                    <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPQzloYlNJVzZHV0hFT1JjM3FXUWo3R3BmaEY1VVlkNWtSM3g0V2tGUi1zTzVtQ2xGMlBia2F4QmhqQVJ6QzM3d1d3SGdvbkZjSFJBMWU5RkNqZFVpU1hkZF9RbGNWWTNOOFZHNzVnZWtSWTVGbm40YWQ4TW1FTlc3N3c5ZjVNN1d5VDlYdHRLbDFGX3NNNzdIRkdtYw?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
                 </div>
-
-                <div
-                    class="bg-champagne-dark/40 p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-gold">
-                    <span class="text-xs text-gold font-bold uppercase tracking-wider mb-2 block">EUROPA</span>
-                    <h4 class="text-charcoal font-serif text-sm font-bold mb-3 leading-snug">La presión fiscal sobre las
-                        empresas en España supera la media europea y reabre el debate sobre los márgenes legales de
-                        planificación</h4>
-                    <a href="https://news.google.com/rss/articles/CBMihwJBVV95cUxQcXhUN0tYLTc1UXV4cWxvQVZvQzJKa0kyX1VWeExydWN1VkVVa0hWVEVMdmJIanRKSUVpRmU4M1FaQktmODNyZmhHTUgxU0RMaUxIYU1sak5sNWkzQXRKRFlYYjhqakdMOHIzc2pEWnRnR0dFcEFFSFBERkpJaFBkaWNQQ3ZEbkU5UnB0YjRiMGpZN0NBbmtUdlg1MzVocjFibVFjS0Qyd0dUU3l5TjVXRzRJZ3J1ZWE4RmpEd3JBTDJPdVlhcTUwcFlZM3hkUVY5SmtYLXBoQUJmZ0pZdjladklOQzd3XzNuUno3R0xnTklLemZDUEs1YUs2WHBfakxRVldXMHpHSdIBjAJBVV95cUxNZUxoNm9uOHU4RlUwZGgxc29HeTYyT1FqZ2tQZ2xGTzktV244bFRXTmpCeGp6c01XOWNmOXQxaWZULThQdGRfY3l6ckhUeXJQSmlMQVNOS2c3OVVMSGY2SmU0dmFHN29lRk9jVzMyazFYMW9rSzVuR0tUMkw2LXhPaGcxOUY3MnJhU3ZmZHlROWQwTFNoV2lnZS01MU15U25mSHRnQnZEd3VHTDBvYXBPRWZCcXFJbmppU2ZJTVExNndNTEh1VGZ6R3B0WEVqU2JubHlTSmpPNGtiY1dBM2NiX0N4Q0tUT2ZHbXdYd2NnUmNIUkl0dU1yM0FfUFBVQVBDTm1HUDF0QU1RckZZ?oc=5"
-                        target="_blank"
-                        class="text-xs text-charcoal-light hover:text-gold transition flex items-center gap-2 uppercase font-bold">
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
+                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">EUROPA</span>
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">El Gobierno destinará 100 millones de euros para las empresas que impulsen la soberanía digital europea</h4>
+                    <a href="https://news.google.com/rss/articles/CBMi4AFBVV95cUxPX1pmUFM3aXNHaDRpSExzd0ZIT0lwa2k4OXRfcTY3THd5Y01EM2NrbGVqM1dKRF9sczdIelkxc3ZVVUc1LUo3R3IyQmF3aU9ncnVVZHdNdWF4QWRoV2ZjZlgxaEdiN1JNSm0wangzYjQ5UndwQXVOXzVEOVlxelltekZZVGkycDVvNndMVEc0UHU0NUlKMm1ISlZSenhKOUozdWJlZFNqSEtRdks3UkNvdFF4djNDVXlJQ2tDbDFQb01QaFpkR2ZWWlNtMHc5cG1WSXNrajdzUlk1eVRuazRSZ9IB9AFBVV95cUxOaWdrdGp5Wl9FeC1GZjJrVzVKN2s0bUZRX0FUSlpUSEw5UlExLWIzcmFMUnl1alk4NGFlNUptYzBNUGpOMUp4aTRSMU5wMjJLX2JNMmRuVDQxSHRxa0NrWHg4UjhqeENzU3I0S18tNC1FeWR0NDk2Z3dUb0NSMWZqb2ptdkJYVDFRQm5SZGlER0JRc1FBQlpKMlFhRmtoR1lKQkszS1lPYUZENFJpLS1EMUVRQ2xVUnJXY3dnSkx2akNNeFl1dUhsNHJhUFl3TXdBVnZ0dUJuU0VMMUcwQlY5Q1FCVFozWHZEbG5wSWs0WG85SjUy?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
                 </div>
-
-                <div
-                    class="bg-champagne-dark/40 p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-gold">
-                    <span class="text-xs text-gold font-bold uppercase tracking-wider mb-2 block">ESPAÑA</span>
-                    <h4 class="text-charcoal font-serif text-sm font-bold mb-3 leading-snug">Tony Blamey (Fotocasa):
-                        "Los algoritmos no influyen en el precio de la vivienda. España tiene un problema grave de
-                        oferta"</h4>
-                    <a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxOVnhkVTZ3YXVoU1NuRXowS2dTVk1KR2hYWnZxc1hYY09uMmtzdHFWMkdia1lIOTlFdzMzb0JPZm1iRFIxX09tS19ocURUVXMzbjA2akl2dDBZZXFVeDRQcERYSVRVVWNLT2Uyd0lWVnltQUpUZXVRWUFqWTZqSlhqSm1MTy14TTFQ0gGIAUFVX3lxTE5jSmU5UWZSZkhzbUJ4TnhFbFZCY0ZkMGprVy1jWTFCbTAtUWNEVDNMaDBuS3IwUkZmWF9lUldsMXFzVUhXeUowcGhqT0ZXVGt3Y3pNNFVYeGZhdzhEdW9qQ1p4b0UtaU5rUkJaUmh2QjFSaUpWUE4tMmNHTEZVUXk3U0ZGMjFEMkE?oc=5"
-                        target="_blank"
-                        class="text-xs text-charcoal-light hover:text-gold transition flex items-center gap-2 uppercase font-bold">
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
+                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">ESPAÑA</span>
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">¿Qué consecuencias tendría para España que EEUU corte sus relaciones comerciales con el país?</h4>
+                    <a href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxQVFNHU0s5cmdGSm1YUWwteDZDNHNaUmNiYkhzNUFVbm9QQ252RVp0bWtCTm9Hd25oVjlhOHVIMUlxMGZxUGtfcXBmMG5MR0JYUDluc0pEWWM4NFF5dTN0UFZiMmpjZVVNNUxKblgyZ0wxeTFQTGgtemJEZTVYU0VhYXF2NjdBWTNhVnpsOEpfRU4wNWMtUThGc2ZkbGFQUDA4VEZ1c3lRZHltaWY3S1VYS1lSWk44bXBUNG5FcngzQU1WV3g1SkFYWTdzdmZMMFls0gHkAUFVX3lxTFAzdy01V05DTUhNTjMteTkzbDFFTC00TGdaOEprTmhGNmwxZWZyVWdzdVVxRzEzUzNWTFE0c2R0SzFzTmFyX2dyS1JFR0N5aGZYaGhJenlnZFd6ZFZwb0taemZicEV6VUQyQlUyODVDTE5yandkYWV1bUVEZG90c1NFZ0tDME85R0gwUzFmU1JKTkVES2hkMG5CX2ZydkV2WXhtUjd2UUtRLWhRMThKZU9LWm12MjV6eURRSmh2Q3dhUGJET3MxVnJIQ19jTnlTcnNGZEk5cjNvYlpKcUNQZmJ4SWwxQg?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
                 </div>
-
-                <div
-                    class="bg-champagne-dark/40 p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-gold">
-                    <span class="text-xs text-gold font-bold uppercase tracking-wider mb-2 block">LEGAL CHILE</span>
-                    <h4 class="text-charcoal font-serif text-sm font-bold mb-3 leading-snug">Cuestionan ante el TC norma
-                        que permite rechazar la carta de nacionalización por criterios de “indignidad”</h4>
-                    <a href="https://news.google.com/rss/articles/CBMi5wFBVV95cUxNcmxIM2ZvMVdUS2pUSHF5WF9WU01PdzJobW5LUnpySWlZaExxbmlTdHBQaGlrYU1lUmhKeTYtMTRBMUxGdmE2bDBTX3FheGhZcW44Y0Q5VzhVU01za3lSa3plY21LZWFPX3BtRkJTOEFHMUV1cVVmLVAyWmQ4UmEtYXdmTVEzUjVGUW51TVNwOVRCQkpXZ25lQkNlcHd6c005Y0FRM2JvTXl2TEEzTTM2VjE0LW1jVFpUXy02d3NhNVdkZTRSS0RweDFvckhzN2dJTWhYeV96aWFrWFplUlo1SDd4QjN6RHc?oc=5"
-                        target="_blank"
-                        class="text-xs text-charcoal-light hover:text-gold transition flex items-center gap-2 uppercase font-bold">
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
+                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">LEGAL CHILE</span>
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Cómo funciona el proyecto de ley que busca prohibir uso de redes sociales a menores de 16 años</h4>
+                    <a href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxQTVE2LVFkNEJaekZ2LW1LeHNhT2tvSlhWN1lYLTltY05xUWRMSVZqLUpMaUhxWVdoNUk5V3QwRjVmbWd5eU82VW5GcE80aHB0WkFQWEVLQU9aaW1PaGx0T0tKMUl3UmwwVTRYdEV1Y05TaDNRa1FiWGhjd2Nzd3duSGdfb0VhNUNnMW5RTDg5MXFIcmtyaWc1RWE0bmpsZnQ5a2hOLUlSZlZtbWkyZjVyZExoYThtWDdvOHZsWl9RYVFfU3pOemNQY01POW1DVXV6QTIyTllPejhXLWpMTjdZ?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
                 </div>
-
-                <div
-                    class="bg-champagne-dark/40 p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-gold">
-                    <span class="text-xs text-gold font-bold uppercase tracking-wider mb-2 block">LEGAL CHILE</span>
-                    <h4 class="text-charcoal font-serif text-sm font-bold mb-3 leading-snug">Cómo funciona el proyecto
-                        de ley que busca prohibir uso de redes sociales a menores de 16 años</h4>
-                    <a href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxPTWV4bzVvVUtBRFEwVkpjNHNsMjE1ZU8xSEFHTXZ5cl9OQVdfVDZhbWhhbm43VUNkWVpNWWhkLWxtbmtCZUI4TEJXVTNXZUkxUVk0LTI0cmROQVNIRmhFczVVVk1UT0RoeGNPSkhsZThDN2xwc0c2SXBIdEFMRG5XbEJrMzZZUnc5XzlYMUtFR2t4dnU1V3hLYVczeklQQ0FVUjlxUkFMaHNyakhFX2ZwUGUtZEs3eGdEVXY3YVlUZnV4X3N3OW1kWmhteHpGZktseWlPTU8ybWp4TFhoTHpB?oc=5"
-                        target="_blank"
-                        class="text-xs text-charcoal-light hover:text-gold transition flex items-center gap-2 uppercase font-bold">
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
+                    <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">LEGAL CHILE</span>
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Ley Uber tensiona el cambio de mando: futuro ministro de Kast pide frenar reglamento antes del 11 de marzo</h4>
+                    <a href="https://news.google.com/rss/articles/CBMi6wFBVV95cUxQMmNnb1hsZEctYzliczJLdFJzVVBIdEdCT3BpUFphTHlYNXBDYkdyTWVFMjJhYlJZUkxUZnNvNmotOUVZN3JBZTFZa1hPOUt4WXBnWWR4Vk16N25VWmtNWGFqbFZOV0c0YUlJWE90dGttcG1ydGhuVldsNkJVdVh4d2pSRzF4SGFGQUhsZXZFVzduSWgtbXctSHNEcHRCMDZVU3FwZTdybWtQSGJDVnlmaEVKTnJDcXlXc0QtNl9yRkowRnZMcWFuMUhKYmFIMGFaRHRuYWlDejNNNnkyWmxYNFI4bHRUM2tnanZz?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
                 </div>
-
+                <!--NOTICIAS_END-->
             </div>
         </div>
     </section>
@@ -806,6 +825,11 @@
                 }).format(recovery);
 
                 simRecovery.innerHTML = `$${formattedRecovery}<span class="text-xl">.00</span>`;
+
+                const inputHidden = document.getElementById('simulador_resultado');
+                if (inputHidden) {
+                    inputHidden.value = `Industria: TECNOLOGIA/SAAS | Regimen: GENERAL | Revenue: ${revenue}M USD | Margin: ${margin}% | Score Fiscal: ${score} | Recovery Estimado: $${formattedRecovery} USD`;
+                }
             };
 
             if (simRevenue && simMargin) {
@@ -816,6 +840,20 @@
             }
         });
     </script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/56968224180" target="_blank"
+        class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 z-50 flex items-center justify-center group"
+        aria-label="Contactar por WhatsApp">
+        <svg fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
+            <path
+                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.066.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z" />
+        </svg>
+        <span
+            class="absolute right-full mr-4 bg-charcoal text-champagne text-xs px-3 py-2 rounded uppercase tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            Consulta rápida
+        </span>
+    </a>
 </body>
 
 </html>
