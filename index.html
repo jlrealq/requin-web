@@ -94,7 +94,7 @@
             <a href="#quienes-somos" class="hover:text-gold transition text-charcoal/80">Quiénes Somos</a>
             <a href="#servicios" class="hover:text-gold transition text-charcoal/80">Servicios</a>
             <button id="nav-simulador-btn"
-                class="hover:text-gold transition font-bold text-gold cursor-pointer uppercase">Rentabilidad</button>
+                class="hover:text-gold transition text-charcoal/80 cursor-pointer uppercase">Rentabilidad</button>
             <a href="#noticias" class="hover:text-gold transition text-charcoal/80">Noticias</a>
             <a href="#faq" class="hover:text-gold transition text-charcoal/80">FAQ</a>
             <a href="#contacto" class="bg-charcoal px-4 py-2 text-champagne hover:bg-gold transition">Contacto</a>
@@ -114,8 +114,7 @@
         </button>
         <a href="#quienes-somos" class="mobile-link hover:text-gold transition">Quiénes Somos</a>
         <a href="#servicios" class="mobile-link hover:text-gold transition">Servicios</a>
-        <button id="mobile-simulador-btn"
-            class="mobile-link hover:text-gold transition text-gold uppercase">Rentabilidad</button>
+        <button id="mobile-simulador-btn" class="mobile-link hover:text-gold transition uppercase">Rentabilidad</button>
         <a href="#noticias" class="mobile-link hover:text-gold transition">Noticias</a>
         <a href="#faq" class="mobile-link hover:text-gold transition">FAQ</a>
         <a href="#contacto" class="mobile-link bg-gold px-6 py-3 text-charcoal rounded-sm">Contacto</a>
@@ -799,21 +798,18 @@
 
             // Smooth scrolling for anchor links to handle fixed header offset
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
+                anchor.addEventListener('click', function  (e) {
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return;
-
-                    const targetElement = document.querySelector(targetId);
+ const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         e.preventDefault();
                         const headerOffset = 100;
                         const elementPosition = targetElement.getBoundingClientRect().top;
                         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: "smooth"
-                        });
+                   rollTo({
+                            top: o                                          behavio                                   });
                     }
                 });
             });
@@ -862,7 +858,7 @@
                 simRevenue.addEventListener('input', calculateSimulator);
                 simMargin.addEventListener('input', calculateSimulator);
                 // Initialize
-                calculateSimulator();
+              ateSimulator();
             }
         });
     </script>
