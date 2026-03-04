@@ -72,9 +72,6 @@ jobs:
           **/requirements.txt
           **/cerebro.py
           **/*.md
-          **/*.jpg
-          **/*.jpeg
-          **/*.png
 
     - name: 🌐 Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
