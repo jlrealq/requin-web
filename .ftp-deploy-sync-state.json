@@ -1,7 +1,7 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1772591843944,
+    "generatedTime": 1772591964941,
     "data": [
         {
             "type": "file",
@@ -14,6 +14,18 @@
             "name": ".nojekyll",
             "size": 0,
             "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "type": "file",
+            "name": "CONFIGURACION_GITHUB_PAGES.md",
+            "size": 3715,
+            "hash": "6ca644f6c7e8dee0aefdf8f29f7f5cd7bbfcf9b48780c5eb389090a1161755df"
+        },
+        {
+            "type": "file",
+            "name": "GUIA_DESPLIEGUE.md",
+            "size": 7360,
+            "hash": "10b6a6241fde82688f88b99537d1bd47c56878f0feac7026958a37a6bcf0be42"
         },
         {
             "type": "file",
@@ -72,8 +84,8 @@
         {
             "type": "file",
             "name": "index.html",
-            "size": 61261,
-            "hash": "4dd9294643b5cc3684993036b01b7bd4cc417a08f52f76c9e8e66dda0aad1b6b"
+            "size": 61771,
+            "hash": "f5789fe81bae4109674dcf6f3186c59db5806dad5fc36d3108340d023a2e8e01"
         },
         {
             "type": "file",
@@ -94,14 +106,14 @@
             "hash": "35c4810ddfcaff29c5129e2832a61aa6918e32593163c5e8e8fb68ff258299b5"
         },
         {
-            "type": "folder",
-            "name": "js"
-        },
-        {
             "type": "file",
             "name": "juanluis_oficina.jpeg",
             "size": 239792,
             "hash": "e36e697f7d04ffcdf9d215f546f480ea22f4aa15ec2f1bced1834f64b1bf9ed6"
+        },
+        {
+            "type": "folder",
+            "name": "js"
         },
         {
             "type": "file",
