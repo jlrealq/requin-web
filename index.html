@@ -72,7 +72,7 @@
                 EUR/CLP: $1.035 <span class="up">▲</span>
             </span>
             <span class="mx-10 text-gray-400 text-[10px] italic uppercase">
-                ACTUALIZADO: 03/03 20:56
+                ACTUALIZADO: 03/03 22:09
             </span>
             <!--TICKER_END-->
         </div>
@@ -91,9 +91,10 @@
 
         <!-- Desktop Nav -->
         <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest items-center">
+            <a href="#quienes-somos" class="hover:text-gold transition text-charcoal/80">Quiénes Somos</a>
             <a href="#servicios" class="hover:text-gold transition text-charcoal/80">Servicios</a>
             <button id="nav-simulador-btn"
-                class="hover:text-gold transition font-bold text-gold cursor-pointer">Rentabilidad</button>
+                class="hover:text-gold transition font-bold text-gold cursor-pointer uppercase">Rentabilidad</button>
             <a href="#noticias" class="hover:text-gold transition text-charcoal/80">Noticias</a>
             <a href="#faq" class="hover:text-gold transition text-charcoal/80">FAQ</a>
             <a href="#contacto" class="bg-charcoal px-4 py-2 text-champagne hover:bg-gold transition">Contacto</a>
@@ -111,8 +112,10 @@
         <button id="close-menu-btn" class="absolute top-6 right-6 p-2 text-champagne hover:text-gold transition">
             <span class="material-symbols-outlined text-3xl">close</span>
         </button>
+        <a href="#quienes-somos" class="mobile-link hover:text-gold transition">Quiénes Somos</a>
         <a href="#servicios" class="mobile-link hover:text-gold transition">Servicios</a>
-        <button id="mobile-simulador-btn" class="mobile-link hover:text-gold transition text-gold">Rentabilidad</button>
+        <button id="mobile-simulador-btn"
+            class="mobile-link hover:text-gold transition text-gold uppercase">Rentabilidad</button>
         <a href="#noticias" class="mobile-link hover:text-gold transition">Noticias</a>
         <a href="#faq" class="mobile-link hover:text-gold transition">FAQ</a>
         <a href="#contacto" class="mobile-link bg-gold px-6 py-3 text-charcoal rounded-sm">Contacto</a>
@@ -137,37 +140,27 @@
             </div>
         </div>
     </header>
-    <section id="filosofia" class="py-20 px-6 bg-white border-b border-charcoal/5">
+    <section id="quienes-somos" class="py-20 px-6 bg-white border-b border-charcoal/5">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-center">
-            <div class="w-full md:w-1/2 relative">
-                <div class="absolute inset-0 bg-gold/10 transform translate-x-4 translate-y-4 rounded-sm"></div>
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80&w=800"
-                    alt="Consultoría Premium"
-                    class="relative z-10 w-full object-cover h-[400px] rounded-sm shadow-lg grayscale hover:grayscale-0 transition-all duration-700" />
+            <div class="w-full md:w-1/2 relative group">
+                <div
+                    class="absolute inset-0 bg-gold/10 transform translate-x-4 translate-y-4 rounded-sm transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2">
+                </div>
+                <img src="JuanLuis Oficina.jpeg" alt="Fundador Requin"
+                    class="relative z-10 w-full object-cover h-[450px] rounded-sm shadow-xl grayscale-[50%] hover:grayscale-0 transition-all duration-700" />
             </div>
-            <div class="w-full md:w-1/2 space-y-6">
-                <span class="text-gold text-xs font-bold tracking-[0.2em] uppercase">Nuestra Filosofía</span>
-                <h2 class="text-3xl font-serif text-charcoal leading-tight">Más que asesores. Arquitectos de su
-                    patrimonio.</h2>
+            <div class="w-full md:w-1/2 space-y-6 fade-in-section">
+                <span class="text-gold text-xs font-bold tracking-[0.2em] uppercase">Quiénes Somos</span>
+                <h2 class="text-3xl font-serif text-charcoal leading-tight">Estrategia, control y protección patrimonial
+                    para emprendedores y empresas consolidadas.</h2>
                 <div class="w-12 h-1 bg-gold"></div>
                 <p class="text-charcoal/70 leading-relaxed font-light">En Requin & Asociados, no nos limitamos a
-                    reportar el pasado financiero; diseñamos el futuro de su corporación. Nuestra metodología integra el
+                    reportar el pasado financiero; diseñamos el futuro corporativo. Nuestra metodología integra el
                     rigor contable con estrategias legales de vanguardia, creando estructuras blindadas que maximizan la
                     rentabilidad en entornos económicos inestables.</p>
-                <p class="text-charcoal/70 leading-relaxed font-light">Confiados por líderes del sector, nuestra
+                <p class="text-charcoal/70 leading-relaxed font-light">Nuestra priorización de la
                     discreción, precisión y visión global nos convierten en el aliado definitivo para el escalamiento
-                    seguro de sus operaciones.</p>
-                <div class="pt-4">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-gold">verified_user</span>
-                        </div>
-                        <div>
-                            <span class="block font-bold text-sm uppercase tracking-wide">Compromiso</span>
-                            <span class="text-xs text-charcoal/50">Confidencialidad Absoluta</span>
-                        </div>
-                    </div>
-                </div>
+                    seguro de sus operaciones y proyectos más ambiciosos.</p>
             </div>
         </div>
     </section>
@@ -460,8 +453,8 @@
                 <!--NOTICIAS_START-->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
                     <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">CHILE</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">La crisis de una constructora que recortó más de la mitad de personal y enfrenta demandas por impagos</h4>
-                    <a href="https://news.google.com/rss/articles/CBMijwJBVV95cUxQN01FaktGRGdXZnZ6aUVCNWVKVjd4bUxLT0s2R2RPMkJ5bmJFNjBiTmh4d2M1a3A0d0JEYkZFUlpPemVoSUphVjU1TGZQUWxJSThZSnV1VWVVWEYxTXFOOXRhZXVMSjJDRFI4SGJOeXdSY2JXZDJ5SDhEVWVCU2lNVWFzazQ3RDd3SmcwMTJNcV81QTNfQnc3RXQ5QjFjQTZnOEdock1ZZUJzbnpJMmpOdjZoWGRQUlZPeGJGR3U1UnN5blVzNTA4allBV3EyV3lJclc1dTlVWERqWFUzUDBabUFtTG5CZG5vUzQ0c2hsWXN5dnB4Vko4Y1A5SW5ZSFUwb1N1Z29nWldPeWNfVTR3?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Cable chino y soberanía tecnológica: una decisión estratégica para el país. Por José Lagos, Docente UEjecutivos Facultad de Economía y Negocios Universidad de Chile</h4>
+                    <a href="https://news.google.com/rss/articles/CBMioAJBVV95cUxPczI4bFhkTXJTaU5BYWxIUm51a2NDVmw3TlJvZDJCRXhvMHdMMzlDX21pS1hSRGdDTmN4bllMRnFiUVg0NTY4ZDdfWllYODBsS0RqdkpqU3pVVEE1RmRVSXJyWVRBYkRXTExQX0kyZTVEUVBuOWhZazU4MmZpLTJSRExhV1doQjhNVUlNaktJV0xxMzljQm5KQlVGVXJZSVJ2UV9GcmlCclM4TXlKS3VpUnRJUnV3VDBUM19EUVZybTBHSXRTUHVXQnQ4TmRFV3docm56dkFuUWZxU1lDY2sxc05uN3FLb2QzSHZmd2hLRlJOdU9TVEplZXNaOHJSNGxjZW1WcmNJbHFLekc0UWdaZEd4OW1GTlhpUVNkTGY0LUQ?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
@@ -469,8 +462,8 @@
                 
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
                     <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">CHILE</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">A días del 8M: Subsecretaría de Economía realiza encuentro con gremios para abordar implementación de la ley Más Mujeres en Directorios</h4>
-                    <a href="https://news.google.com/rss/articles/CBMi9wFBVV95cUxQSG5kcHlMbklEQ3E5cXlBV0dnc21JSmEzUS1aSFRtQzlfemhHS2FDVTBielp2dDBLTWs0MjZHLUZlemJuOVotWWpYZ3ZzekdOUDNJdlJPcnJJOUpBNmNOdjFlS24wRk5CdjFxcUYxendZb0dCeC1feTkwUjBuM0diQjBWS2pZLXFSR0Z3WlFkcGltbno5MGI1aU1aZ1R3MHdLM3dwSW9jcnFoY21HYjJDNjVNT01FU2NMRDBMclZFV1YwREdxUXdTU09QSG9BMFhVQmVkRGg4QmhXRU9udW1FMVU1dUxfMVJ6VjBZeWQ0Z25fNS1YWTRJ?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">La crisis de una constructora que recortó más de la mitad de personal y enfrenta demandas por impagos</h4>
+                    <a href="https://news.google.com/rss/articles/CBMijwJBVV95cUxQN01FaktGRGdXZnZ6aUVCNWVKVjd4bUxLT0s2R2RPMkJ5bmJFNjBiTmh4d2M1a3A0d0JEYkZFUlpPemVoSUphVjU1TGZQUWxJSThZSnV1VWVVWEYxTXFOOXRhZXVMSjJDRFI4SGJOeXdSY2JXZDJ5SDhEVWVCU2lNVWFzazQ3RDd3SmcwMTJNcV81QTNfQnc3RXQ5QjFjQTZnOEdock1ZZUJzbnpJMmpOdjZoWGRQUlZPeGJGR3U1UnN5blVzNTA4allBV3EyV3lJclc1dTlVWERqWFUzUDBabUFtTG5CZG5vUzQ0c2hsWXN5dnB4Vko4Y1A5SW5ZSFUwb1N1Z29nWldPeWNfVTR3?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
@@ -558,8 +551,10 @@
                             class="material-symbols-outlined text-gold group-open:rotate-180 transition-transform">expand_more</span>
                     </summary>
                     <div class="px-5 pb-5 text-sm text-charcoal/70 leading-relaxed">
-                        Utilizamos estándares internacionales VAN/TIR y análisis de sensibilidad para escenarios
-                        financieros.
+                        Utilizamos metodologías de evaluación financiera basadas en estándares internacionales, como VAN
+                        y TIR, complementadas con análisis de sensibilidad y escenarios (base, pesimista y optimista)
+                        para medir la rentabilidad y el riesgo del proyecto. Esto nos permite entregar una recomendación
+                        integral, considerando tanto los resultados numéricos como el contexto estratégico del negocio.
                     </div>
                 </details>
 
