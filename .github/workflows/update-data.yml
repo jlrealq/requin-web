@@ -61,6 +61,23 @@ jobs:
       
 
       
+      - name: Deploy a Servidor FTP
+        if: steps.check_changes.outputs.changes == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: /home/cggktjgz/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.github/**
+            **/cerebro.py
+            **/requirements.txt
+      
       - name: Deploy a GitHub Pages
         if: steps.check_changes.outputs.changes == 'true'
         uses: peaceiris/actions-gh-pages@v3
