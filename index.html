@@ -829,7 +829,16 @@
                 const revenue = parseFloat(simRevenue.value);
                 const margin = parseInt(simMargin.value);
 
-                valRevenue.textContent = `USD ${revenue.toFixed(1)}M`;
+                let pais = 'chile';
+                const paisEl = document.getElementById('paisSelector');
+                if (paisEl) pais = paisEl.value;
+
+                let curLabel = pais === 'espana' ? 'EUR' : 'CLP';
+                let curSym = pais === 'espana' ? '€' : '$';
+
+                let revDisplay = pais === 'espana' ? `${curSym} ${revenue.toFixed(1)}M` : `${curSym} ${(revenue * 1000).toFixed(0)}M CLP`;
+
+                valRevenue.textContent = revDisplay;
                 valMargin.textContent = `${margin}%`;
 
                 // Mock calculation logic: 
@@ -843,17 +852,18 @@
                 simScore.textContent = score;
 
                 // Format currency
-                const formattedRecovery = new Intl.NumberFormat('es-CL', {
+                const locale = pais === 'espana' ? 'es-ES' : 'es-CL';
+                const formattedRecovery = new Intl.NumberFormat(locale, {
                     style: 'decimal',
                     minimumFractionDigits: 0,
                     maximumFractionDigits: 0
                 }).format(recovery);
 
-                simRecovery.innerHTML = `$${formattedRecovery}<span class="text-xl">.00</span>`;
+                simRecovery.innerHTML = `${curSym}${formattedRecovery}<span class="text-xl">.00</span>`;
 
                 const inputHidden = document.getElementById('simulador_resultado');
                 if (inputHidden) {
-                    inputHidden.value = `Industria: TECNOLOGIA/SAAS | Regimen: GENERAL | Revenue: ${revenue}M USD | Margin: ${margin}% | Score Fiscal: ${score} | Recovery Estimado: $${formattedRecovery} USD`;
+                    inputHidden.value = `Industria: TECNOLOGIA/SAAS | Regimen: GENERAL | Revenue: ${revenue}M ${curLabel} | Margin: ${margin}% | Score Fiscal: ${score} | Recovery Estimado: ${curSym}${formattedRecovery} ${curLabel}`;
                 }
             };
 
