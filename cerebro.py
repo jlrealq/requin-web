@@ -37,7 +37,7 @@ FEEDS_NOTICIAS = {
         'cantidad': 1
     },
     'LEGAL CHILE': {
-        'url': 'https://news.google.com/rss/search?q=Chile+Normativa+Legal+Ley+Regulación+when:2d&hl=es-419&gl=CL&ceid=CL:es-419',
+        'url': 'https://news.google.com/rss/search?q=%22Chile%22+(ley+OR+normativa+OR+proyecto+de+ley+OR+Corte+Suprema+OR+SII)+when:2d&hl=es-419&gl=CL&ceid=CL:es-419',
         'cantidad': 2
     }
 }
