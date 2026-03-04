@@ -1,7 +1,7 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1772591832314,
+    "generatedTime": 1772591843944,
     "data": [
         {
             "type": "file",
@@ -14,18 +14,6 @@
             "name": ".nojekyll",
             "size": 0,
             "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-        },
-        {
-            "type": "file",
-            "name": "CONFIGURACION_GITHUB_PAGES.md",
-            "size": 3715,
-            "hash": "6ca644f6c7e8dee0aefdf8f29f7f5cd7bbfcf9b48780c5eb389090a1161755df"
-        },
-        {
-            "type": "file",
-            "name": "GUIA_DESPLIEGUE.md",
-            "size": 7360,
-            "hash": "10b6a6241fde82688f88b99537d1bd47c56878f0feac7026958a37a6bcf0be42"
         },
         {
             "type": "file",
