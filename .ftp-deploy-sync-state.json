@@ -1,7 +1,7 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1772826588001,
+    "generatedTime": 1772883565477,
     "data": [
         {
             "type": "file",
@@ -65,15 +65,15 @@
         },
         {
             "type": "file",
-            "name": "diagnostico.html",
-            "size": 17253,
-            "hash": "12854c6cd9ce62f1234f0d198e0be158456efa618c7e9a097a87387eb6ac373b"
+            "name": "index.html",
+            "size": 61223,
+            "hash": "5b7b4697d09b165dc6cd56b4651cf9269c69c5c13c705f8e78e7d3be4d6710e6"
         },
         {
             "type": "file",
-            "name": "index.html",
-            "size": 60573,
-            "hash": "040391893457bcfcf63dae5e96c8a9200aabbefce13ca6a7d8e776b621186530"
+            "name": "diagnostico.html",
+            "size": 17253,
+            "hash": "12854c6cd9ce62f1234f0d198e0be158456efa618c7e9a097a87387eb6ac373b"
         },
         {
             "type": "file",
@@ -83,15 +83,15 @@
         },
         {
             "type": "file",
-            "name": "index_v2_preview.html",
-            "size": 26513,
-            "hash": "35c4810ddfcaff29c5129e2832a61aa6918e32593163c5e8e8fb68ff258299b5"
-        },
-        {
-            "type": "file",
             "name": "index_interactive.html",
             "size": 31086,
             "hash": "8968aa9db321dcb2d0337ac6b39c193f3d258cae9fcfa5e062fc326d4a60fbd3"
+        },
+        {
+            "type": "file",
+            "name": "index_v2_preview.html",
+            "size": 26513,
+            "hash": "35c4810ddfcaff29c5129e2832a61aa6918e32593163c5e8e8fb68ff258299b5"
         },
         {
             "type": "folder",
