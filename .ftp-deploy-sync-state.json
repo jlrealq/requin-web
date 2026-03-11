@@ -1,7 +1,7 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1773228946693,
+    "generatedTime": 1773255277690,
     "data": [
         {
             "type": "file",
@@ -35,15 +35,15 @@
         },
         {
             "type": "file",
-            "name": "Logo-Requin_transparent.png",
-            "size": 157025,
-            "hash": "9d69caf4827cf0436a2f0dc3c569adee093c7a7a94b6fd9d817c5c6e2f6101d5"
-        },
-        {
-            "type": "file",
             "name": "Logo-Requin_block.jpeg",
             "size": 1241470,
             "hash": "389791266a0563441c8a355a1866dee6e6452c51b5b10d7cb483a1a2d7266199"
+        },
+        {
+            "type": "file",
+            "name": "Logo-Requin_transparent.png",
+            "size": 157025,
+            "hash": "9d69caf4827cf0436a2f0dc3c569adee093c7a7a94b6fd9d817c5c6e2f6101d5"
         },
         {
             "type": "file",
@@ -72,20 +72,14 @@
         {
             "type": "file",
             "name": "index.html",
-            "size": 61527,
-            "hash": "28425032eae50de2f490bffe839c0aa9cbf6a8d9504e92fa573801e4fd6f6df7"
+            "size": 62111,
+            "hash": "2eb6c4fe263e2148d203e004d31c0b38693fdb40604884278cce8fe0ab6edf26"
         },
         {
             "type": "file",
             "name": "index_backup.html",
             "size": 35306,
             "hash": "7758d2698b702bf90dcf9482ad2d3af29a444312c68faeb36e9f7238d20ca7e7"
-        },
-        {
-            "type": "file",
-            "name": "index_v2_preview.html",
-            "size": 26513,
-            "hash": "35c4810ddfcaff29c5129e2832a61aa6918e32593163c5e8e8fb68ff258299b5"
         },
         {
             "type": "file",
@@ -96,6 +90,12 @@
         {
             "type": "folder",
             "name": "js"
+        },
+        {
+            "type": "file",
+            "name": "index_v2_preview.html",
+            "size": 26513,
+            "hash": "35c4810ddfcaff29c5129e2832a61aa6918e32593163c5e8e8fb68ff258299b5"
         },
         {
             "type": "file",
