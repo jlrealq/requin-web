@@ -1,7 +1,7 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1773401655587,
+    "generatedTime": 1773427375591,
     "data": [
         {
             "type": "file",
@@ -71,15 +71,21 @@
         },
         {
             "type": "file",
-            "name": "index.html",
-            "size": 61561,
-            "hash": "31afce95c91cc04aedec41957f3665b859a5e24e5a9c866e3adea822da82f122"
-        },
-        {
-            "type": "file",
             "name": "index_backup.html",
             "size": 35306,
             "hash": "7758d2698b702bf90dcf9482ad2d3af29a444312c68faeb36e9f7238d20ca7e7"
+        },
+        {
+            "type": "file",
+            "name": "index.html",
+            "size": 61942,
+            "hash": "304eae17416143b71bf83542d8ccbc22b559c2db21f9fd8996d8a6276a68d8a1"
+        },
+        {
+            "type": "file",
+            "name": "index_v2_preview.html",
+            "size": 26513,
+            "hash": "35c4810ddfcaff29c5129e2832a61aa6918e32593163c5e8e8fb68ff258299b5"
         },
         {
             "type": "file",
@@ -89,19 +95,13 @@
         },
         {
             "type": "file",
-            "name": "index_v2_preview.html",
-            "size": 26513,
-            "hash": "35c4810ddfcaff29c5129e2832a61aa6918e32593163c5e8e8fb68ff258299b5"
+            "name": "juanluis_oficina.jpeg",
+            "size": 239792,
+            "hash": "e36e697f7d04ffcdf9d215f546f480ea22f4aa15ec2f1bced1834f64b1bf9ed6"
         },
         {
             "type": "folder",
             "name": "js"
-        },
-        {
-            "type": "file",
-            "name": "juanluis_oficina.jpeg",
-            "size": 239792,
-            "hash": "e36e697f7d04ffcdf9d215f546f480ea22f4aa15ec2f1bced1834f64b1bf9ed6"
         },
         {
             "type": "file",
