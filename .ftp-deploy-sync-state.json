@@ -1,7 +1,7 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1773487626391,
+    "generatedTime": 1773513591259,
     "data": [
         {
             "type": "file",
@@ -41,15 +41,15 @@
         },
         {
             "type": "file",
-            "name": "calculator_preview.html",
-            "size": 14734,
-            "hash": "22a67bab6caa1ab93cf49766455b86c42deae4885041056623493fd461045a57"
-        },
-        {
-            "type": "file",
             "name": "Logo-Requin_transparent.png",
             "size": 157025,
             "hash": "9d69caf4827cf0436a2f0dc3c569adee093c7a7a94b6fd9d817c5c6e2f6101d5"
+        },
+        {
+            "type": "file",
+            "name": "calculator_preview.html",
+            "size": 14734,
+            "hash": "22a67bab6caa1ab93cf49766455b86c42deae4885041056623493fd461045a57"
         },
         {
             "type": "file",
@@ -72,8 +72,8 @@
         {
             "type": "file",
             "name": "index.html",
-            "size": 61496,
-            "hash": "a8f5b86bcbb74e080d569c94d251f18d05bad30bad5ba08143185071f4c328f9"
+            "size": 61644,
+            "hash": "60efbd35a0990fe53cd10f05c637954a0809ba48a003803abd5e9cac18ce4035"
         },
         {
             "type": "file",
@@ -88,14 +88,14 @@
             "hash": "8968aa9db321dcb2d0337ac6b39c193f3d258cae9fcfa5e062fc326d4a60fbd3"
         },
         {
-            "type": "folder",
-            "name": "js"
-        },
-        {
             "type": "file",
             "name": "index_v2_preview.html",
             "size": 26513,
             "hash": "35c4810ddfcaff29c5129e2832a61aa6918e32593163c5e8e8fb68ff258299b5"
+        },
+        {
+            "type": "folder",
+            "name": "js"
         },
         {
             "type": "file",
