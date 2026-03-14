@@ -1,7 +1,7 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1773427375591,
+    "generatedTime": 1773487626391,
     "data": [
         {
             "type": "file",
@@ -41,15 +41,15 @@
         },
         {
             "type": "file",
-            "name": "Logo-Requin_transparent.png",
-            "size": 157025,
-            "hash": "9d69caf4827cf0436a2f0dc3c569adee093c7a7a94b6fd9d817c5c6e2f6101d5"
-        },
-        {
-            "type": "file",
             "name": "calculator_preview.html",
             "size": 14734,
             "hash": "22a67bab6caa1ab93cf49766455b86c42deae4885041056623493fd461045a57"
+        },
+        {
+            "type": "file",
+            "name": "Logo-Requin_transparent.png",
+            "size": 157025,
+            "hash": "9d69caf4827cf0436a2f0dc3c569adee093c7a7a94b6fd9d817c5c6e2f6101d5"
         },
         {
             "type": "file",
@@ -71,15 +71,25 @@
         },
         {
             "type": "file",
+            "name": "index.html",
+            "size": 61496,
+            "hash": "a8f5b86bcbb74e080d569c94d251f18d05bad30bad5ba08143185071f4c328f9"
+        },
+        {
+            "type": "file",
             "name": "index_backup.html",
             "size": 35306,
             "hash": "7758d2698b702bf90dcf9482ad2d3af29a444312c68faeb36e9f7238d20ca7e7"
         },
         {
             "type": "file",
-            "name": "index.html",
-            "size": 61942,
-            "hash": "304eae17416143b71bf83542d8ccbc22b559c2db21f9fd8996d8a6276a68d8a1"
+            "name": "index_interactive.html",
+            "size": 31086,
+            "hash": "8968aa9db321dcb2d0337ac6b39c193f3d258cae9fcfa5e062fc326d4a60fbd3"
+        },
+        {
+            "type": "folder",
+            "name": "js"
         },
         {
             "type": "file",
@@ -89,19 +99,9 @@
         },
         {
             "type": "file",
-            "name": "index_interactive.html",
-            "size": 31086,
-            "hash": "8968aa9db321dcb2d0337ac6b39c193f3d258cae9fcfa5e062fc326d4a60fbd3"
-        },
-        {
-            "type": "file",
             "name": "juanluis_oficina.jpeg",
             "size": 239792,
             "hash": "e36e697f7d04ffcdf9d215f546f480ea22f4aa15ec2f1bced1834f64b1bf9ed6"
-        },
-        {
-            "type": "folder",
-            "name": "js"
         },
         {
             "type": "file",
