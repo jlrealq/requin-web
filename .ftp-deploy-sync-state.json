@@ -1,7 +1,7 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1774552016163,
+    "generatedTime": 1774611798106,
     "data": [
         {
             "type": "file",
@@ -53,15 +53,15 @@
         },
         {
             "type": "file",
-            "name": "consultoria_premium.png",
-            "size": 672339,
-            "hash": "879354fea50f2a314a99861ec539f45e18e75470a9f6631d3fea388a84f65924"
-        },
-        {
-            "type": "file",
             "name": "design_showcase.html",
             "size": 13719,
             "hash": "c9085466551501b5522df6d4a76970f10dc8268dbfd5af4c9bc917b96452414f"
+        },
+        {
+            "type": "file",
+            "name": "consultoria_premium.png",
+            "size": 672339,
+            "hash": "879354fea50f2a314a99861ec539f45e18e75470a9f6631d3fea388a84f65924"
         },
         {
             "type": "file",
@@ -72,8 +72,8 @@
         {
             "type": "file",
             "name": "index.html",
-            "size": 60725,
-            "hash": "7f9f9dc57225c2b3d2d1df09725b3dee64ecad30ab7d9875a16c62faaeda8b08"
+            "size": 62001,
+            "hash": "6a607c1a79a2b47ecdc492c0e35e361047f78ffb3ad5309f9cd7398dd68eddfe"
         },
         {
             "type": "file",
