@@ -1,7 +1,7 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1775216394261,
+    "generatedTime": 1775225390014,
     "data": [
         {
             "type": "file",
@@ -20,6 +20,12 @@
             "name": "Gemini_Generated_Image_yxjsspyxjsspyxjs.png",
             "size": 1567223,
             "hash": "8871f4f7ef619bf1cae5719421788c0be9b72d9c34ecdfef99df3fc1abfc3f49"
+        },
+        {
+            "type": "file",
+            "name": "Juan Luis Oficina 4K.jpeg",
+            "size": 985460,
+            "hash": "3e4d154e49590c60514044643650cf5cdee3c63bcc9ee1f50d81a81ce08d8bd8"
         },
         {
             "type": "file",
@@ -72,8 +78,8 @@
         {
             "type": "file",
             "name": "index.html",
-            "size": 60750,
-            "hash": "1740de39e1ff988d43fb2210f158d9865e066d744e72a2f70f21c5c08c2ed895"
+            "size": 60485,
+            "hash": "75e9505810affbde4e9ec10f79788233a271e1b796eda9c44cb8ff4fc771adc3"
         },
         {
             "type": "file",
