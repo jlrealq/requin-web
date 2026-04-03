@@ -1,7 +1,7 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1775225390014,
+    "generatedTime": 1775232439541,
     "data": [
         {
             "type": "file",
@@ -26,6 +26,12 @@
             "name": "Juan Luis Oficina 4K.jpeg",
             "size": 985460,
             "hash": "3e4d154e49590c60514044643650cf5cdee3c63bcc9ee1f50d81a81ce08d8bd8"
+        },
+        {
+            "type": "file",
+            "name": "Logo-Requin-V2.png",
+            "size": 270126,
+            "hash": "85e2870458f8ed46bb1bd600076ca145d20bcfae518db01cc074ca3fc661af7c"
         },
         {
             "type": "file",
@@ -78,8 +84,8 @@
         {
             "type": "file",
             "name": "index.html",
-            "size": 60485,
-            "hash": "75e9505810affbde4e9ec10f79788233a271e1b796eda9c44cb8ff4fc771adc3"
+            "size": 60530,
+            "hash": "307f329e49c626f27eb5a906a1042ec58c779fd49c7b3ef6edf0ed687ef4050b"
         },
         {
             "type": "file",
