@@ -144,7 +144,7 @@ def obtener_noticias():
                 
                 # Generar HTML de la tarjeta
                 html_noticias += f"""
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
+                <div class="bg-champagne p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
                     <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">{region}</span>
                     <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">{titulo}</h4>
                     <a href="{item.link}" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
