@@ -82,15 +82,15 @@
     </div>
     <nav
         class="sticky top-0 z-50 bg-champagne/95 backdrop-blur-md border-b border-charcoal/5 px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-4">
+        <a href="#inicio" class="flex items-center gap-4 hover:opacity-80 transition-opacity">
             <img src="Logo-Requin-V2.png" alt="Requin & Asociados Logo"
                 class="h-12 md:h-14 w-auto object-contain rounded-md" />
             <span class="font-serif text-xl md:text-2xl font-bold tracking-tight uppercase text-charcoal">Requin <span
                     class="text-gold">&amp;</span> Asociados</span>
-        </div>
+        </a>
 
-        <!-- Desktop Nav -->
         <div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest items-center">
+            <a href="#inicio" class="hover:text-gold transition text-charcoal/80 border-b-2 border-transparent hover:border-gold">Inicio</a>
             <a href="#quienes-somos" class="hover:text-gold transition text-charcoal/80">Quiénes Somos</a>
             <a href="#servicios" class="hover:text-gold transition text-charcoal/80">Servicios</a>
             <button id="nav-simulador-btn"
@@ -112,6 +112,7 @@
         <button id="close-menu-btn" class="absolute top-6 right-6 p-2 text-champagne hover:text-gold transition">
             <span class="material-symbols-outlined text-3xl">close</span>
         </button>
+        <a href="#inicio" class="mobile-link hover:text-gold transition">Inicio</a>
         <a href="#quienes-somos" class="mobile-link hover:text-gold transition">Quiénes Somos</a>
         <a href="#servicios" class="mobile-link hover:text-gold transition">Servicios</a>
         <button id="mobile-simulador-btn" class="mobile-link hover:text-gold transition uppercase">Rentabilidad</button>
@@ -119,7 +120,7 @@
         <a href="#faq" class="mobile-link hover:text-gold transition">FAQ</a>
         <a href="#contacto" class="mobile-link bg-gold px-6 py-3 text-charcoal rounded-sm">Contacto</a>
     </div>
-    <header class="relative px-6 py-16 overflow-hidden bg-champagne-dark/30">
+    <header id="inicio" class="relative px-6 py-16 overflow-hidden bg-champagne-dark/30">
 
         <img src="premium_hero_bg.png" alt="Hero Background"
             class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-overlay z-0" />
