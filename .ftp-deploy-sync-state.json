@@ -1,7 +1,7 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1775388818787,
+    "generatedTime": 1775414742554,
     "data": [
         {
             "type": "file",
@@ -41,15 +41,15 @@
         },
         {
             "type": "file",
-            "name": "Logo-Requin_block.jpeg",
-            "size": 1241470,
-            "hash": "389791266a0563441c8a355a1866dee6e6452c51b5b10d7cb483a1a2d7266199"
-        },
-        {
-            "type": "file",
             "name": "Logo-Requin.png",
             "size": 1753224,
             "hash": "285a7f3166561a290a870a892fc21536a75ee04904cf687e4ea4581dad84db79"
+        },
+        {
+            "type": "file",
+            "name": "Logo-Requin_block.jpeg",
+            "size": 1241470,
+            "hash": "389791266a0563441c8a355a1866dee6e6452c51b5b10d7cb483a1a2d7266199"
         },
         {
             "type": "file",
@@ -83,15 +83,15 @@
         },
         {
             "type": "file",
-            "name": "index.html",
-            "size": 60761,
-            "hash": "9aad9783f86a50ae5eb54af307706bfe20eabad5a6dfbdaf09a81fd29164b6dc"
-        },
-        {
-            "type": "file",
             "name": "index_backup.html",
             "size": 35306,
             "hash": "7758d2698b702bf90dcf9482ad2d3af29a444312c68faeb36e9f7238d20ca7e7"
+        },
+        {
+            "type": "file",
+            "name": "index.html",
+            "size": 60951,
+            "hash": "55155f056853de2a01e2ce2d750735e8abdfc45ecade3b403abd83bc9a5724b4"
         },
         {
             "type": "file",
