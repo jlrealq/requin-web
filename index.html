@@ -54,6 +54,30 @@
         body {
             min-height: max(884px, 100dvh);
         }
+        .tabla-dolor-solucion {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: white;
+        }
+        .tabla-dolor-solucion th,
+        .tabla-dolor-solucion td {
+            border: 1px solid rgba(26, 26, 26, 0.1);
+            padding: 1.25rem;
+            text-align: left;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        .tabla-dolor-solucion th {
+            background-color: #F8F9FA;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #1A1A1A;
+        }
+        .tabla-dolor-solucion tr:hover {
+            background-color: #FDFDFB;
+        }
     </style>
 </head>
 
@@ -120,26 +144,48 @@
         <a href="#faq" class="mobile-link hover:text-gold transition">FAQ</a>
         <a href="#contacto" class="mobile-link bg-gold px-6 py-3 text-charcoal rounded-sm">Contacto</a>
     </div>
-    <header id="inicio" class="relative px-6 py-16 overflow-hidden bg-champagne-dark/30">
 
+    <header id="inicio" class="relative px-6 py-20 overflow-hidden bg-champagne-dark/30">
         <img src="premium_hero_bg.png" alt="Hero Background"
-            class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-overlay z-0" />
-        <div class="max-w-xl mx-auto text-center relative z-10 opacity-0 animate-fade-in-up">
-            <span class="text-gold text-xs font-bold tracking-[0.3em] uppercase mb-4 block">Estrategia &amp;
-                Patrimonio</span>
-            <h1 class="text-4xl font-serif text-charcoal leading-tight mb-6">Expertos en Arquitectura Financiera</h1>
-            <p class="text-charcoal/70 text-lg font-light leading-relaxed mb-10">Transformamos la complejidad fiscal en
-                una ventaja competitiva sostenible para su empresa.</p>
-            <div class="flex flex-col gap-4">
-                <a href="#servicios"
-                    class="inline-block text-center bg-charcoal text-champagne py-4 px-8 rounded-sm font-medium hover:bg-charcoal-light transition-all uppercase text-xs tracking-widest">Descubrir
-                    Soluciones</a>
+            class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay z-0" />
+        <div class="max-w-4xl mx-auto text-center relative z-10 opacity-0 animate-fade-in-up">
+            <span class="text-gold text-xs font-bold tracking-[0.3em] uppercase mb-6 block underline decoration-gold/30 underline-offset-8">Arquitectura Financiera de Élite</span>
+            <h1 class="text-3xl md:text-5xl font-serif text-charcoal leading-tight mb-8">Reorganizamos la estructura financiera y legal de empresas y patrimonios para que crezcan con menos impuestos, más control y menor riesgo al expandirse tanto a nivel nacional como internacional.</h1>
+            <h2 class="text-lg md:text-xl text-charcoal/80 font-light leading-relaxed mb-12 max-w-3xl mx-auto italic">Especialistas en empresas chilenas que quieren estructurar su realidad financiera antes del salto a mercados internacionales, combinando rigor jurídico, visión de negocio y plan de acción concreto.</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-12">
+                <div class="bg-white/50 backdrop-blur-sm p-6 border border-gold/10 rounded-sm">
+                    <div class="text-gold mb-3"><span class="material-symbols-outlined text-2xl">trending_down</span></div>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">Reducimos tu carga fiscal sin perder licencia ni transparencia, diseñando estructuras que acompañan tu crecimiento real.</p>
+                </div>
+                <div class="bg-white/50 backdrop-blur-sm p-6 border border-gold/10 rounded-sm">
+                    <div class="text-gold mb-3"><span class="material-symbols-outlined text-2xl">public</span></div>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">Preparamos tu empresa y tu patrimonio para expansión internacional, sucesión y eventual venta, minimizando riesgos legales y tributarios.</p>
+                </div>
+                <div class="bg-white/50 backdrop-blur-sm p-6 border border-gold/10 rounded-sm">
+                    <div class="text-gold mb-3"><span class="material-symbols-outlined text-2xl">checklist_rtl</span></div>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">Trabajamos en 3 etapas claras: diagnóstico integral, propuesta de arquitectura financiera y legal, y ejecución controlada junto a tu equipo.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center gap-4">
                 <a href="#contacto"
-                    class="inline-block text-center border border-charcoal/20 text-charcoal py-4 px-8 rounded-sm font-medium hover:bg-charcoal/5 transition-all uppercase text-xs tracking-widest">Agenda
-                    de Consultoría</a>
+                    class="inline-block text-center bg-charcoal text-champagne py-4 px-10 rounded-sm font-medium hover:bg-gold hover:text-charcoal transition-all uppercase text-xs tracking-widest shadow-lg">Solicitar Diagnóstico</a>
+                <a href="#servicios"
+                    class="inline-block text-center border border-charcoal/20 text-charcoal py-4 px-10 rounded-sm font-medium hover:bg-charcoal/5 transition-all uppercase text-xs tracking-widest">Nuestra Metodología</a>
             </div>
         </div>
     </header>
+
+    <!-- Bloque 2: Resumen de cliente ideal -->
+    <section class="py-12 bg-charcoal text-champagne px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-lg md:text-xl font-light leading-relaxed italic opacity-90">
+                "Ayudamos a pymes en crecimiento, holdings familiares, startups y empresas que preparan su expansión a España y otros mercados, diseñando estructuras financieras y legales que minimizan impuestos, riesgos y fricciones operativas."
+            </p>
+        </div>
+    </section>
+
     <section id="quienes-somos" class="py-20 px-6 bg-champagne border-b border-charcoal/5">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-center">
             <div class="w-full md:w-1/2 relative group">
@@ -161,6 +207,92 @@
                 <p class="text-charcoal/70 leading-relaxed font-light">Nuestra priorización de la
                     discreción, precisión y visión global nos convierten en el aliado definitivo para el escalamiento
                     seguro de sus operaciones y proyectos más ambiciosos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloque 3: Tabla de dolor‑solución -->
+    <section id="segmentos" class="py-20 px-6 bg-white/50">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-12 border-l-2 border-gold pl-4">
+                <h2 class="text-3xl font-serif text-charcoal leading-tight">Para quién diseñamos nuestra arquitectura</h2>
+                <p class="text-charcoal/70 mt-4 max-w-3xl font-light">
+                    Ayudamos a pymes en crecimiento, holdings familiares, startups y empresas que preparan su expansión a España y otros mercados, diseñando estructuras financieras y legales que minimizan impuestos, riesgos y fricciones operativas.
+                </p>
+            </div>
+
+            <div class="overflow-x-auto shadow-xl border border-charcoal/5 rounded-sm">
+                <table class="tabla-dolor-solucion">
+                    <thead>
+                        <tr>
+                            <th class="w-1/4">Segmento</th>
+                            <th class="w-1/3">Principal dolor</th>
+                            <th class="w-1/3">Nuestra solución</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold text-charcoal">Pymes con crecimiento sostenido</td>
+                            <td class="text-charcoal/80">
+                                Sienten que están pagando de más en impuestos o exponiéndose sin estructuras planificadas.<br><br>
+                                Operan bien, pero su base financiera y tributaria no está preparada para el salto de escala.
+                            </td>
+                            <td class="bg-gold/5 text-charcoal/90">
+                                <span class="font-bold text-gold block mb-1">Estructura de Crecimiento</span>
+                                Reestructuramos tu empresa para que tu carga fiscal se reduzca y tu estructura acompañe el crecimiento.<br><br>
+                                Diseñamos una arquitectura financiera clara y sostenible, que soporte asociaciones, inversiones y expansión.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-charcoal">Holdings y grupos empresariales familiares</td>
+                            <td class="text-charcoal/80">
+                                No tienen una visión global de su estructura patrimonial y empresarial.<br><br>
+                                Tienen riesgos en sucesión, falta de separación de activos y exposición fiscal innecesaria.
+                            </td>
+                            <td class="bg-gold/5 text-charcoal/90">
+                                <span class="font-bold text-gold block mb-1">Orden Patrimonial</span>
+                                Ordenamos tu grupo de empresas y patrimonios en una estructura coherente y defendible.<br><br>
+                                Preparamos sucesión, separación de riesgos y expansión internacional, especialmente hacia España.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-charcoal">Startups y empresas de alto crecimiento</td>
+                            <td class="text-charcoal/80">
+                                Su estructura fue pensada para la fase inicial y no resiste rondas de inversión o expansión.<br><br>
+                                Temen errores básicos de estructuración que encarecen la internacionalización o una eventual salida.
+                            </td>
+                            <td class="bg-gold/5 text-charcoal/90">
+                                <span class="font-bold text-gold block mb-1">Arquitectura para Escalar</span>
+                                Diseñamos una arquitectura financiera y legal pensada para inversionistas, due diligence y expansión.<br><br>
+                                Ajustamos holdings, socios y activos para que el modelo sea sólido antes de la siguiente ronda o salida.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-charcoal">Empresas con expansión a España u otros mercados</td>
+                            <td class="text-charcoal/80">
+                                No saben cómo estructurar procesos, socios y contratos en dos jurisdicciones.<br><br>
+                                Temen pagar impuestos excesivos o exponerse legalmente por errores de diseño.
+                            </td>
+                            <td class="bg-gold/5 text-charcoal/90">
+                                <span class="font-bold text-gold block mb-1">Puente Internacional</span>
+                                Creamos una estructura coordinada entre Chile y España (u otros mercados) que minimice impuestos y riesgos.<br><br>
+                                Preparamos tu empresa para operar con menores fricciones, bases imponibles más bajas y cumplimiento seguro.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-charcoal">Patrimonios y familias empresarias con visión global</td>
+                            <td class="text-charcoal/80">
+                                Mezclan activos operativos con personales sin separación clara.<br><br>
+                                No tienen un plan de sucesión ni estructura preparada para transmisión ordenada.
+                            </td>
+                            <td class="bg-gold/5 text-charcoal/90">
+                                <span class="font-bold text-gold block mb-1">Protección de Legado</span>
+                                Diseñamos una estructura patrimonial y empresarial que separe riesgos, proteja el legado y planifique la sucesión.<br><br>
+                                Creamos una arquitectura que funcione tanto en Chile como en España, pensada en el largo plazo.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
