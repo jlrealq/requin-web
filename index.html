@@ -54,6 +54,30 @@
         body {
             min-height: max(884px, 100dvh);
         }
+        .tabla-dolor-solucion {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: white;
+        }
+        .tabla-dolor-solucion th,
+        .tabla-dolor-solucion td {
+            border: 1px solid rgba(26, 26, 26, 0.1);
+            padding: 1.25rem;
+            text-align: left;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        .tabla-dolor-solucion th {
+            background-color: #F8F9FA;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #1A1A1A;
+        }
+        .tabla-dolor-solucion tr:hover {
+            background-color: #FDFDFB;
+        }
     </style>
 </head>
 
@@ -72,7 +96,7 @@
                 EUR/CLP: $1.064 <span class="up">▲</span>
             </span>
             <span class="mx-10 text-gray-400 text-[10px] italic uppercase">
-                ACTUALIZADO: 06/04 08:51
+                ACTUALIZADO: 06/04 13:27
             </span>
             <!--TICKER_END-->
         </div>
@@ -120,26 +144,48 @@
         <a href="#faq" class="mobile-link hover:text-gold transition">FAQ</a>
         <a href="#contacto" class="mobile-link bg-gold px-6 py-3 text-charcoal rounded-sm">Contacto</a>
     </div>
-    <header id="inicio" class="relative px-6 py-16 overflow-hidden bg-champagne-dark/30">
 
+    <header id="inicio" class="relative px-6 py-20 overflow-hidden bg-champagne-dark/30">
         <img src="premium_hero_bg.png" alt="Hero Background"
-            class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-overlay z-0" />
-        <div class="max-w-xl mx-auto text-center relative z-10 opacity-0 animate-fade-in-up">
-            <span class="text-gold text-xs font-bold tracking-[0.3em] uppercase mb-4 block">Estrategia &amp;
-                Patrimonio</span>
-            <h1 class="text-4xl font-serif text-charcoal leading-tight mb-6">Expertos en Arquitectura Financiera</h1>
-            <p class="text-charcoal/70 text-lg font-light leading-relaxed mb-10">Transformamos la complejidad fiscal en
-                una ventaja competitiva sostenible para su empresa.</p>
-            <div class="flex flex-col gap-4">
-                <a href="#servicios"
-                    class="inline-block text-center bg-charcoal text-champagne py-4 px-8 rounded-sm font-medium hover:bg-charcoal-light transition-all uppercase text-xs tracking-widest">Descubrir
-                    Soluciones</a>
+            class="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-overlay z-0" />
+        <div class="max-w-4xl mx-auto text-center relative z-10 opacity-0 animate-fade-in-up">
+            <span class="text-gold text-xs font-bold tracking-[0.3em] uppercase mb-6 block underline decoration-gold/30 underline-offset-8">Arquitectura Financiera de Élite</span>
+            <h1 class="text-3xl md:text-5xl font-serif text-charcoal leading-tight mb-8">Reorganizamos la estructura financiera y legal de empresas y patrimonios para que crezcan con menos impuestos, más control y menor riesgo al expandirse tanto a nivel nacional como internacional.</h1>
+            <h2 class="text-lg md:text-xl text-charcoal/80 font-light leading-relaxed mb-12 max-w-3xl mx-auto italic">Especialistas en empresas chilenas que quieren estructurar su realidad financiera antes del salto a mercados internacionales, combinando rigor jurídico, visión de negocio y plan de acción concreto.</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-12">
+                <div class="bg-white/50 backdrop-blur-sm p-6 border border-gold/10 rounded-sm">
+                    <div class="text-gold mb-3"><span class="material-symbols-outlined text-2xl">trending_down</span></div>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">Reducimos tu carga fiscal sin perder licencia ni transparencia, diseñando estructuras que acompañan tu crecimiento real.</p>
+                </div>
+                <div class="bg-white/50 backdrop-blur-sm p-6 border border-gold/10 rounded-sm">
+                    <div class="text-gold mb-3"><span class="material-symbols-outlined text-2xl">public</span></div>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">Preparamos tu empresa y tu patrimonio para expansión internacional, sucesión y eventual venta, minimizando riesgos legales y tributarios.</p>
+                </div>
+                <div class="bg-white/50 backdrop-blur-sm p-6 border border-gold/10 rounded-sm">
+                    <div class="text-gold mb-3"><span class="material-symbols-outlined text-2xl">checklist_rtl</span></div>
+                    <p class="text-sm text-charcoal/80 leading-relaxed">Trabajamos en 3 etapas claras: diagnóstico integral, propuesta de arquitectura financiera y legal, y ejecución controlada junto a tu equipo.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center gap-4">
                 <a href="#contacto"
-                    class="inline-block text-center border border-charcoal/20 text-charcoal py-4 px-8 rounded-sm font-medium hover:bg-charcoal/5 transition-all uppercase text-xs tracking-widest">Agenda
-                    de Consultoría</a>
+                    class="inline-block text-center bg-charcoal text-champagne py-4 px-10 rounded-sm font-medium hover:bg-gold hover:text-charcoal transition-all uppercase text-xs tracking-widest shadow-lg">Solicitar Diagnóstico</a>
+                <a href="#servicios"
+                    class="inline-block text-center border border-charcoal/20 text-charcoal py-4 px-10 rounded-sm font-medium hover:bg-charcoal/5 transition-all uppercase text-xs tracking-widest">Nuestra Metodología</a>
             </div>
         </div>
     </header>
+
+    <!-- Bloque 2: Resumen de cliente ideal -->
+    <section class="py-12 bg-charcoal text-champagne px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-lg md:text-xl font-light leading-relaxed italic opacity-90">
+                "Ayudamos a pymes en crecimiento, holdings familiares, startups y empresas que preparan su expansión a España y otros mercados, diseñando estructuras financieras y legales que minimizan impuestos, riesgos y fricciones operativas."
+            </p>
+        </div>
+    </section>
+
     <section id="quienes-somos" class="py-20 px-6 bg-champagne border-b border-charcoal/5">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-center">
             <div class="w-full md:w-1/2 relative group">
@@ -161,6 +207,92 @@
                 <p class="text-charcoal/70 leading-relaxed font-light">Nuestra priorización de la
                     discreción, precisión y visión global nos convierten en el aliado definitivo para el escalamiento
                     seguro de sus operaciones y proyectos más ambiciosos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloque 3: Tabla de dolor‑solución -->
+    <section id="segmentos" class="py-20 px-6 bg-white/50">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-12 border-l-2 border-gold pl-4">
+                <h2 class="text-3xl font-serif text-charcoal leading-tight">Para quién diseñamos nuestra arquitectura</h2>
+                <p class="text-charcoal/70 mt-4 max-w-3xl font-light">
+                    Ayudamos a pymes en crecimiento, holdings familiares, startups y empresas que preparan su expansión a España y otros mercados, diseñando estructuras financieras y legales que minimizan impuestos, riesgos y fricciones operativas.
+                </p>
+            </div>
+
+            <div class="overflow-x-auto shadow-xl border border-charcoal/5 rounded-sm">
+                <table class="tabla-dolor-solucion">
+                    <thead>
+                        <tr>
+                            <th class="w-1/4">Segmento</th>
+                            <th class="w-1/3">Principal dolor</th>
+                            <th class="w-1/3">Nuestra solución</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold text-charcoal">Pymes con crecimiento sostenido</td>
+                            <td class="text-charcoal/80">
+                                Sienten que están pagando de más en impuestos o exponiéndose sin estructuras planificadas.<br><br>
+                                Operan bien, pero su base financiera y tributaria no está preparada para el salto de escala.
+                            </td>
+                            <td class="bg-gold/5 text-charcoal/90">
+                                <span class="font-bold text-gold block mb-1">Estructura de Crecimiento</span>
+                                Reestructuramos tu empresa para que tu carga fiscal se reduzca y tu estructura acompañe el crecimiento.<br><br>
+                                Diseñamos una arquitectura financiera clara y sostenible, que soporte asociaciones, inversiones y expansión.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-charcoal">Holdings y grupos empresariales familiares</td>
+                            <td class="text-charcoal/80">
+                                No tienen una visión global de su estructura patrimonial y empresarial.<br><br>
+                                Tienen riesgos en sucesión, falta de separación de activos y exposición fiscal innecesaria.
+                            </td>
+                            <td class="bg-gold/5 text-charcoal/90">
+                                <span class="font-bold text-gold block mb-1">Orden Patrimonial</span>
+                                Ordenamos tu grupo de empresas y patrimonios en una estructura coherente y defendible.<br><br>
+                                Preparamos sucesión, separación de riesgos y expansión internacional, especialmente hacia España.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-charcoal">Startups y empresas de alto crecimiento</td>
+                            <td class="text-charcoal/80">
+                                Su estructura fue pensada para la fase inicial y no resiste rondas de inversión o expansión.<br><br>
+                                Temen errores básicos de estructuración que encarecen la internacionalización o una eventual salida.
+                            </td>
+                            <td class="bg-gold/5 text-charcoal/90">
+                                <span class="font-bold text-gold block mb-1">Arquitectura para Escalar</span>
+                                Diseñamos una arquitectura financiera y legal pensada para inversionistas, due diligence y expansión.<br><br>
+                                Ajustamos holdings, socios y activos para que el modelo sea sólido antes de la siguiente ronda o salida.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-charcoal">Empresas con expansión a España u otros mercados</td>
+                            <td class="text-charcoal/80">
+                                No saben cómo estructurar procesos, socios y contratos en dos jurisdicciones.<br><br>
+                                Temen pagar impuestos excesivos o exponerse legalmente por errores de diseño.
+                            </td>
+                            <td class="bg-gold/5 text-charcoal/90">
+                                <span class="font-bold text-gold block mb-1">Puente Internacional</span>
+                                Creamos una estructura coordinada entre Chile y España (u otros mercados) que minimice impuestos y riesgos.<br><br>
+                                Preparamos tu empresa para operar con menores fricciones, bases imponibles más bajas y cumplimiento seguro.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-charcoal">Patrimonios y familias empresarias con visión global</td>
+                            <td class="text-charcoal/80">
+                                Mezclan activos operativos con personales sin separación clara.<br><br>
+                                No tienen un plan de sucesión ni estructura preparada para transmisión ordenada.
+                            </td>
+                            <td class="bg-gold/5 text-charcoal/90">
+                                <span class="font-bold text-gold block mb-1">Protección de Legado</span>
+                                Diseñamos una estructura patrimonial y empresarial que separe riesgos, proteja el legado y planifique la sucesión.<br><br>
+                                Creamos una arquitectura que funcione tanto en Chile como en España, pensada en el largo plazo.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -453,8 +585,8 @@
                 <!--NOTICIAS_START-->
                 <div class="bg-champagne p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
                     <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">CHILE</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Cómo es el plan de Mercado Libre para fortalecer su operación en Chile con inversión de US$ 750 millones</h4>
-                    <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxOTmIyYXU2XzBDUFI1NjI0UkVLb3E0YkppUm0xWTh5alh0X2hOdTk5OTJva2NMU0VCYkp1T1FVRjE4TTJjU0ZobVRPX3phLXJBeHRIZGpQaF9nLW9Ud0x2am1pNTdhVC1xaTAtMU5ZbEZDdkhLelk5WnVnNXJaOGtmZGlORDgxTVhqRTdhXzFjSmtPWWFQcmhPSkZRcXBlOUFULU1kS1NsdW4zdHdMSlNFY3hiRFcyZ0FKYmRwc2syekZUSGV1M3c?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Representantes de distintas industrias conocen en terreno nuevas tecnologías de acuicultura en Chile</h4>
+                    <a href="https://news.google.com/rss/articles/CBMijwJBVV95cUxQckxPM2pvTHFVR0otalVxZUdWYnBEbDd2N3NnOU1tLWpBX1RFaF9ZR0ZSMTRpMWxRUG44QkEyemxST3ZRRjRlWVppT0FwYTVCVVlNT3c4S0hrLU10OERmRnl6bkQ2eXN2TlNwb2FETERPVlhQNXZiY2NQV2YyRW91VnEwOXRHLWJCblBTYU9lb2Z4d2ItYU5CeFltQVd0RUVEekhMX0Izc2RkX0daWGZXRF9tT0Zabkw3MC1teGFQSzlWWkx5cDVPSUgzbEFUNC1OUkxKTmFQNy04aUQ1QklScDZqWTVfMjR2RUxwSXJ3RDF2U1phaWJocHFCQ1l1aWxlMUNnZmdZS1ZZd0NsUXBJ?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
@@ -462,8 +594,8 @@
                 
                 <div class="bg-champagne p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
                     <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">CHILE</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">¿Qué tan preparados estamos para un escenario de volatilidad prolongada?. Por Vera Voitova y Jesus Juyumaya – Facultad de Economía y Negocios UNAB</h4>
-                    <a href="https://news.google.com/rss/articles/CBMihgJBVV95cUxOQVczUWgwaFdHTWF5QnN2MUNZTGwwdThGUEpwb2o2cXBtYTRNZEJBTk5mSHprVS03RE9vaXoySHJNeE0wNW8yWWlIX0pVb2s5Sl9nZm4xa3BHakp1YmkzZFd6WnY1YTdvS21fZFNleWtMc1FXWkVqLXhORVhabzh2R2Z6RWJKLTVyOVE1U05yY2dQUUF1ci1ENnNSVk02LVJublZHckYybElSZE1uYVpMNzE2N3JWZXBOdVN6NWVud05COWVsYmZUV2lhb1BpeHdXRmxNaFhmMDVsb1VkZzFPQWRiOE9CQ0JobVBNTWNNQ3NrSXduVnAxUGVDVWVrOW85UmlRT25B?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">CADEM golpea expectativas del Gobierno: 52% cree que Chile va por mal camino y sube temor por la economía</h4>
+                    <a href="https://news.google.com/rss/articles/CBMi6gFBVV95cUxPQ0tNNGlsb1dGak9wNUYzYnBHSXFuQXRUZHV0UEVoMjRudzc3RHhTQ090aVpWTnp2ekhyaUtuWENDZDZIN3FwS05pclB1bUVPSHlTMmxYT3Q2WGxDQlAtTldJRkotVW9rNU9YaHVBdWpaUU05Ynk4bzJ6RGZURHpNelhtVklobFBVREhfM0NHVTNIbXJpcVNMZEQyMUNxbmVuUWttNlM4dktMUUoyTjdOc2RPZE9HTHZLNGtBVlRMdm5pS2EyYkItTWFhbDZCSEVoTV9NaEJxUFlzNGUwcVpOT2xpRE91NnYtcEHSAeoBQVVfeXFMT0NLTTRpbG9XRmpPcDVGM2JwR0lxbkF0VGR1dFBFaDI0bnc3N0R4U0NPdGlaVk56dnpIcmlLblhDQ2Q2SDdxcEtOaXJQdW1FT0h5UzJsWE90NlhsQ0JQLU5XSUZKLVVvazVPWGh1QXVqWlFNOWJ5OG8yekRmVER6TXpYbVZJaGxQVURIXzNDR1UzSG1yaXFTTGREMjFDcW5lblFrbTZTOHZLTFFKMk43TnNkT2RPR0x2SzRrQVZUTHZuaUthMmJCLU1hYWw2QkhFaE1fTWhCcVBZczRlMHFaTk9saURPdTZ2LXBB?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
@@ -471,8 +603,8 @@
                 
                 <div class="bg-champagne p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
                     <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">CHILE</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Mercado Libre anuncia inversión histórica en Chile por US$ 750 millones</h4>
-                    <a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNQ3NHSVV2M2s0X0JHMWJiQnViYnIxaDY1LVJrekZCUjBrR20tLWJzdHVzSnItZl92aExkRGpjeGJRRmdKVXhFMzZxX3BmVWZDVHNRck1zeTBvNTVrMGItSlpRZ2hVU2xxSmhzb1BKRlowMW5KcHczX3BweGp0WXJDUUhRNGNBb1RxdjB4dW9mcXFrUjZiQUNuQjV2MA?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Desempleo, ley de las 40 horas y flexibilidad: las prioridades laborales del gobierno</h4>
+                    <a href="https://news.google.com/rss/articles/CBMi5wFBVV95cUxOZVExSVJkZUhKMkMzVklGc1dRb3dwc0RzOFBVVHppQWxWVUJUQnEzSG5FNTFfbExsNFNsSnM1bHAxckFCTXE3RlpBMWNKWEROckxDTk9UdHRaY25XYXotb05LRjNSVEEzYnJXNmhxWUtMTXltUFI5MkpQUWxueHdSTE1aQmtBTHFsTC1CM183aHNDMnlhWTZZeUZYVXFlaml3RXNRc3B3VjBCZko3Z3U1alFMYWd1eXhOZW9Gd3hDQXpNYUxkUlc2Yk1raHU4UG9NanFsTk1iS2NJc1hUSElRY2tpNjFFeWfSAecBQVVfeXFMTmVRMUlSZGVISjJDM1ZJRnNXUW93cHNEczhQVVR6aUFsVlVCVEJxM0huRTUxX2xMbDRTbEpzNWxwMXJBQk1xN0ZaQTFjSlhETnJMQ05PVHR0WmNuV2F6LW9OS0YzUlRBM2JyVzZocVlLTE15bVBSOTJKUFFsbnh3UkxNWkJrQUxxbEwtQjNfN2hzQzJ5YVk2WXlGWFVxZWppd0VzUXNwd1YwQmZKN2d1NWpRTGFndXl4TmVvRnd4Q0F6TWFMZFJXNmJNa2h1OFBvTWpxbE5NYktjSXNYVEhJUWNraTYxRXln?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
@@ -480,8 +612,8 @@
                 
                 <div class="bg-champagne p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
                     <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">CHILE</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Joaquín Vial: “No podemos seguir manteniendo déficits de los últimos años”</h4>
-                    <a href="https://news.google.com/rss/articles/CBMi-AFBVV95cUxQTXcyVzdvUUN1Vlh4Sm1jYTFHaFBFWUZmWGVsaHQ2RlBOLXhGU2dxNmt1QWxieVVfMllpdmJSWTdwRUhlaWFFZWtGTm02OVF3UGU1WHNaWXFpcjVsdEZGWW1qbU9GUzlHbVE3NzdILU5PdFJZN1ctSV9nZHhfblktdC1MX0xrZC1NNEY4MVVLdWFPS2pzZ1RNalpFVTZldFo5dmllZGdTWGJEcWY3aURxUmxUbGFzZERBLTdDQ3JBNkJ2UnNXTVJxOHJ1Qnd5MXZBZmsycVBRd3oxbS0zcElnSHlBTzdsZzZ5Ukp2VVRRMDd6VWQ2S0RKTQ?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Dólar cae en la apertura en Chile y se ubica en $914,85 en medio de menor aversión al riesgo global</h4>
+                    <a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxNU1Z2XzRuN050QmRJYlBhTWxIRkllcXpWQ25Wc1lYQWJDWkZMdEY2NEdzeXRNYW9DUDlPQ2E1S2dGUkkwZWFsalUwUFRyQjJPMnpQQnUyM2MxUGpienNsZDhSaGhzNTVRTWpsNGxiVXllUkdVNGtHLU92RkRLQ1RSSktiVnpSV1h6MEZiYVRfOElWaGN2cUx4ejF4SDVXcG5wQjh1TklqTkw2dW5CQXhRVGNtZW9TMEZaaEZDcVJNcw?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
@@ -489,8 +621,8 @@
                 
                 <div class="bg-champagne p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
                     <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">EUROPA</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">La disputa por el dinero del futuro</h4>
-                    <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxOOGwxakphWmhsY1g1M0pzQ2VHVmFoejNJZ3EyVjFadzZSMHBqTXN3aTNxMVp2LWpBRUJ0Sy1sUjllMEVXaDlkNW5hQVlrWTRQWjAteHAwRzNQMmpjbmVYelE4ZzFFYUVQNGM5TFhiMFREQ0JoTkJ5c2lxRW9EemFOS3JXdThuQXBZelQxZkRvcmxkcDZ3WmttY2NtX1JNVXNDUEozYk1n0gGmAUFVX3lxTE44bDFqSmFaaGxjWDUzSnNDZUdWYWh6M0lncTJWMVp3NlIwcGpNc3dpM3ExWnYtakFFQnRLLWxSOWUwRVdoOWQ1bmFBWWtZNFBaMC14cDBHM1AyamNuZVh6UThnMUVhRVA0YzlMWGIwVERDQmhOQnlzaXFFb0R6YU5Lcld1OG5BcFl6VDFmRG9ybGRwNndaa21jY21fUk1Vc0NQSjNiTWc?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Persisten los problemas de la economía de datos europea</h4>
+                    <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxNZDJvME55VE0xTzYtVU9pQjFwa1NpNHJrdkxZR245UjV0OUdKandieEhnWnZCWHBidzRBMTRXT0tfcUtjV3A1QjROVGlDVUlRRjRkQ19iMFR0Wk9sMGR4QkNVenlFRE1zcnFiU3l6TFNBeWMyWmlTMk1EMzhGSkF5RHI3MUwyR0xQbVFoTUp4dnlib0FrbUxZdl92RzV1d2FmYUNwNHVDbWtxWUthcnpPSlF6VnZndnEzQXJoaw?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
@@ -498,8 +630,8 @@
                 
                 <div class="bg-champagne p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
                     <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">ESPAÑA</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">La ruptura del sistema económico internacional</h4>
-                    <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQdmxDRDRtbXptSVk3cHcxUHRnVmotWi1neXdhVG41TndiejVuVXhyLVFQYjJjZ3J3MFo3V1FPcXR4aHRVY251eEVqOUxjMGk2a0VwUjBlN1JSX2dVODRnWkk4cC1GOFBuczRTLVlZWHhRQkdCNEJRd29wNTQxTjNlZDBrTlJjUXFmc1dvZHBoOUszZHFUYzNTMGI4TVNjUGZX0gG0AUFVX3lxTE9qY1cta1V3c3FuR1RteTY2cDBpQnNhS3Y0WXRVc3BvLXZxM2hZWUF2a2JFZVRqU1J0LXJxeVJSLTNfM0JQWDJJSUxfYUtSUzJnZUMwNmFCNDYycVQ0MUFYNXdHY1dpM2dIcW9DcmJxeTJVNE1ENjBMUk9laWFJenRDZklCZm1YQkhQVUxaQUdEd3Q5QlE0YXZyVjVSZ0FYcUp6ZEczaFJQYXdoeFlJekQyVE5oOA?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">España seguirá creciendo por encima de la Eurozona, con una expansión del 2,5% en 2026</h4>
+                    <a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNY1pMU1h2Qm1wQ05SOHc1aUVvdlE3X191VThuaWtfMzltNDVHYWl3WkVUc1NYU2JpaUZLN1p0ODFibFAwc2tKOEotTWVwYkhaVWxPUjVERUd1VDBqSUJzQWNaUllfNmVvQmZtOHhQQi1uRjJHLWd4QW96WVUtOFIyQzFMdVZYN0U?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
@@ -507,8 +639,8 @@
                 
                 <div class="bg-champagne p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
                     <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">LEGAL CHILE</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Corte de Chillán ordena al Ministerio de Justicia emitir certificado de silencio negativo</h4>
-                    <a href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxOZEZZbFpPcG1fcHF6OHkyMVdxWlBJVksyNUZENjltLXQ0TXVpakVDcnpwUFdrN1hsVE9JN3JGSXN4ZHZmYTh0TXhBbXhjbm9DRkhOaGpsMVJzS2ozV012dVh0MVhscmMyVFIwaWhyWlZIVlFXZG02dkVCYmRXd1BIdVJEVUF6azJkWVg0VE9xWnpYYTBuelZ0RFhBR3V0VXZtZEYxeFBWWmNfZmdKbGNndGQxX2FIQlZIbnl6WW9FTnppSlhqckI1RGRpQTFqQ0NVa3Fz?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Corte Suprema acoge amparo y autoriza ingreso de extranjera con hijos en Chile</h4>
+                    <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQSC1TeVJrSmNudVJCVUtCREg3UWt2TDBWRF9DbmJQdG10R1MxR1RNUUhyN0dhMWszWmlCT1dzS3VrVEszVTdVTVZmLUYydU1VMUVyN0EzajA2YlNEc2RJdEN2bERHQjNEbl8wQkFZdlR5eXZuM3d5NkZuSTFfaV9Db205Q2Y?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
@@ -516,8 +648,8 @@
                 
                 <div class="bg-champagne p-6 rounded-lg shadow-md hover:shadow-xl transition border-l-4 border-yellow-600">
                     <span class="text-xs text-yellow-600 font-bold uppercase tracking-wider mb-2 block">LEGAL CHILE</span>
-                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Fiscal judicial de la Corte de Puerto Montt aborda los alcances de nueva ley que moderniza el sistema notarial y registral</h4>
-                    <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQMlh4bkgwM3pKYloxWTB1NmVoVDJoSHI5TmdBWVBnR2c5bDlwSzFLSnQ3UGpzQS1BV3dubWJJYUNRUTdyTVlZeUZzckplYzdGT1ZjYmN0RFVBaVB3aXNNbDZ0RFd2RWhSSkRtSWQ2MTFtaklHRUY3LVFzdk1tWlBscVRJcXE?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
+                    <h4 class="text-slate-900 text-sm font-bold mb-3 leading-snug">Corte Suprema confirma multa a sostenedor por declarar asistencia escolar irregular en el SIGE</h4>
+                    <a href="https://news.google.com/rss/articles/CBMi2gFBVV95cUxNZ2pSS1BDdkRzSVYwZUpGM0puMzFwMVRKMGNqWXJhNDRKZmZWZzl0UUtBMkJZM0ZQMmpla24zS2VUQWt3QUw3WnUwY1I3cGg1Sm1oZk90NGM2dTBxeGFjRjFVSkFIemVZY081WTJhUl93Sl9kRTE4NzI3Q1hZNzdlM2lVQ2Y1U3VlVmc1UGxxeVYzMy1ySGtscXE5X1ZZMXdLQ1hjZEdQaHlLbXFnNVN2Y25FdmMwR0s1R1hBT0FXZ1hxUlJmSGl4amZtbW4wdDZpUzRYUHFmZHRFdw?oc=5" target="_blank" class="text-xs text-slate-600 hover:text-yellow-600 transition flex items-center gap-2 uppercase font-bold">
                         Leer artículo completo
                         <i class="fas fa-external-link-alt text-[10px]"></i>
                     </a>
