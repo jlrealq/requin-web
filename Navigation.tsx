@@ -29,7 +29,7 @@ export function Navigation({ onSimulatorClick }: NavigationProps) {
       <nav className="sticky top-0 z-50 bg-[#EFEDE8]/95 backdrop-blur-md border-b border-[#1A1A1A]/5 px-6 py-4 flex justify-between items-center">
         <a href="#inicio" onClick={() => handleNavClick('#inicio')} className="flex items-center gap-4 hover:opacity-80 transition-opacity">
           <img
-            src="https://www.requinspa.com/Logo-Requin-V2.png"
+            src="/Logo-Requin.jpg"
             alt="Requin & Asociados Logo"
             className="h-12 md:h-14 w-auto object-contain"
             onError={(e) => {

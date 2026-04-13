@@ -5,7 +5,7 @@ export function AboutUs() {
         <div className="w-full md:w-1/2 relative group">
           <div className="absolute inset-0 bg-[#C5A059]/10 transform translate-x-4 translate-y-4 rounded-sm transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div>
           <img
-            src="https://www.requinspa.com/Juan%20Luis%20Oficina%204K.jpeg"
+            src="/Juan%20Luis%20Oficina%204K.jpeg"
             alt="Fundador Requin & Asociados"
             className="relative z-10 w-full object-cover h-[450px] rounded-sm shadow-xl transition-all duration-700"
             onError={(e) => {
