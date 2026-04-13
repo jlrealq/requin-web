@@ -31,7 +31,7 @@ export function Navigation({ onSimulatorClick }: NavigationProps) {
           <img
             src="/Logo-Requin.jpg"
             alt="Requin & Asociados Logo"
-            className="h-12 md:h-14 w-auto object-contain"
+            className="h-12 md:h-14 w-auto object-contain mix-blend-multiply"
             onError={(e) => {
               e.currentTarget.style.display = 'none';
               const fallback = e.currentTarget.nextElementSibling as HTMLElement;
