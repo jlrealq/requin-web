@@ -109,18 +109,13 @@ export function Testimonials() {
               className="bg-[#2D2D2D] border border-[#C5A059]/10 rounded-lg p-6 hover:border-[#C5A059]/30 transition-all hover:shadow-xl hover:shadow-[#C5A059]/10 group"
             >
               <div className="flex items-start gap-4 mb-4">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-16 h-16 rounded-full object-cover border-2 border-[#C5A059]/20 group-hover:border-[#C5A059] transition-all"
-                />
                 <div className="flex-1">
                   <h3 className="font-bold text-[#EFEDE8] mb-1">{testimonial.name}</h3>
                   <p className="text-xs text-[#EFEDE8]/60">
-                    {testimonial.position} • {testimonial.company}
+                    {testimonial.position}
                   </p>
                   <span className="inline-block mt-1 bg-[#C5A059]/10 text-[#C5A059] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
-                    {testimonial.industry}
+                    Sector {testimonial.industry}
                   </span>
                 </div>
               </div>

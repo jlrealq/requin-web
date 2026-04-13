@@ -20,17 +20,17 @@ RUTA_NEWS = os.path.join(RUTA_BASE, 'src', 'data', 'news.json')
 FEEDS_NOTICIAS = {
     'CHILE': {
         'url': 'https://news.google.com/rss/search?q=Chile+Economía+Negocios+when:1d&hl=es-419&gl=CL&ceid=CL:es-419',
-        'cantidad': 1,
+        'cantidad': 3,
         'category': 'TRIBUTARIO'
     },
     'EUROPA': {
         'url': 'https://news.google.com/rss/search?q=Europa+Economía+Negocios+when:1d&hl=es&gl=ES&ceid=ES:es',
-        'cantidad': 1,
+        'cantidad': 2,
         'category': 'INTERNACIONAL'
     },
     'LEGAL': {
         'url': 'https://news.google.com/rss/search?q=%22Chile%22+(ley+OR+normativa+OR+proyecto+de+ley+OR+Corte+Suprema+OR+SII)+when:2d&hl=es-419&gl=CL&ceid=CL:es-419',
-        'cantidad': 1,
+        'cantidad': 4,
         'category': 'PLANIFICACIÓN'
     }
 }
