@@ -120,7 +120,7 @@ export function ContactForm() {
                 {...register('phone', { required: 'El teléfono es requerido' })}
                 type="tel"
                 className="w-full bg-[#2D2D2D] border border-[#C5A059]/20 text-[#EFEDE8] py-3 px-4 rounded-sm focus:ring-2 focus:ring-[#C5A059] focus:border-transparent"
-                placeholder="+56 9 1234 5678"
+                placeholder="+56 9 9326 0101"
               />
               {errors.phone && (
                 <p className="text-red-400 text-xs mt-1">{errors.phone.message}</p>

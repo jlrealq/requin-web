@@ -1,7 +1,7 @@
 import { MessageCircle } from 'lucide-react';
 
 export function WhatsAppButton() {
-  const phoneNumber = '56912345678';
+  const phoneNumber = '56993260101';
   const message = 'Hola, me gustaría obtener más información sobre los servicios de Requin & Asociados.';
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

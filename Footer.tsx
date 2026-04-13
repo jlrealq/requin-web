@@ -22,9 +22,15 @@ export function Footer() {
                 </a>
               </div>
               <div className="flex items-center gap-2 text-[#EFEDE8]/70">
-                <Phone className="w-4 h-4" />
-                <a href="tel:+56912345678" className="hover:text-[#C5A059] transition">
-                  +56 9 1234 5678
+                <span>🇨🇱</span>
+                <a href="tel:+56993260101" className="hover:text-[#C5A059] transition">
+                  +56 9 9326 0101
+                </a>
+              </div>
+              <div className="flex items-center gap-2 text-[#EFEDE8]/70">
+                <span>🇪🇸</span>
+                <a href="tel:+34682028354" className="hover:text-[#C5A059] transition">
+                  +34 682 02 8354
                 </a>
               </div>
               <div className="flex items-center gap-2 text-[#EFEDE8]/70">
