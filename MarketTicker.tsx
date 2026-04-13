@@ -1,5 +1,5 @@
 import { TrendingUp, TrendingDown } from 'lucide-react';
-import marketDataJson from '../data/market.json';
+import marketDataJson from './src/data/market.json';
 
 export function MarketTicker() {
   const marketData = {

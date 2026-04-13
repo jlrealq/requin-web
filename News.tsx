@@ -1,6 +1,6 @@
 import { Calendar, ArrowRight } from 'lucide-react';
 
-import newsData from '../data/news.json';
+import newsData from './src/data/news.json';
 
 export function News() {
   const news = newsData;
