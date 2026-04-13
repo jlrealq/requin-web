@@ -1,26 +1,9 @@
 import { Calendar, ArrowRight } from 'lucide-react';
 
+import newsData from '../data/news.json';
+
 export function News() {
-  const news = [
-    {
-      date: '2026-04-10',
-      title: 'Nueva Reforma Tributaria 2026: Oportunidades para Holdings Familiares',
-      excerpt: 'Analizamos los cambios clave de la reforma tributaria y cómo pueden beneficiar a empresas familiares que buscan optimizar su estructura.',
-      category: 'Tributario'
-    },
-    {
-      date: '2026-04-05',
-      title: 'Expansión a España: Guía Completa para Empresas Chilenas',
-      excerpt: 'Todo lo que necesitas saber sobre estructuración legal, tributaria y financiera para expandir tu empresa al mercado español.',
-      category: 'Internacional'
-    },
-    {
-      date: '2026-03-28',
-      title: 'Planificación Sucesoria: Protege el Legado de tu Empresa Familiar',
-      excerpt: 'Estrategias efectivas para asegurar la continuidad del negocio familiar minimizando conflictos y carga tributaria.',
-      category: 'Planificación'
-    }
-  ];
+  const news = newsData;
 
   return (
     <section id="noticias" className="py-20 px-6 bg-[#EFEDE8]">

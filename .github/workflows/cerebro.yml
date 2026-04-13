@@ -1,0 +1,47 @@
+name: Robot Noticias e Indicadores
+
+on:
+  schedule:
+    - cron: '0 11 * * *' # Ejecutar a las 8:00 AM Chile (11:00 UTC)
+    - cron: '0 18 * * *' # Ejecutar a las 3:00 PM Chile (18:00 UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    name: 🧠 Generar Datos Requin
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Obtener código
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: 🐍 Instalar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: 📦 Instalar herramientas
+      run: |
+        pip install -r requirements.txt
+
+    - name: 🧠 Ejecutar Cerebro
+      run: |
+        python cerebro.py
+
+    - name: 📝 Commit y push de cambios
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        
+        git add src/data/market.json src/data/news.json
+        
+        if git diff --staged --quiet; then
+          echo "No hay cambios para commitear"
+        else
+          git commit -m "🤖 Actualización automática de datos - $(date '+%Y-%m-%d %H:%M:%S')"
+          git push origin main
+        fi

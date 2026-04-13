@@ -1,38 +1,19 @@
-import { useState, useEffect } from 'react';
 import { TrendingUp, TrendingDown } from 'lucide-react';
-
-interface MarketData {
-  uf: number;
-  usd: number;
-  eur: number;
-  lastUpdate: string;
-}
+import marketDataJson from '../data/market.json';
 
 export function MarketTicker() {
-  const [marketData, setMarketData] = useState<MarketData>({
-    uf: 39854,
-    usd: 894,
-    eur: 1046,
-    lastUpdate: ''
-  });
+  const marketData = {
+    uf: marketDataJson.uf.value,
+    usd: marketDataJson.usd.value,
+    eur: marketDataJson.eur.value,
+    lastUpdate: marketDataJson.timestamp || ''
+  };
 
-  const [trends] = useState({
-    uf: 'up',
-    usd: 'down',
-    eur: 'up'
-  });
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const formatted = `${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-      setMarketData(prev => ({ ...prev, lastUpdate: formatted }));
-    };
-
-    updateTime();
-    const interval = setInterval(updateTime, 60000);
-    return () => clearInterval(interval);
-  }, []);
+  const trends = {
+    uf: marketDataJson.uf.trend,
+    usd: marketDataJson.usd.trend,
+    eur: marketDataJson.eur.trend
+  };
 
   const formatNumber = (num: number) => {
     return num.toLocaleString('es-CL');
