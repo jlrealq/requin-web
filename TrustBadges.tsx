@@ -34,13 +34,6 @@ export function TrustBadges() {
     }
   ];
 
-  const associations = [
-    'Colegio de Contadores de Chile',
-    'Colegio de Abogados de Chile',
-    'International Fiscal Association (IFA)',
-    'Asociación de Empresas Familiares'
-  ];
-
   return (
     <section className="py-16 px-6 bg-white border-y border-[#1A1A1A]/5">
       <div className="max-w-6xl mx-auto">
@@ -71,23 +64,6 @@ export function TrustBadges() {
             </div>
           ))}
         </div>
-
-        <div className="bg-[#EFEDE8] rounded-lg p-6">
-          <h4 className="text-center text-xs font-bold uppercase tracking-wider text-[#C5A059] mb-4">
-            Miembros Activos
-          </h4>
-          <div className="flex flex-wrap justify-center gap-4 text-xs text-[#1A1A1A]/70">
-            {associations.map((association, index) => (
-              <span
-                key={index}
-                className="bg-white px-4 py-2 rounded-sm border border-[#1A1A1A]/10"
-              >
-                {association}
-              </span>
-            ))}
-          </div>
-        </div>
-
         <div className="mt-8 text-center">
           <div className="inline-flex items-center gap-2 text-sm text-[#1A1A1A]/60">
             <Shield className="w-4 h-4 text-[#C5A059]" />
