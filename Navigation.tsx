@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+const logoUrl = '/Logo-Requin.jpg';
 
 interface NavigationProps {
   onSimulatorClick: () => void;
@@ -27,16 +28,11 @@ export function Navigation({ onSimulatorClick }: NavigationProps) {
   return (
     <>
       <nav className="sticky top-0 z-50 bg-[#EFEDE8]/95 backdrop-blur-md border-b border-[#1A1A1A]/5 px-6 py-4 flex justify-between items-center">
-        <a href="#inicio" onClick={() => handleNavClick('#inicio')} className="flex items-center gap-4 hover:opacity-80 transition-opacity">
+        <a href="#inicio" onClick={() => handleNavClick('#inicio')} className="flex items-center gap-4">
           <img
-            src="/Logo-Requin.jpg"
+            src={logoUrl}
             alt="Requin & Asociados Logo"
-            className="h-12 md:h-14 w-auto object-contain mix-blend-multiply"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-              const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-              if (fallback) fallback.style.display = 'flex';
-            }}
+            className="h-16 md:h-20 w-auto object-contain mix-blend-multiply"
           />
           <div className="h-12 md:h-14 w-12 md:w-14 bg-[#1A1A1A] rounded-md items-center justify-center hidden">
             <span className="text-[#C5A059] font-bold text-2xl font-serif">R</span>

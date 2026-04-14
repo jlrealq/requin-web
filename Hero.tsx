@@ -1,6 +1,10 @@
-import { TrendingDown, Globe, CheckSquare } from 'lucide-react';
+import { TrendingDown, Globe, CheckSquare, Calculator } from 'lucide-react';
 
-export function Hero() {
+interface HeroProps {
+  onSimulatorClick?: () => void;
+}
+
+export function Hero({ onSimulatorClick }: HeroProps) {
   return (
     <header id="inicio" className="relative px-6 py-20 overflow-hidden bg-[#DED9D0]/30">
       <div className="absolute inset-0 bg-gradient-to-br from-[#EFEDE8] to-[#DED9D0] opacity-50"></div>
@@ -49,12 +53,13 @@ export function Hero() {
           >
             Solicitar Diagnóstico
           </a>
-          <a
-            href="#servicios"
-            className="inline-block text-center border border-[#1A1A1A]/20 text-[#1A1A1A] py-4 px-10 rounded-sm font-medium hover:bg-[#1A1A1A]/5 transition-all uppercase text-xs tracking-widest"
+          <button
+            onClick={onSimulatorClick}
+            className="inline-flex items-center justify-center gap-2 text-center border-2 border-[#C5A059] bg-white text-[#1A1A1A] py-4 px-10 rounded-sm font-bold hover:bg-[#C5A059] hover:text-white transition-all uppercase text-xs tracking-widest shadow-md hover:shadow-lg group"
           >
-            Nuestra Metodología
-          </a>
+            <Calculator className="w-4 h-4 group-hover:scale-110 transition-transform" />
+            Simulador de Ahorro Fiscal
+          </button>
         </div>
       </div>
     </header>

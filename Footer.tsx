@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
+const logoUrl = '/Logo-Requin.jpg';
 
 export function Footer() {
   return (
@@ -6,7 +7,12 @@ export function Footer() {
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="font-serif text-xl mb-4 text-[#C5A059]">Requin & Asociados</h3>
+            <img 
+              src={logoUrl} 
+              alt="Requin & Asociados" 
+              className="h-16 w-auto object-contain mb-4 mix-blend-screen invert"
+            />
+            <h3 className="font-serif text-xl mb-4 text-[#C5A059] hidden">Requin & Asociados</h3>
             <p className="text-[#EFEDE8]/70 text-sm leading-relaxed">
               Arquitectura Financiera de Élite para empresas que buscan crecer de manera segura y eficiente.
             </p>

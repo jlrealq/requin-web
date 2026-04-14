@@ -16,8 +16,10 @@ import { FAQ } from '../../FAQ';
 import { ContactForm } from '../../ContactForm';
 import { Footer } from '../../Footer';
 import { WhatsAppButton } from '../../WhatsAppButton';
+import { useState } from 'react';
 
 function App() {
+  const [isSimulatorOpen, setIsSimulatorOpen] = useState(false);
   return (
     <>
       <SEOHead />
@@ -25,7 +27,7 @@ function App() {
       
       <div className="flex flex-col min-h-screen">
         <MarketTicker />
-        <Navigation />
+        <Navigation onSimulatorClick={() => setIsSimulatorOpen(true)} />
         
         <main className="flex-grow">
           <Hero />
@@ -33,7 +35,7 @@ function App() {
           <Services />
           <SegmentsTable />
           <CaseStudies />
-          <Simulator />
+          <Simulator isOpen={isSimulatorOpen} onClose={() => setIsSimulatorOpen(false)} />
           <TrustBadges />
           <Testimonials />
           <News />

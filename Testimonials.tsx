@@ -112,10 +112,10 @@ export function Testimonials() {
                 <div className="flex-1">
                   <h3 className="font-bold text-[#EFEDE8] mb-1">{testimonial.name}</h3>
                   <p className="text-xs text-[#EFEDE8]/60">
-                    {testimonial.position}
+                    {testimonial.position} • {testimonial.company}
                   </p>
                   <span className="inline-block mt-1 bg-[#C5A059]/10 text-[#C5A059] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
-                    Sector {testimonial.industry}
+                    {testimonial.industry}
                   </span>
                 </div>
               </div>
