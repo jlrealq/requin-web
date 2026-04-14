@@ -325,14 +325,23 @@ export function Simulator({ isOpen, onClose }: SimulatorProps) {
               <p className="text-[9px] text-[#EFEDE8]/40 uppercase tracking-wider max-w-xs text-center sm:text-left">
                 * Simulación preliminar basada en el marco tributario chileno vigente. No constituye asesoría legal vinculante.
               </p>
-              <a
-                href="#contacto"
-                onClick={onClose}
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  onClose();
+                  setTimeout(() => {
+                    const el = document.getElementById('contacto');
+                    if (el) {
+                      el.scrollIntoView({ behavior: 'smooth' });
+                      window.history.pushState(null, '', '#contacto');
+                    }
+                  }, 100);
+                }}
                 className="w-full sm:w-auto bg-[#C5A059] text-[#1A1A1A] py-3.5 px-8 rounded-sm font-bold uppercase text-[11px] tracking-widest hover:bg-white hover:shadow-[0_0_20px_rgba(197,160,89,0.3)] transition-all flex items-center justify-center gap-2"
               >
                 Auditar Mi Empresa 
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </button>
             </div>
           </div>
           

@@ -1,54 +1,58 @@
+import { useState } from 'react';
 import { SEOHead } from '../../SEOHead';
 import { GoogleAnalytics } from '../../GoogleAnalytics';
 import { MarketTicker } from '../../MarketTicker';
 import { Navigation } from '../../Navigation';
 import { Hero } from '../../Hero';
 import { Stats } from '../../Stats';
-import { Services } from '../../Services';
+import { AboutUs } from '../../AboutUs';
 import { SegmentsTable } from '../../SegmentsTable';
-import { CaseStudies } from '../../CaseStudies';
-import { Simulator } from '../../Simulator';
+import { Services } from '../../Services';
 import { TrustBadges } from '../../TrustBadges';
 import { Testimonials } from '../../Testimonials';
+import { CaseStudies } from '../../CaseStudies';
+import { Simulator } from '../../Simulator';
 import { News } from '../../News';
-import { AboutUs } from '../../AboutUs';
 import { FAQ } from '../../FAQ';
 import { ContactForm } from '../../ContactForm';
 import { Footer } from '../../Footer';
 import { WhatsAppButton } from '../../WhatsAppButton';
-import { useState } from 'react';
+import { Calculator } from 'lucide-react';
 
-function App() {
-  const [isSimulatorOpen, setIsSimulatorOpen] = useState(false);
+export default function App() {
+  const [simulatorOpen, setSimulatorOpen] = useState(false);
+
   return (
-    <>
+    <div className="min-h-screen bg-[#EFEDE8] text-[#1A1A1A]">
       <SEOHead />
       <GoogleAnalytics />
-      
-      <div className="flex flex-col min-h-screen">
-        <MarketTicker />
-        <Navigation onSimulatorClick={() => setIsSimulatorOpen(true)} />
-        
-        <main className="flex-grow">
-          <Hero />
-          <Stats />
-          <Services />
-          <SegmentsTable />
-          <CaseStudies />
-          <Simulator isOpen={isSimulatorOpen} onClose={() => setIsSimulatorOpen(false)} />
-          <TrustBadges />
-          <Testimonials />
-          <News />
-          <AboutUs />
-          <FAQ />
-          <ContactForm />
-        </main>
-        
-        <Footer />
-        <WhatsAppButton />
-      </div>
-    </>
+
+      <MarketTicker />
+      <Navigation onSimulatorClick={() => setSimulatorOpen(true)} />
+      <Hero onSimulatorClick={() => setSimulatorOpen(true)} />
+
+      <section className="py-12 bg-[#1A1A1A] text-[#EFEDE8] px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-lg md:text-xl font-light leading-relaxed italic opacity-90">
+            "Ayudamos a pymes en crecimiento, holdings familiares, startups y empresas que preparan su expansión a España y otros mercados, diseñando estructuras financieras y legales que minimizan impuestos, riesgos y fricciones operativas."
+          </p>
+        </div>
+      </section>
+
+      <AboutUs />
+      <Stats />
+      <SegmentsTable />
+      <Services />
+      <TrustBadges />
+      <Testimonials />
+      <CaseStudies />
+      <News />
+      <FAQ />
+      <ContactForm />
+      <Footer />
+
+      <WhatsAppButton />
+      <Simulator isOpen={simulatorOpen} onClose={() => setSimulatorOpen(false)} />
+    </div>
   );
 }
-
-export default App;
