@@ -17,27 +17,34 @@ export function News() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {news.map((item, index) => (
-            <article
+            <a
               key={index}
-              className="bg-white border border-[#1A1A1A]/5 rounded-sm p-6 hover:shadow-lg transition-all group cursor-pointer"
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block no-underline"
             >
-              <div className="flex items-center gap-2 text-xs text-[#C5A059] mb-3">
-                <Calendar className="w-4 h-4" />
-                <time>{new Date(item.date).toLocaleDateString('es-CL', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-              </div>
-              <span className="inline-block bg-[#C5A059]/10 text-[#C5A059] text-xs font-bold uppercase tracking-wider px-2 py-1 rounded mb-3">
-                {item.category}
-              </span>
-              <h3 className="font-serif text-lg font-bold text-[#1A1A1A] mb-3 group-hover:text-[#C5A059] transition-colors">
-                {item.title}
-              </h3>
-              <p className="text-sm text-[#1A1A1A]/70 leading-relaxed mb-4">
-                {item.excerpt}
-              </p>
-              <div className="flex items-center gap-2 text-sm font-bold text-[#C5A059] group-hover:gap-3 transition-all">
-                Leer más <ArrowRight className="w-4 h-4" />
-              </div>
-            </article>
+              <article
+                className="bg-white border border-[#1A1A1A]/5 rounded-sm p-6 hover:shadow-lg transition-all group cursor-pointer h-full"
+              >
+                <div className="flex items-center gap-2 text-xs text-[#C5A059] mb-3">
+                  <Calendar className="w-4 h-4" />
+                  <time>{new Date(item.date).toLocaleDateString('es-CL', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                </div>
+                <span className="inline-block bg-[#C5A059]/10 text-[#C5A059] text-xs font-bold uppercase tracking-wider px-2 py-1 rounded mb-3">
+                  {item.category}
+                </span>
+                <h3 className="font-serif text-lg font-bold text-[#1A1A1A] mb-3 group-hover:text-[#C5A059] transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-[#1A1A1A]/70 leading-relaxed mb-4">
+                  {item.excerpt}
+                </p>
+                <div className="flex items-center gap-2 text-sm font-bold text-[#C5A059] group-hover:gap-3 transition-all">
+                  Leer más <ArrowRight className="w-4 h-4" />
+                </div>
+              </article>
+            </a>
           ))}
         </div>
       </div>
