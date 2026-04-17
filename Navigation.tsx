@@ -15,6 +15,7 @@ export function Navigation({ onSimulatorClick }: NavigationProps) {
     { label: 'Para Quién', href: '#segmentos' },
     { label: 'Servicios', href: '#servicios' },
     { label: 'Casos de Éxito', href: '#testimonios' },
+    { label: 'Noticias', href: '#noticias' },
     { label: 'FAQ', href: '#faq' }
   ];
 
