@@ -16,7 +16,7 @@ import { News } from '../../News';
 import { FAQ } from '../../FAQ';
 import { ContactForm } from '../../ContactForm';
 import { Footer } from '../../Footer';
-import { WhatsAppButton } from '../../WhatsAppButton';
+
 import { Calculator } from 'lucide-react';
 
 export default function App() {
@@ -51,7 +51,7 @@ export default function App() {
       <ContactForm />
       <Footer />
 
-      <WhatsAppButton />
+
       <Simulator isOpen={simulatorOpen} onClose={() => setSimulatorOpen(false)} />
     </div>
   );
