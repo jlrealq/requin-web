@@ -27,6 +27,12 @@ jobs:
     - name: 🏗️ Construir proyecto
       run: npm run build
 
+    - name: 📁 Incluir webhook Telegram en deploy
+      run: |
+        mkdir -p ./dist/telegram/sessions
+        cp telegram/telegram-webhook.php ./dist/telegram/
+        echo "deny from all" > ./dist/telegram/sessions/.htaccess
+
     - name: 🌐 Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:

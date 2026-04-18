@@ -2,3 +2,6 @@ node_modules/
 dist/
 .env
 .DS_Store
+
+# Sesiones Telegram (datos privados de usuarios — no subir a Git)
+telegram/sessions/*.json

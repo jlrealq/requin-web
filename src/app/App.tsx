@@ -17,6 +17,7 @@ import { FAQ } from '../../FAQ';
 import { ContactForm } from '../../ContactForm';
 import { Footer } from '../../Footer';
 
+import { TelegramButton } from '../../TelegramButton';
 import { Calculator } from 'lucide-react';
 
 export default function App() {
@@ -52,6 +53,7 @@ export default function App() {
       <Footer />
 
 
+      <TelegramButton />
       <Simulator isOpen={simulatorOpen} onClose={() => setSimulatorOpen(false)} />
     </div>
   );
