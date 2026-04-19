@@ -14,6 +14,31 @@ interface ContactFormData {
   utm_campaign?: string;
 }
 
+interface InputWrapperProps {
+  children: React.ReactNode;
+  isTouched?: boolean;
+  hasError?: boolean;
+  errorMsg?: string;
+}
+
+const InputWrapper = ({ children, isTouched, hasError, errorMsg }: InputWrapperProps) => {
+  const isValid = isTouched && !hasError;
+
+  return (
+    <div className="relative">
+      {children}
+      {isValid && (
+        <CheckCircle2 className="absolute right-3 top-10 w-4 h-4 text-green-500 pointer-events-none" />
+      )}
+      {errorMsg && (
+        <p className="text-red-400 text-[10px] uppercase tracking-wider mt-1.5 flex items-center gap-1">
+          <AlertCircle className="w-3 h-3" /> {errorMsg}
+        </p>
+      )}
+    </div>
+  );
+};
+
 export function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -83,25 +108,7 @@ export function ContactForm() {
     }
   };
 
-  const InputWrapper = ({ children, fieldName, errorMsg }: any) => {
-    const isTouched = touchedFields[fieldName as keyof ContactFormData];
-    const hasError = !!errors[fieldName as keyof ContactFormData];
-    const isValid = isTouched && !hasError;
 
-    return (
-      <div className="relative">
-        {children}
-        {isValid && (
-          <CheckCircle2 className="absolute right-3 top-10 w-4 h-4 text-green-500 pointer-events-none" />
-        )}
-        {errorMsg && (
-          <p className="text-red-400 text-[10px] uppercase tracking-wider mt-1.5 flex items-center gap-1">
-            <AlertCircle className="w-3 h-3" /> {errorMsg}
-          </p>
-        )}
-      </div>
-    );
-  };
 
   return (
     <section id="contacto" className="py-24 px-6 bg-[#1A1A1A] text-[#EFEDE8] relative overflow-hidden">
@@ -148,7 +155,7 @@ export function ContactForm() {
           <input type="text" {...register('_gotcha')} className="hidden" tabIndex={-1} autoComplete="off" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <InputWrapper fieldName="name" errorMsg={errors.name?.message}>
+            <InputWrapper isTouched={touchedFields.name} hasError={!!errors.name} errorMsg={errors.name?.message}>
               <label className="block text-[10px] uppercase tracking-widest text-[#C5A059] mb-2 font-bold">
                 Nombre Completo *
               </label>
@@ -159,7 +166,7 @@ export function ContactForm() {
               />
             </InputWrapper>
 
-            <InputWrapper fieldName="email" errorMsg={errors.email?.message}>
+            <InputWrapper isTouched={touchedFields.email} hasError={!!errors.email} errorMsg={errors.email?.message}>
               <label className="block text-[10px] uppercase tracking-widest text-[#C5A059] mb-2 font-bold">
                 Email Corporativo *
               </label>
@@ -179,7 +186,7 @@ export function ContactForm() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <InputWrapper fieldName="phone" errorMsg={errors.phone?.message}>
+            <InputWrapper isTouched={touchedFields.phone} hasError={!!errors.phone} errorMsg={errors.phone?.message}>
               <label className="block text-[10px] uppercase tracking-widest text-[#C5A059] mb-2 font-bold">
                 Teléfono / WhatsApp *
               </label>
@@ -194,7 +201,7 @@ export function ContactForm() {
               />
             </InputWrapper>
 
-            <InputWrapper fieldName="company">
+            <InputWrapper isTouched={touchedFields.company} hasError={!!errors.company}>
               <label className="block text-[10px] uppercase tracking-widest text-[#C5A059] mb-2 font-bold">
                 Empresa
               </label>
@@ -206,7 +213,7 @@ export function ContactForm() {
             </InputWrapper>
           </div>
 
-          <InputWrapper fieldName="message" errorMsg={errors.message?.message}>
+          <InputWrapper isTouched={touchedFields.message} hasError={!!errors.message} errorMsg={errors.message?.message}>
             <label className="block text-[10px] uppercase tracking-widest text-[#C5A059] mb-2 font-bold">
               Desafío Principal *
             </label>
