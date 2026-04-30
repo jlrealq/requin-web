@@ -25,7 +25,7 @@ export function Hero({ onSimulatorClick }: HeroProps) {
               <TrendingDown className="w-6 h-6" />
             </div>
             <p className="text-sm text-[#1A1A1A]/80 leading-relaxed">
-              Reducimos tu carga fiscal sin perder licencia ni transparencia, diseñando estructuras que acompañan tu crecimiento real.
+              Reducimos tu carga fiscal con total transparencia, diseñando estructuras que acompañan tu crecimiento real.
             </p>
           </div>
           <div className="bg-white/50 backdrop-blur-sm p-6 border border-[#C5A059]/10 rounded-sm">
