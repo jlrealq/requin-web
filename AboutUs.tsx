@@ -7,7 +7,7 @@ export function AboutUs() {
           <img
             src="/juan_luis_brazos_cruzados.jpeg"
             alt="Fundador Requin & Asociados"
-            className="relative z-10 w-full object-cover h-[450px] rounded-sm shadow-xl transition-all duration-700"
+            className="relative z-10 w-full object-cover object-top h-[450px] rounded-sm shadow-xl transition-all duration-700"
             onError={(e) => {
               const target = e.currentTarget as HTMLImageElement;
               target.style.display = 'none';
