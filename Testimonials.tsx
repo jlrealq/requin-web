@@ -3,9 +3,9 @@ import { Star, Quote } from 'lucide-react';
 export function Testimonials() {
   const testimonials = [
     {
-      name: 'Rodrigo Martínez',
+      name: 'CEO',
       position: 'CEO',
-      company: 'TechFlow SpA',
+      company: 'Empresa Sector SaaS',
       industry: 'SaaS',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400',
       quote: 'Requin reestructuró completamente nuestra arquitectura financiera antes de nuestra Serie A. Redujimos la carga fiscal en 35% y logramos una valoración 40% superior gracias a la claridad de nuestra estructura.',
@@ -16,9 +16,9 @@ export function Testimonials() {
       rating: 5
     },
     {
-      name: 'María José Valenzuela',
+      name: 'Directora',
       position: 'Directora',
-      company: 'Holding Familiar Valenzuela',
+      company: 'Holding Sector Real Estate',
       industry: 'Real Estate',
       image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400',
       quote: 'Necesitábamos ordenar 3 generaciones de empresas familiares. Requin diseñó una estructura que protege el patrimonio, facilita la sucesión y nos permitió expandirnos a España sin duplicar impuestos.',
@@ -29,9 +29,9 @@ export function Testimonials() {
       rating: 5
     },
     {
-      name: 'Andrés Poblete',
+      name: 'Fundador',
       position: 'Fundador',
-      company: 'Exportadora del Sur',
+      company: 'Empresa Sector Exportación',
       industry: 'Exportación',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400',
       quote: 'Antes de trabajar con Requin, pagábamos impuestos innecesarios por no tener separadas las operaciones de Chile y Europa. La nueva estructura nos ahorró más de lo que invertimos en 6 meses.',
@@ -42,9 +42,9 @@ export function Testimonials() {
       rating: 5
     },
     {
-      name: 'Carolina Fernández',
+      name: 'CFO',
       position: 'CFO',
-      company: 'InnovaHealth',
+      company: 'Empresa Sector HealthTech',
       industry: 'HealthTech',
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400',
       quote: 'El due diligence para nuestra adquisición hubiera sido un caos sin la estructura que Requin implementó. Los compradores valoraron la claridad y transparencia, lo que aceleró el proceso y mejoró el precio.',
@@ -55,9 +55,9 @@ export function Testimonials() {
       rating: 5
     },
     {
-      name: 'Juan Pablo Soto',
+      name: 'Socio Fundador',
       position: 'Socio Fundador',
-      company: 'FinanceHub',
+      company: 'Empresa Sector Fintech',
       industry: 'Fintech',
       image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400',
       quote: 'Como fintech, el compliance es crítico. Requin no solo optimizó nuestra estructura tributaria, sino que blindó la operación legalmente. Pasamos auditorías de inversionistas institucionales sin observaciones.',
@@ -68,9 +68,9 @@ export function Testimonials() {
       rating: 5
     },
     {
-      name: 'Patricia Muñoz',
+      name: 'Gerente General',
       position: 'Gerente General',
-      company: 'Alimentos Premium SA',
+      company: 'Empresa Sector Alimentos',
       industry: 'Alimentos',
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400',
       quote: 'Llevábamos años con contadores tradicionales que solo "cumplían". Requin piensa estratégicamente: nos ayudaron a estructurar la expansión a 4 países nuevos minimizando riesgos y maximizando rentabilidad.',
