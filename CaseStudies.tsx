@@ -8,7 +8,7 @@ export function CaseStudies() {
   const cases = [
     {
       icon: <TrendingUp className="w-8 h-8" />,
-      company: 'TechFlow SpA',
+      company: 'Empresa Sector SaaS',
       industry: 'SaaS B2B',
       challenge: 'Estructura inadecuada para levantar inversión Serie A',
       image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800',
@@ -34,12 +34,12 @@ export function CaseStudies() {
       ],
       testimonial: {
         quote: 'Requin transformó nuestra estructura de caos a best-practice en 2 meses. Los inversores quedaron impresionados con la claridad.',
-        author: 'Rodrigo Martínez, CEO TechFlow'
+        author: 'CEO, Empresa Sector SaaS'
       }
     },
     {
       icon: <Building2 className="w-8 h-8" />,
-      company: 'Holding Familiar Valenzuela',
+      company: 'Holding Sector Real Estate',
       industry: 'Real Estate & Inversiones',
       challenge: 'Sucesión familiar y expansión internacional sin plan',
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800',
@@ -65,12 +65,12 @@ export function CaseStudies() {
       ],
       testimonial: {
         quote: 'Pasamos de conflictos familiares constantes a una estructura profesional donde todos sabemos qué esperar. Invaluable.',
-        author: 'María José Valenzuela, Directora Holding'
+        author: 'Directora, Holding Sector Real Estate'
       }
     },
     {
       icon: <Globe2 className="w-8 h-8" />,
-      company: 'Exportadora del Sur',
+      company: 'Empresa Sector Agroindustrial',
       industry: 'Exportación Agroindustrial',
       challenge: 'Doble tributación y complejidad operativa internacional',
       image: 'https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?auto=format&fit=crop&q=80&w=800',
@@ -96,7 +96,7 @@ export function CaseStudies() {
       ],
       testimonial: {
         quote: 'La estructura que diseñó Requin no solo nos ahorró millones, nos posicionó para una venta exitosa que nunca creímos posible.',
-        author: 'Andrés Poblete, Fundador'
+        author: 'Fundador, Empresa Sector Agroindustrial'
       }
     }
   ];

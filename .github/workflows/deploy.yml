@@ -3,6 +3,10 @@ name: Deploy Requin Web (Vite)
 on:
   push:
     branches: [ "main" ]
+  workflow_run:
+    workflows: ["Robot Noticias e Indicadores"]
+    types:
+      - completed
   workflow_dispatch:
 
 permissions:
